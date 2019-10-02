@@ -1,0 +1,509 @@
+SL no,SRN,Candidate Full Name ,Gender,Highest Qualification YEAR_OF_PASS,Highest Qualification,Highest Qualification Branch,Highest Qualification CGPA,College Name,College Location ( City),University,Std XII,Std X,Profile applied
+1,01FB16ECS490,Shrey Jain,Male,2020,B.Tech,Computer Science & Engineering,8.45,PES University,Benagaluru,PES University,88,10,FTE + Internship (Mandatory)
+2,01FB16EEC371,Hritik Raj,Male,2020,B.Tech,Electronics & Communication Engineering,7.5,PES University,Benagaluru,PES University,76.4,94,FTE + Internship (Mandatory)
+3,01FB16ECS449,Vishal S,Male,2030,B.Tech,Computer Science & Engineering,8.84,PES University,Benagaluru,PES University,93.7,94.8,FTE
+4,01FB16ECS359,Shashank Shekhar Pathak,Male,2020,B.Tech,Computer Science & Engineering,8.3,PES University,Benagaluru,PES University,84.6,93.5,FTE + Internship (Mandatory)
+5,01FB16EEC042,Anurag Muttur,Male,2020,B.Tech,Electronics & Communication Engineering,8.04,PES University,Benagaluru,PES University,92.8,88,FTE + Internship (Mandatory)
+6,01FB16ECS232 ,Ninaad R Rao,Male,2020,B.Tech,Computer Science & Engineering,9.68,PES University,Benagaluru,PES University,95,100,FTE + Internship (Mandatory)
+7,1pe16cs153,siddanth Pai,Male,2020,B.Tech,Computer Science & Engineering,7.9,PESIT South Campus,"E-City, Bengaluru",VTU,89.16,94.6,FTE
+8,01FB16EEC176,NIRANJAN KUMAR M,Male,2020,B.Tech,Electronics & Communication Engineering,7.53,PES University,Benagaluru,PES University,86.83,79.52,FTE + Internship (Mandatory)
+9,01FB16ECS365,shivam ganwani,Male,2020,B.Tech,Computer Science & Engineering,8.6,PES University,Benagaluru,PES University,91,94,FTE + Internship (Mandatory)
+10,01FB16ECS053,Amar Ananth,Male,2020,B.Tech,Computer Science & Engineering,7.77,PES University,Benagaluru,PES University,89.5,92,FTE + Internship (Mandatory)
+11,01FB16ECS207,Mehul Jain,Male,2020,B.Tech,Computer Science & Engineering,8.67,PES University,Benagaluru,PES University,88.6,9.6,FTE + Internship (Mandatory)
+12,01FB16ECS109,Devang Shetty,Male,2020,B.Tech,Computer Science & Engineering,7.8,PES University,Benagaluru,PES University,90,91,FTE + Internship (Mandatory)
+13,01FB16EEC314,Tanmayee M Nerlige,Female,2020,B.Tech,Electronics & Communication Engineering,7.1,PES University,Benagaluru,PES University,83%,94,FTE + Internship (Mandatory)
+14,01FB16ECS376,Shrushti Kaul,Female,2020,B.Tech,Computer Science & Engineering,8.1,PES University,Benagaluru,PES University,90.4,95,FTE + Internship (Mandatory)
+15,01FB16ECS077,Ashutosh Sharan,Male,2020,B.Tech,Computer Science & Engineering,8.1,PES University,Benagaluru,PES University,89,92.4,FTE + Internship (Mandatory)
+16,01FB16EEC033,Amrutha varshini S,Female,2020,B.Tech,Electronics & Communication Engineering,7.09,PES University,Benagaluru,PES University,92.88,93.64,FTE + Internship (Mandatory)
+17,01FB16EEC217,Rahul Raj,Male,2020,B.Tech,Electronics & Communication Engineering,7,PES University,Benagaluru,PES University,83,88,FTE + Internship (Mandatory)
+18,01FB16ECS206 ,Mehul Garg ,Male,2020,B.Tech,Computer Science & Engineering,8.76,PES University,Benagaluru,PES University,94,91,FTE + Internship (Mandatory)
+19,01FB16EEC122 ,Kalyan Prakash B L,Male,2020,B.Tech,Electronics & Communication Engineering,7.73,PES University,Benagaluru,PES University,82.3,92.8,FTE + Internship (Mandatory)
+20,01FB16ECS377,Shruthi C,Female,2020,B.Tech,Computer Science & Engineering,7.688,PES University,Benagaluru,PES University,88,95,FTE + Internship (Mandatory)
+21,01FB16ECS397,Srivamsi Sakirepalli,Male,2020,B.Tech,Computer Science & Engineering,7.7,PES University,Benagaluru,PES University,89,100,FTE + Internship (Mandatory)
+22,01FB16EEC116,K L HEMANTH KUMAR,Male,2020,B.Tech,Electronics & Communication Engineering,8.3,PES University,Benagaluru,PES University,91.30%,96.16,FTE + Internship (Mandatory)
+23,  01FB17EEC717,SINCHANA,Female,2020,B.Tech,Electronics & Communication Engineering,7.01,PES University,Benagaluru,PES University,81.5,76.64,FTE + Internship (Mandatory)
+24,01FB16ECS157,Karthik Murali,Male,2020,B.Tech,Computer Science & Engineering,8.48,PES University,Benagaluru,PES University,96.5,92.7,FTE + Internship (Mandatory)
+25,01FB16ECS281,R Ruthuvikas,Male,2020,B.Tech,Computer Science & Engineering,8.3,PES University,Benagaluru,PES University,92,85,FTE + Internship (Mandatory)
+26,01FB16ECS422,Thejaswini M R,Female,2020,B.Tech,Computer Science & Engineering,7.413,PES University,Benagaluru,PES University,80.5,87.68,FTE + Internship (Mandatory)
+27,01FB16EEC326,Varsha V,Female,2020,B.Tech,Electronics & Communication Engineering,9.81,PES University,Benagaluru,PES University,96.5,96,FTE
+28,01FB16EEC103,Greeshma S,Female,2020,B.Tech,Electronics & Communication Engineering,7.83,PES University,Benagaluru,PES University,91.33,94.33,FTE + Internship (Mandatory)
+29,01FB16EEC363,Rakshit Viswanatha,Male,2020,B.Tech,Electronics & Communication Engineering,7,PES University,Benagaluru,PES University,96.5,92.7,FTE + Internship (Mandatory)
+30,01FB16EEC068,Bhagyashree B R,Female,2020,B.Tech,Electronics & Communication Engineering,8.28,PES University,Benagaluru,PES University,97.5,10,FTE + Internship (Mandatory)
+31,01FB16ECS412,Swati Maruvalli,Female,2020,B.Tech,Computer Science & Engineering,7.37,PES University,Benagaluru,PES University,92.71,90,FTE + Internship (Mandatory)
+32,01FB16EEC041,Ankita Singh ,Female,16,B.Tech,Electronics & Communication Engineering,8.22,PES University,Benagaluru,PES University,91,95,FTE + Internship (Mandatory)
+33,01FB16ECS406,SURAJ K A,Male,2020,B.Tech,Computer Science & Engineering,8.63,PES University,Benagaluru,PES University,90,94,FTE + Internship (Mandatory)
+34,1PE16CS132,RISHAB JAIN,Male,2020,B.Tech,Computer Science & Engineering,8.04,PESIT South Campus,"E-City, Bengaluru",VTU,82.8,81.7,FTE
+35,01FB16EEC184,P Ramesh,Male,2020,B.Tech,Electronics & Communication Engineering,7.07,PES University,Benagaluru,PES University,94.83,91.84,FTE + Internship (Mandatory)
+36,01FB16ECS424,Raj Subramanian U S,Male,2020,B.Tech,Computer Science & Engineering,8.4,PES University,Benagaluru,PES University,94.2,87.4,FTE + Internship (Mandatory)
+37,01FB16EEC254,Shaik Arslan Naval,Male,2020,B.Tech,Electronics & Communication Engineering,8.7,PES University,Benagaluru,PES University,94,95,FTE + Internship (Mandatory)
+38,1PE16CS178,VISMAYA MERCHANT,Female,2020,B.Tech,Computer Science & Engineering,8.93,PESIT South Campus,"E-City, Bengaluru",VTU,95.5,95.2,FTE
+39,1PE16CS015,Amit Agrawal,Male,2020,B.Tech,Computer Science & Engineering,7.24,PESIT South Campus,"E-City, Bengaluru",VTU,83.2,91.2,FTE
+40,01FB16EEC121,K Vineet V Rao ,Male,2020,B.Tech,Electronics & Communication Engineering,9.36,PES University,Benagaluru,PES University,93.6,9.4,FTE + Internship (Mandatory)
+41,1PE16CS087,Mufaddal Dewaswala,Male,2020,B.Tech,Computer Science & Engineering,7.58,PESIT South Campus,"E-City, Bengaluru",VTU,88.5,89.83,FTE
+42,01FB16EEC021,Aditya Priyadarshi,Male,2020,B.Tech,Electronics & Communication Engineering,8.48,PES University,Benagaluru,PES University,86.8,94.6,FTE + Internship (Mandatory)
+43,01FB17ECS701,Akilesh.S,Male,2020,B.Tech,Computer Science & Engineering,7.54,PES University,Benagaluru,PES University,81.6,74.1,FTE + Internship (Mandatory)
+44,01FB16ECS026,Aditya Arora,Male,2020,B.Tech,Computer Science & Engineering,7.98,PES University,Benagaluru,PES University,91,94,FTE + Internship (Mandatory)
+45,1PE16CS195,Gitansh Agarwal,Male,2020,B.Tech,Computer Science & Engineering,7.01,PESIT South Campus,"E-City, Bengaluru",VTU,70%,8.4,FTE
+46,1PE16EC099,Patil Deekshith Reddy ,Male,2020,B.Tech,Electronics & Communication Engineering,8,PESIT South Campus,"E-City, Bengaluru",VTU,92,8.8,FTE
+47,01FB16ECS149,K P Rachita Rao,Female,2020,B.Tech,Computer Science & Engineering,8.01,PES University,Benagaluru,PES University,91.6,10,FTE + Internship (Mandatory)
+48,01fb16eec011,ABHISHEK MAHANTESH KATTI,Male,2019,B.Tech,Electronics & Communication Engineering,7.43,PES University,Benagaluru,PES University,88,90.4,FTE + Internship (Mandatory)
+49,1PE16CS024,ANUBHAB MAJI,Male,2020,B.Tech,Computer Science & Engineering,7.31,PESIT South Campus,"E-City, Bengaluru",VTU,91.2,95,FTE
+50,1PE16IS126,Nishant kumar,Male,2020,B.Tech,Infromation Science & Engineering,7.01,PESIT South Campus,"E-City, Bengaluru",VTU,86.4,96,FTE
+51,01FB17EEC702,Diwakar R,Male,2020,B.Tech,Electronics & Communication Engineering,7.09,PES University,Benagaluru,PES University,80.5,72.16,FTE + Internship (Mandatory)
+52,1PE16EC026,Bandenawaz M K,Male,2020,B.Tech,Electronics & Communication Engineering,7.54,PESIT South Campus,"E-City, Bengaluru",VTU,93.33,94.33,FTE
+53,01FB16ECS392,Sonam Rathod,Female,2020,B.Tech,Computer Science & Engineering,7.553,PES University,Benagaluru,PES University,88,9.6,FTE + Internship (Mandatory)
+54,01fb16eec159,Mohammed Iliyaz,Male,2020,B.Tech,Electronics & Communication Engineering,7.84,PES University,Benagaluru,PES University,90.66,94.66,FTE + Internship (Mandatory)
+55,01fb16ecs296,RAMESH S,Male,2020,B.Tech,Computer Science & Engineering,7.62,PES University,Benagaluru,PES University,94.5,95,FTE + Internship (Mandatory)
+56,1PE16CS155 ,Sindhu Gajanan Gouda,Female,2020,B.Tech,Computer Science & Engineering,8.5,PESIT South Campus,"E-City, Bengaluru",VTU,92,90.4,FTE
+57,1PE16CS123,Rahul goyal,Male,2020,B.Tech,Computer Science & Engineering,8.1,PESIT South Campus,"E-City, Bengaluru",VTU,72.8,79.8,FTE
+58,01fb16eec025,Akella Ramya,Female,2020,B.Tech,Electronics & Communication Engineering,8.8,PES University,Benagaluru,PES University,90.2,96,FTE + Internship (Mandatory)
+59,01FB16ECS407,Surapaneni Nidhi Phani CHOWDARY ,Female,2020,B.Tech,Computer Science & Engineering,7.78,PES University,Benagaluru,PES University,96,98,FTE + Internship (Mandatory)
+60,1pe16is049,Kruthi.K,Female,2020,B.Tech,Infromation Science & Engineering,7.4,PESIT South Campus,"E-City, Bengaluru",VTU,90,88,FTE
+61,01FB16EEC010,ABHISHEK HP,Male,2020,B.Tech,Electronics & Communication Engineering,7.58,PES University,Benagaluru,PES University,90.66,92,FTE + Internship (Mandatory)
+62,01FB16EEC181,Nitish Kumar,Male,2020,B.Tech,Electronics & Communication Engineering,8.19,PES University,Benagaluru,PES University,96.33,96,FTE + Internship (Mandatory)
+63,01FB16ECS272,Preetham Upadhya,Male,2020,B.Tech,Computer Science & Engineering,7.2,PES University,Benagaluru,PES University,90,100,FTE + Internship (Mandatory)
+64,1PE16CS010,Akash D,Male,2020,B.Tech,Computer Science & Engineering,8.19,PESIT South Campus,"E-City, Bengaluru",VTU,93,93,FTE
+65,01FB16ECS135,Hemant Kumar C,Male,2020,B.Tech,Computer Science & Engineering,8.07,PES University,Benagaluru,PES University,97.3,100,FTE + Internship (Mandatory)
+66,1PE16CS143,Saurabh Bishnoi,Male,2020,B.Tech,Computer Science & Engineering,8.29,PESIT South Campus,"E-City, Bengaluru",VTU,90.4,95,FTE
+67,1PE16CS058,G.Narasimha karthik,Male,2020,B.Tech,Computer Science & Engineering,7.3,PESIT South Campus,"E-City, Bengaluru",VTU,89.7,80,FTE
+68,1PE16EC120,RAHUL CHOWDARY PALADUGULA,Male,2020,B.Tech,Electronics & Communication Engineering,7.22,PESIT South Campus,"E-City, Bengaluru",VTU,95.6,95,FTE
+69,1PE16CS012,Akib Balkhi,Male,2020,B.Tech,Computer Science & Engineering,7.88,PESIT South Campus,"E-City, Bengaluru",VTU,92.6,91.2,FTE
+70,01fb16eec098,Ganesh Kumar R,Male,2020,B.Tech,Electronics & Communication Engineering,7.02,PES University,Benagaluru,PES University,80,75,FTE + Internship (Mandatory)
+71,1PE16IS013,Akhil Upadhyay,Male,2020,B.Tech,Infromation Science & Engineering,8.56,PESIT South Campus,"E-City, Bengaluru",VTU,91.2,98,FTE
+72,01fb16ecs453,Vishwas Joshi,Male,2020,B.Tech,Computer Science & Engineering,7.02,PES University,Benagaluru,PES University,86,89,FTE + Internship (Mandatory)
+73,1PE16CS037,Ayush Jain,Male,2020,B.Tech,Computer Science & Engineering,7.69,PESIT South Campus,"E-City, Bengaluru",VTU,91.2,9,FTE
+74,01FB16EEC263,sheetal panchakshari,Female,2020,B.Tech,Electronics & Communication Engineering,8.17,PES University,Benagaluru,PES University,83.85,92.6,FTE + Internship (Mandatory)
+75,01FB16ECS383,Simran Bhatia,Female,2020,B.Tech,Computer Science & Engineering,8.77,PES University,Benagaluru,PES University,94,90,FTE + Internship (Mandatory)
+76,1PE16CS115,PRANAV PATHAK,Male,2020,B.Tech,Computer Science & Engineering,7.76,PESIT South Campus,"E-City, Bengaluru",VTU,73.6,95,FTE
+77,1PE16CS106,Naveen Naidu,Male,2020,B.Tech,Computer Science & Engineering,7.81,PESIT South Campus,"E-City, Bengaluru",VTU,97.5,10,FTE
+78,1PE16CS159,Sowrabh S Ullal,Male,2020,B.Tech,Computer Science & Engineering,7.5,PESIT South Campus,"E-City, Bengaluru",VTU,87,83,FTE
+79,01FB16EEC238,Rushali Jadon,Female,2020,B.Tech,Electronics & Communication Engineering,8.487,PES University,Benagaluru,PES University,89.8,93,FTE + Internship (Mandatory)
+80,1PE16CS096,NIKHIL KUMAR MISHRA,Male,2020,B.Tech,Computer Science & Engineering,7.55,PESIT South Campus,"E-City, Bengaluru",VTU,88.8,92.6,FTE
+81,01FB16ECS290,Rahul Sharma,Male,2020,B.Tech,Computer Science & Engineering,7.81,PES University,Benagaluru,PES University,91.8,95,FTE + Internship (Mandatory)
+82,01FB16ECS327,Sahitya Belgavi,Female,2020,B.Tech,Computer Science & Engineering,7.2,PES University,Benagaluru,PES University,94,9.4,FTE + Internship (Mandatory)
+83,01FB16EEC333,Vijay PN,Male,2020,B.Tech,Electronics & Communication Engineering,9,PES University,Benagaluru,PES University,92,93,FTE + Internship (Mandatory)
+84,01FB16EEC328,Vasanth Vallabh TN,Male,2020,B.Tech,Electronics & Communication Engineering,7.1,PES University,Benagaluru,PES University,94,89.2,FTE + Internship (Mandatory)
+85,01FB16EEC043,Anushree CS ,Female,2020,B.Tech,Electronics & Communication Engineering,8.67,PES University,Benagaluru,PES University,90.2,95,FTE + Internship (Mandatory)
+86,01FB16EEC213,Rahul.A,Male,2020,B.Tech,Electronics & Communication Engineering,8.811,PES University,Benagaluru,PES University,97.17,96.16,FTE + Internship (Mandatory)
+87,01FB16ECS305,Rohan B Sahu,Male,2020,B.Tech,Computer Science & Engineering,8.46,PES University,Benagaluru,PES University,87,95,FTE + Internship (Mandatory)
+88,01FB16EEC073,Hemanth Reddy,Male,2016,B.Tech,Electronics & Communication Engineering,8.35,PES University,Benagaluru,PES University,95.8,95,FTE + Internship (Mandatory)
+89,1PE16EC042,Dhruva H,Male,2020,B.Tech,Electronics & Communication Engineering,7.07,PESIT South Campus,"E-City, Bengaluru",VTU,81,91.84,FTE
+90,01FB16ECS132,Harshith P S,Male,2020,B.Tech,Computer Science & Engineering,7.4,PES University,Benagaluru,PES University,95.33,96.16,FTE + Internship (Mandatory)
+91,01FB16ECS141,Iresh Hiremath,Male,2020,B.Tech,Computer Science & Engineering,8.19,PES University,Benagaluru,PES University,89.83,90.4,FTE + Internship (Mandatory)
+92,01FB16ECS482,Krishna Khurana,Male,2020,B.Tech,Computer Science & Engineering,9.19,PES University,Benagaluru,PES University,91,92.6,FTE + Internship (Mandatory)
+93,01fb17ecs717,likitha R,Female,2020,B.Tech,Computer Science & Engineering,7.24,PES University,Benagaluru,PES University,66,82,FTE + Internship (Mandatory)
+94,01FB16ECS209,Miriam John K,Female,2020,B.Tech,Computer Science & Engineering,9.1,PES University,Benagaluru,PES University,94.3,95,FTE + Internship (Mandatory)
+95,1PE16CS191,Shashank Agarwal,Male,2020,B.Tech,Computer Science & Engineering,7.94,PESIT South Campus,"E-City, Bengaluru",VTU,83.2,91.2,FTE
+96,1PE16IS119,Tushar Pandey,Male,2020,B.Tech,Infromation Science & Engineering,8.07,PESIT South Campus,"E-City, Bengaluru",VTU,91.4,95,FTE
+97,01FB16EEC223,Ranjitha M,Female,2020,B.Tech,Electronics & Communication Engineering,9.22,PES University,Benagaluru,PES University,93,93.44,FTE + Internship (Mandatory)
+98,1PE16EC016,Ananya Pandey,Male,2020,B.Tech,Electronics & Communication Engineering,7.3,PESIT South Campus,"E-City, Bengaluru",VTU,85%,92,FTE
+99,1PE16IS036,Hardik Sakhuja,Male,2020,B.Tech,Infromation Science & Engineering,7.67,PESIT South Campus,"E-City, Bengaluru",VTU,86.4,9.8,FTE
+100,01FB16EEC374,MANJUNATH PANIGATTI ,Male,2020,B.Tech,Electronics & Communication Engineering,7.56,PES University,Benagaluru,PES University,87.83,81.44,FTE + Internship (Mandatory)
+101,1PE16CS174,Venkatesh B N,Male,2020,B.Tech,Computer Science & Engineering,7,PESIT South Campus,"E-City, Bengaluru",VTU,89,93,FTE
+102,01FB16ECS075,Ashish Ashok Sanu,Male,2020,B.Tech,Computer Science & Engineering,9.015,PES University,Benagaluru,PES University,82,92,FTE + Internship (Mandatory)
+103,01FB16ECS073,Arpit Singh Nargundkar,Male,2020,B.Tech,Computer Science & Engineering,8.77,PES University,Benagaluru,PES University,96,94.88,FTE + Internship (Mandatory)
+104,1PE16CS183,Aditya Gandotra,Male,2020,B.Tech,Computer Science & Engineering,7.546,PESIT South Campus,"E-City, Bengaluru",VTU,86.4,94.8,FTE
+105,01FB16EEC144,Mahantesh R,Male,2020,B.Tech,Electronics & Communication Engineering,8.75,PES University,Benagaluru,PES University,93,88,FTE + Internship (Mandatory)
+106,01FB16EEC366,Akshay Suresh Kumbar,Male,2020,B.Tech,Electronics & Communication Engineering,9.45,PES University,Benagaluru,PES University,90.33,95.66,FTE + Internship (Mandatory)
+107,01FB16ECS316,Ruqaiya naaz Kittur,Female,2020,B.Tech,Computer Science & Engineering,8.13,PES University,Benagaluru,PES University,95.6,94.8,FTE + Internship (Mandatory)
+108,01fb17ecs737,Prajwal h g,Male,2020,B.Tech,Computer Science & Engineering,7.2,PES University,Benagaluru,PES University,77,66,FTE + Internship (Mandatory)
+109,1PE16IS093,Shivani Agrawal,Female,2020,B.Tech,Infromation Science & Engineering,7.61,PESIT South Campus,"E-City, Bengaluru",VTU,92.80%,100,FTE
+110,1PE16CS030,Apoorva Saxena,Female,2020,B.Tech,Computer Science & Engineering,7.75,PESIT South Campus,"E-City, Bengaluru",VTU,92,9,FTE
+111,01fb16eec080,MALLAPPA MALALI,Male,2020,B.Tech,Electronics & Communication Engineering,8.4,PES University,Benagaluru,PES University,93.5,93.6,FTE + Internship (Mandatory)
+112,1PE16IS021,Arshiya Abdul Latheef,Female,2020,B.Tech,Infromation Science & Engineering,7.65,PESIT South Campus,"E-City, Bengaluru",VTU,96.2,94,FTE
+113,01FB16EEC376,Pradeep Kishan,Male,2020,B.Tech,Electronics & Communication Engineering,8.8,PES University,Benagaluru,PES University,89.83,79.17,FTE + Internship (Mandatory)
+114,1PE16CS050,Deepak S,Male,2020,B.Tech,Computer Science & Engineering,7.25,PESIT South Campus,"E-City, Bengaluru",VTU,90.38,89.67,FTE
+115,01FB16ECS285,Raghav Goel,Male,2020,B.Tech,Computer Science & Engineering,7.35,PES University,Benagaluru,PES University,86.8,88,FTE + Internship (Mandatory)
+116,1pe16ec040,DEVALAPALLE JASWANTH REDDY,Male,2020,B.Tech,Electronics & Communication Engineering,8.44,PESIT South Campus,"E-City, Bengaluru",VTU,97,88,FTE
+117,1pe16ec084,MonikU,Male,2020,B.Tech,Electronics & Communication Engineering,7.39,PESIT South Campus,"E-City, Bengaluru",VTU,91.88,96.48,FTE
+118,01FB16EEC240,S.SHIV MOHITH,Male,2020,B.Tech,Electronics & Communication Engineering,9.5,PES University,Benagaluru,PES University,96,93.8,FTE + Internship (Mandatory)
+119,01FB16ECS032,Aditya Venkatesh,Male,2020,B.Tech,Computer Science & Engineering,8.2,PES University,Benagaluru,PES University,93.6,9.4,FTE + Internship (Mandatory)
+120,1pe16is004,Abhineet singh,Male,2020,B.Tech,Infromation Science & Engineering,8.18,PESIT South Campus,"E-City, Bengaluru",VTU,88,95,FTE
+121,1PE16EC121,RAMESH SAI PRASANTH ,Male,2020,B.Tech,Electronics & Communication Engineering,8.45,PESIT South Campus,"E-City, Bengaluru",VTU,98.1,9.7,FTE
+122,1PE16EC078,Manzoor bin Mahmood,Male,2020,B.Tech,Electronics & Communication Engineering,7.757,PESIT South Campus,"E-City, Bengaluru",VTU,92,94,FTE
+123,01FB16ECS212,Mohit Kumar,Male,2020,B.Tech,Computer Science & Engineering,7.45,PES University,Benagaluru,PES University,75.2,81.6,FTE + Internship (Mandatory)
+124,01FB16EEC059,B Ganesh Rao,Male,2020,B.Tech,Electronics & Communication Engineering,8.4,PES University,Benagaluru,PES University,95,90.72,FTE + Internship (Mandatory)
+125,1PE16CS007 ,Aditya Poddar,Male,2020,B.Tech,Computer Science & Engineering,7.57,PESIT South Campus,"E-City, Bengaluru",VTU,84,83.4,FTE
+126,1pe16is008,Abhishek Akki,Male,2020,B.Tech,Infromation Science & Engineering,7.95,PESIT South Campus,"E-City, Bengaluru",VTU,79.4,10,FTE
+127,1PE16EC126,RITIK ROHAN,Male,2020,B.Tech,Electronics & Communication Engineering,7.17,PESIT South Campus,"E-City, Bengaluru",VTU,88.8,100,FTE
+128,1PE16EC072 ,Lakshmisagar MK ,Male,2020,B.Tech,Electronics & Communication Engineering,7.97,PESIT South Campus,"E-City, Bengaluru",VTU,93.33,92.16,FTE
+129,01FB16EEC216,Rahul R Belgaonkar,Male,2020,B.Tech,Electronics & Communication Engineering,7.42,PES University,Benagaluru,PES University,88,9.6,FTE + Internship (Mandatory)
+130,01FB16EEC109,Indhu Lekha M,Female,2020,B.Tech,Electronics & Communication Engineering,7.7,PES University,Benagaluru,PES University,96.5,9.5,FTE + Internship (Mandatory)
+131,01FB16EEC267,Shivappa Kotihal,Male,2020,B.Tech,Electronics & Communication Engineering,7.02,PES University,Benagaluru,PES University,85,93.6,FTE + Internship (Mandatory)
+132,1PE16CS091,Nidhi R Patil,Female,2020,B.Tech,Computer Science & Engineering,8,PESIT South Campus,"E-City, Bengaluru",VTU,97.40%,10,FTE
+133,01FB16ECS369,Shreya Eswaraiah,Female,2020,B.Tech,Computer Science & Engineering,8.01,PES University,Benagaluru,PES University,82.8,9.8,FTE + Internship (Mandatory)
+134,1PE16IS050,Kumar Aishwary,Male,2020,B.Tech,Infromation Science & Engineering,7.25,PESIT South Campus,"E-City, Bengaluru",VTU,82.8,93.1,FTE
+135,01FB16EEC067,Basavaraj Malabadi,Male,2020,B.Tech,Electronics & Communication Engineering,7.58,PES University,Benagaluru,PES University,89,93.28,FTE + Internship (Mandatory)
+136,01FB16ECS178,Lalit Gattani,Male,2020,B.Tech,Computer Science & Engineering,7.9,PES University,Benagaluru,PES University,92.4,95,FTE + Internship (Mandatory)
+137,01FB16EEC320,Teja Vardhan Reddy Janga,Male,2020,B.Tech,Electronics & Communication Engineering,7.01,PES University,Benagaluru,PES University,70,80,FTE + Internship (Mandatory)
+138,01FB16EEC278,Shweta Katti,Female,2020,B.Tech,Electronics & Communication Engineering,8.92,PES University,Benagaluru,PES University,96.16,10,FTE + Internship (Mandatory)
+139,1pe16ec056,Jasan preet singh,Male,2020,B.Tech,Electronics & Communication Engineering,8.18,PESIT South Campus,"E-City, Bengaluru",VTU,89.67,85.28,FTE
+140,01FB16ECS101,D G Sudheer,Male,2020,B.Tech,Computer Science & Engineering,8.59,PES University,Benagaluru,PES University,95.3,95.8,FTE + Internship (Mandatory)
+141,1PE16IS057,Michelle Vivita,Female,2020,B.Tech,Infromation Science & Engineering,8.15,PESIT South Campus,"E-City, Bengaluru",VTU,93.33,98.08,FTE
+142,1PE16CS172,VALIPE SOUNDARYA LAHARI,Female,2020,B.Tech,Computer Science & Engineering,7.28,PESIT South Campus,"E-City, Bengaluru",VTU,91.5,9.8,FTE
+143,01FB16EEC341,Vishal Vasisht ,Male,2020,B.Tech,Electronics & Communication Engineering,7.7,PES University,Benagaluru,PES University,82,85,FTE + Internship (Mandatory)
+144,1PE16EC092,NICHANAMETLA JASWANTH KUMAR GUPTA,Male,2020,B.Tech,Electronics & Communication Engineering,7.75,PESIT South Campus,"E-City, Bengaluru",VTU,95.4,9.3,FTE
+145,01FB16ECS256,Pragna Prasanna,Female,2020,B.Tech,Computer Science & Engineering,7.2,PES University,Benagaluru,PES University,86.4,94,FTE + Internship (Mandatory)
+146,1PE16CS084,MANISH KUMAR B,Male,2020,B.Tech,Computer Science & Engineering,8.57,PESIT South Campus,"E-City, Bengaluru",VTU,91,95,FTE
+147,01FB16ECS110,Devashish Narula,Male,2020,B.Tech,Computer Science & Engineering,7.95,PES University,Benagaluru,PES University,86.4,86,FTE + Internship (Mandatory)
+148,01FB16EEC210 ,Rachana Chetan,Female,2020,B.Tech,Electronics & Communication Engineering,7.3,PES University,Benagaluru,PES University,86.4,9.6,FTE + Internship (Mandatory)
+149,1PE16CS164,Suraj Dev Yadav,Male,2020,B.Tech,Computer Science & Engineering,7.92,PESIT South Campus,"E-City, Bengaluru",VTU,90,91.68,FTE
+150,1PE16EC073,LAXMI RATNAPPA GONI,Female,2020,B.Tech,Electronics & Communication Engineering,8.06,PESIT South Campus,"E-City, Bengaluru",VTU,93.66%,95.2,FTE
+151,1PE16CS151,Shubham Agarwal,Male,2020,B.Tech,Computer Science & Engineering,8.54,PESIT South Campus,"E-City, Bengaluru",VTU,95.5,90.4,FTE
+152,01FB16EEC261,Shashidhar Gireesh Hampannavar,Male,2020,B.Tech,Electronics & Communication Engineering,8.1,PES University,Benagaluru,PES University,95.5,95.84,FTE + Internship (Mandatory)
+153,01FB16ECS042,Akash shetty k ,Male,2020,B.Tech,Computer Science & Engineering,8.16,PES University,Benagaluru,PES University,91,95.56,FTE + Internship (Mandatory)
+154,01FB16ECS102,D Ganesh Kumar,Male,2020,B.Tech,Computer Science & Engineering,7.91,PES University,Benagaluru,PES University,93.2,10,FTE + Internship (Mandatory)
+155,1pe16is123 ,E RAJA SHEKAR ,Male,2020,B.Tech,Infromation Science & Engineering,7.02,PESIT South Campus,"E-City, Bengaluru",VTU,94%,8.8,FTE
+156,01fb16ecs096,Chetan G,Male,2020,B.Tech,Computer Science & Engineering,8.5,PES University,Benagaluru,PES University,96.5,100,FTE + Internship (Mandatory)
+157,01FB16ECS238,Nitin Verma,Male,2020,B.Tech,Computer Science & Engineering,8.23,PES University,Benagaluru,PES University,90.2,83.6,FTE + Internship (Mandatory)
+158,01fb16eec036,Aniruddha M,Male,2020,B.Tech,Electronics & Communication Engineering,8.22,PES University,Benagaluru,PES University,93.82,93.28,FTE + Internship (Mandatory)
+159,01FB16EEC313,Madhavi Tangirala ,Female,2020,B.Tech,Electronics & Communication Engineering,8.26,PES University,Benagaluru,PES University,97.1,100,FTE + Internship (Mandatory)
+160,1PE16EC179,G DAIVIK,Male,2020,B.Tech,Electronics & Communication Engineering,7.9,PESIT South Campus,"E-City, Bengaluru",VTU,91.33,87.52,FTE
+161,01FB16EEC218,Rakshak BM ,Male,2020,B.Tech,Electronics & Communication Engineering,7.39,PES University,Benagaluru,PES University,90.16,83.52,FTE + Internship (Mandatory)
+162,1PE16IS040,Hemantha Reddy S,Female,2020,B.Tech,Infromation Science & Engineering,8.2,PESIT South Campus,"E-City, Bengaluru",VTU,93,91,FTE
+163,1PE16CS148,Shivansh Handa,Male,2020,B.Tech,Computer Science & Engineering,7.53,PESIT South Campus,"E-City, Bengaluru",VTU,91.2,89.2,FTE
+164,1pe16is023,Avantika Pandey,Female,2020,B.Tech,Infromation Science & Engineering,8.16,PESIT South Campus,"E-City, Bengaluru",VTU,91.8,95,FTE
+165,1pe16ec061,K Pavithra,Female,2020,B.Tech,Electronics & Communication Engineering,7.12,PESIT South Campus,"E-City, Bengaluru",VTU,86,100,FTE
+166,01fb16ecs171,kumar satyam,Male,2020,B.Tech,Computer Science & Engineering,7.18,PES University,Benagaluru,PES University,87.8,9.6,FTE + Internship (Mandatory)
+167,01fb16eec168,Nagesh Verma,Male,2020,B.Tech,Electronics & Communication Engineering,8.24,PES University,Benagaluru,PES University,89,100,FTE + Internship (Mandatory)
+168,1PE16IS046 ,Kashish Barnwal ,Male,2020,B.Tech,Infromation Science & Engineering,7.754,PESIT South Campus,"E-City, Bengaluru",VTU,86.6,95,FTE + Internship (Mandatory)
+169,1PE16IS051,Manasa M Hegde,Female,2020,B.Tech,Infromation Science & Engineering,9,PESIT South Campus,"E-City, Bengaluru",VTU,94.4,91.2,FTE
+170,01FB16EEC191,POOJA.J,Female,2020,B.Tech,Electronics & Communication Engineering,8.3,PES University,Benagaluru,PES University,93.5,92.96,FTE + Internship (Mandatory)
+171,1PE16CS121,PUNEET AGRAWAL ,Male,2020,B.Tech,Computer Science & Engineering,8.15,PESIT South Campus,"E-City, Bengaluru",VTU,84,81,FTE
+172,01FB16EEC124,Karthik BN,Male,2020,B.Tech,Electronics & Communication Engineering,8.17,PES University,Benagaluru,PES University,97.75,95.5,FTE + Internship (Mandatory)
+173,01FB16ECS468,Harsh Kothari,Male,2020,B.Tech,Computer Science & Engineering,7.98,PES University,Benagaluru,PES University,79,80,FTE + Internship (Mandatory)
+174,01FB16ECS121,Gnana Murthy K B,Male,2020,B.Tech,Computer Science & Engineering,8.71,PES University,Benagaluru,PES University,94.5,95,FTE + Internship (Mandatory)
+175,01FB16ECS360,Shashikumar Jutoor,Male,2020,B.Tech,Computer Science & Engineering,8.68,PES University,Benagaluru,PES University,96.66,100,FTE + Internship (Mandatory)
+176,01FB16ECS098,Chirag Kavdia,Male,2020,B.Tech,Computer Science & Engineering,7.81,PES University,Benagaluru,PES University,83.4,95,FTE + Internship (Mandatory)
+177,01FB16ECS125,Gurudas Bhat,Male,2020,B.Tech,Computer Science & Engineering,7.67,PES University,Benagaluru,PES University,85.5,9.4,FTE + Internship (Mandatory)
+178,01FB16EEC247 ,Sanam. J. S. R. S. Krishna. Praneeth ,Male,2020,B.Tech,Electronics & Communication Engineering,7.1,PES University,Benagaluru,PES University,93,8.6,FTE + Internship (Mandatory)
+179,1PE16CS002,Abhinav N Kumar,Male,2020,B.Tech,Computer Science & Engineering,7.65,PESIT South Campus,"E-City, Bengaluru",VTU,91%,8.6,FTE
+180,01FB16EEC354,Dinakar G,Male,2020,B.Tech,Electronics & Communication Engineering,8.81,PES University,Benagaluru,PES University,97.6,95.33,FTE + Internship (Mandatory)
+181,1PE16CS133,Rishav Banka,Male,2020,B.Tech,Computer Science & Engineering,8.31,PESIT South Campus,"E-City, Bengaluru",VTU,86,91.2,FTE
+182,1PE16EC059,Jillella Srinivas Reddy,Male,2020,B.Tech,Electronics & Communication Engineering,8.45,PESIT South Campus,"E-City, Bengaluru",VTU,96.2,9.5,FTE
+183,01fb16eec378,Rohith Y R C,Male,2020,B.Tech,Electronics & Communication Engineering,7.6,PES University,Benagaluru,PES University,79,9.4,FTE + Internship (Mandatory)
+184,01FB16ECS188 ,Madan R,Male,2020,B.Tech,Computer Science & Engineering,7.94,PES University,Benagaluru,PES University,84,84,FTE + Internship (Mandatory)
+185,1PE16EC075,MALLAREDDY.G,Male,2020,B.Tech,Electronics & Communication Engineering,8.35,PESIT South Campus,"E-City, Bengaluru",VTU,93.33,82.68,FTE
+186,1PE16CS138,Samanyu Bhandary,Male,2020,B.Tech,Computer Science & Engineering,7.61,PESIT South Campus,"E-City, Bengaluru",VTU,82,89,FTE
+187,01FB16ECS061,Anish Kasi,Male,2020,B.Tech,Computer Science & Engineering,9.45,PES University,Benagaluru,PES University,97.3,100,FTE + Internship (Mandatory)
+188,01FB16ECS448,Vipul Raj,Male,2020,B.Tech,Computer Science & Engineering,7.54,PES University,Benagaluru,PES University,85.8,87.4,FTE + Internship (Mandatory)
+189,1PE16CS063,Himanshu Poddar,Male,2020,B.Tech,Computer Science & Engineering,8.23,PESIT South Campus,"E-City, Bengaluru",VTU,84.6,95,FTE
+190,01FB16EEC310,Swapneel,Male,2020,B.Tech,Electronics & Communication Engineering,7.9,PES University,Benagaluru,PES University,87.6,95,FTE + Internship (Mandatory)
+191,1PE16IS007,Abhishek Kumar Jha,Male,2020,B.Tech,Infromation Science & Engineering,7.89,PESIT South Campus,"E-City, Bengaluru",VTU,91,95,FTE
+192,1PE16CS160,Sreejit Menon,Male,2020,B.Tech,Computer Science & Engineering,8.6,PESIT South Campus,"E-City, Bengaluru",VTU,93.8,91.1,FTE
+193,01FB16ECS311,Rohan Sharma,Male,2020,B.Tech,Computer Science & Engineering,7.1,PES University,Benagaluru,PES University,89.2,94.6,FTE + Internship (Mandatory)
+194,1PE16CS173,VATSAL GUPTA,Male,2020,B.Tech,Computer Science & Engineering,7.26,PESIT South Campus,"E-City, Bengaluru",VTU,89.6,9.4,FTE
+195,01FB16EEC241,S Vijay,Male,2020,B.Tech,Electronics & Communication Engineering,8.96,PES University,Benagaluru,PES University,91.8,88,FTE + Internship (Mandatory)
+196,1PE16IS118,Satyam Prakash,Male,2020,B.Tech,Infromation Science & Engineering,7.92,PESIT South Campus,"E-City, Bengaluru",VTU,87,95,FTE
+197,01FB16EEC369,Ankush Kumar Agarwal,Male,2020,B.Tech,Electronics & Communication Engineering,8.42,PES University,Benagaluru,PES University,76.2,96,FTE + Internship (Mandatory)
+198,01FB16ECS048,Akshay N,Male,2020,B.Tech,Computer Science & Engineering,7.97,PES University,Benagaluru,PES University,88.67,92.64,FTE + Internship (Mandatory)
+199,1PE16CS061,HARSH CHAUDHARY,Male,2020,B.Tech,Computer Science & Engineering,7.56,PESIT South Campus,"E-City, Bengaluru",VTU,91,10,FTE
+200,1PE16EC152,SONI KUMARI,Female,2020,B.Tech,Electronics & Communication Engineering,8.37,PESIT South Campus,"E-City, Bengaluru",VTU,89.4,95,FTE
+201,1PE16IS018,Anshul Kumar Jain,Male,2020,B.Tech,Infromation Science & Engineering,8.07,PESIT South Campus,"E-City, Bengaluru",VTU,81,9.8,FTE
+202,1PE16CS140,Sandhya K S,Female,2020,B.Tech,Computer Science & Engineering,7.97,PESIT South Campus,"E-City, Bengaluru",VTU,95.5 %,90.88,FTE
+203,01FB16EEC175,Nikhita Nadagouda,Female,2020,B.Tech,Electronics & Communication Engineering,8.7,PES University,Benagaluru,PES University,95.67,97.12,FTE + Internship (Mandatory)
+204,1PE16IS092,SHASHANK C SOMANNA,Male,2020,B.Tech,Infromation Science & Engineering,7.23,PESIT South Campus,"E-City, Bengaluru",VTU,75.33,91.36,FTE
+205,1PE16IS044,Karan Kumbhani,Male,2020,B.Tech,Infromation Science & Engineering,8.423,PESIT South Campus,"E-City, Bengaluru",VTU,88.8,9.4,FTE
+206,01FB16ECS336 ,samhith karkada,Male,2020,B.Tech,Computer Science & Engineering,8.6,PES University,Benagaluru,PES University,97,92,FTE + Internship (Mandatory)
+207,1PE16CS101,Nishant Kumar,Male,2020,B.Tech,Computer Science & Engineering,8.1,PESIT South Campus,"E-City, Bengaluru",VTU,89.4,10,FTE
+208,1PE16CS039,Bheemashankar,Male,2020,B.Tech,Computer Science & Engineering,7.94,PESIT South Campus,"E-City, Bengaluru",VTU,91.33,88.8,FTE
+209,01FB16ECS308 ,ROHAN R ,Male,2020,B.Tech,Computer Science & Engineering,7.92,PES University,Benagaluru,PES University,94,96,FTE + Internship (Mandatory)
+210,1PE16IS084,Ravindra Toshniwal,Male,2020,B.Tech,Infromation Science & Engineering,8.3,PESIT South Campus,"E-City, Bengaluru",VTU,78.4,94,FTE
+211,1PE16EC021,Apeksha D L,Female,2020,B.Tech,Electronics & Communication Engineering,7.93,PESIT South Campus,"E-City, Bengaluru",VTU,92.37%,9.6,FTE
+212,1PE16CS109,Pavan Kumar A,Male,2020,B.Tech,Computer Science & Engineering,7.98,PESIT South Campus,"E-City, Bengaluru",VTU,90.8,95,FTE
+213,1PE16CS146,Shivam Gupta,Male,2020,B.Tech,Computer Science & Engineering,8.01,PESIT South Campus,"E-City, Bengaluru",VTU,88.6,81.33,FTE
+214,01FB16ECS444,Vikram,Male,2020,B.Tech,Computer Science & Engineering,8.21,PES University,Benagaluru,PES University,85.4,93.1,FTE + Internship (Mandatory)
+215,01FB16ECS022,Adapa Shivani,Female,2020,B.Tech,Computer Science & Engineering,8.661,PES University,Benagaluru,PES University,96.83,85,FTE + Internship (Mandatory)
+216,1PE16IS090,Sanjay Kumar Das,Male,2020,B.Tech,Infromation Science & Engineering,8.44,PESIT South Campus,"E-City, Bengaluru",VTU,75,10,FTE
+217,01FB16ECS230,Nikhil V Revankar,Male,2020,B.Tech,Computer Science & Engineering,9.35,PES University,Benagaluru,PES University,96.1,9.8,FTE + Internship (Mandatory)
+218,01FB16EEC189,Penakalapati Keerthi ,Female,2020,B.Tech,Electronics & Communication Engineering,8.5,PES University,Benagaluru,PES University,97.8,100,FTE + Internship (Mandatory)
+219,1PE16CS013,Akshika Agarwal,Female,2020,B.Tech,Computer Science & Engineering,8.316,PESIT South Campus,"E-City, Bengaluru",VTU,92.60%,100,FTE
+220,1PE16EC086,Monisha J R,Female,2020,B.Tech,Electronics & Communication Engineering,8.79,PESIT South Campus,"E-City, Bengaluru",VTU,93%,9,FTE
+221,01FB16ECS134,Hemanth SVS,Male,2020,B.Tech,Computer Science & Engineering,8.46,PES University,Benagaluru,PES University,90.2,87.4,FTE + Internship (Mandatory)
+222,1PE16IS062,Naazneen Ahmed,Female,2020,B.Tech,Infromation Science & Engineering,8.23,PESIT South Campus,"E-City, Bengaluru",VTU,91.6,92.3,FTE
+223,01FB16EEC100,Geetika Moolchandani,Female,2020,B.Tech,Electronics & Communication Engineering,8.29,PES University,Benagaluru,PES University,95.83,94.6,FTE + Internship (Mandatory)
+224,01FB16ECS122,Gopal Nambiar,Male,2020,B.Tech,Computer Science & Engineering,8.4,PES University,Benagaluru,PES University,82,96,FTE + Internship (Mandatory)
+225,01FB16ECS306,Rohan Mahendra Chaudhari ,Male,2020,B.Tech,Computer Science & Engineering,8.83,PES University,Benagaluru,PES University,95,89,FTE + Internship (Mandatory)
+226,01FB16ECS001,annabathula abhishek,Male,2020,B.Tech,Computer Science & Engineering,7.81,PES University,Benagaluru,PES University,95.3,9.2,FTE + Internship (Mandatory)
+227,01FB16EEC327,Varun Nayak,Male,2020,B.Tech,Electronics & Communication Engineering,9.49,PES University,Benagaluru,PES University,95,95,FTE + Internship (Mandatory)
+228,1PE16CS181,Yugesh Kumar,Male,2020,B.Tech,Computer Science & Engineering,7.78,PESIT South Campus,"E-City, Bengaluru",VTU,87.33,95,FTE
+229,1PE16CS028,Apoorv Manchanda,Male,2020,B.Tech,Computer Science & Engineering,7.48,PESIT South Campus,"E-City, Bengaluru",VTU,83,87,FTE
+230,01FB16EEC264,Shivam,Male,2020,B.Tech,Electronics & Communication Engineering,7.38,PES University,Benagaluru,PES University,82,91.2,FTE + Internship (Mandatory)
+231,1PE16IS010,Aditi Dutta,Female,2020,B.Tech,Infromation Science & Engineering,7.01,PESIT South Campus,"E-City, Bengaluru",VTU,88.8,93.5,FTE
+232,01FB16EEC128,Kaushik AS,Male,3,B.Tech,Electronics & Communication Engineering,7.9,PES University,Benagaluru,PES University,87,92,FTE + Internship (Mandatory)
+233,01FB16ECS037,Ajay Kumar K T,Male,2020,B.Tech,Computer Science & Engineering,7.3,PES University,Benagaluru,PES University,78,85.6,FTE + Internship (Mandatory)
+234,01FB16ECS446,VINAYKUMAR S R,Male,2020,B.Tech,Computer Science & Engineering,7.67,PES University,Benagaluru,PES University,94.5,92.64,FTE + Internship (Mandatory)
+235,01FB16ECS259,Prajna Nagaraj,Female,2020,B.Tech,Computer Science & Engineering,8.078,PES University,Benagaluru,PES University,CBSE 85.2,100,FTE + Internship (Mandatory)
+236,1PE16CS046,Chinmayi L Hegde,Female,2020,B.Tech,Computer Science & Engineering,7.76,PESIT South Campus,"E-City, Bengaluru",VTU,92.70%,10,FTE
+237,01FB16ECS247,Paromita Roy ,Female,2020,B.Tech,Computer Science & Engineering,7.44,PES University,Benagaluru,PES University,73,88,FTE + Internship (Mandatory)
+238,1PE16IS095,Shweta,Female,2020,B.Tech,Infromation Science & Engineering,7.51,PESIT South Campus,"E-City, Bengaluru",VTU,84.17,80,FTE
+239,01fb16ecs007,abdul qadir,Male,2020,B.Tech,Computer Science & Engineering,7.7166,PES University,Benagaluru,PES University,93.5,91.36,FTE + Internship (Mandatory)
+240,01FB16EEC293 ,Srivarshini V Upadhya,Female,2020,B.Tech,Electronics & Communication Engineering,7.92,PES University,Benagaluru,PES University,89.1,100,FTE + Internship (Mandatory)
+241,01FB16EEC009,Abhishek Joshi,Male,2020,B.Tech,Electronics & Communication Engineering,8.7,PES University,Benagaluru,PES University,96,96,FTE + Internship (Mandatory)
+242,01FB16EEC193,Pradeep Ashok Gudadinni,Male,2020,B.Tech,Electronics & Communication Engineering,8.1,PES University,Benagaluru,PES University,97.5,96.64,FTE + Internship (Mandatory)
+243,01FB16ECS226,NESARA B R,Female,2020,B.Tech,Computer Science & Engineering,8.12,PES University,Benagaluru,PES University,96.33,95.84,FTE + Internship (Mandatory)
+244,01FB16ECS227,Nihal Pawar K N,Male,2020,B.Tech,Computer Science & Engineering,7.8,PES University,Benagaluru,PES University,96.16%,10,FTE + Internship (Mandatory)
+245,1PE16EC169,Vaishnavi A B,Female,2020,B.Tech,Electronics & Communication Engineering,8.05,PESIT South Campus,"E-City, Bengaluru",VTU,97.12,96.96,FTE
+246,1pe16cs129,rashmi sudarshan,Female,2020,B.Tech,Computer Science & Engineering,7.79,PESIT South Campus,"E-City, Bengaluru",VTU,95.4,94.5,FTE
+247,01FB16ECS216,N Kantharvan,Male,2020,B.Tech,Computer Science & Engineering,8.34,PES University,Benagaluru,PES University,10 cgpa,91,FTE + Internship (Mandatory)
+248,01fb16eec064,B SHASHIKIRAN,Male,2020,B.Tech,Electronics & Communication Engineering,7.18,PES University,Benagaluru,PES University,89,8.8,FTE + Internship (Mandatory)
+249,01FB16EEC321,Tippusultan,Male,2020,B.Tech,Electronics & Communication Engineering,8.73,PES University,Benagaluru,PES University,93,94.72,FTE + Internship (Mandatory)
+250,01FB16ECS399,SUMAIR AHMED SHARIFF,Male,2020,B.Tech,Computer Science & Engineering,9.3,PES University,Benagaluru,PES University,96,94,FTE + Internship (Mandatory)
+251,1PE16CS165,Sushant Sinha,Male,2020,B.Tech,Computer Science & Engineering,8.64,PESIT South Campus,"E-City, Bengaluru",VTU,89,94.16,FTE
+252,01FB16ECS447,VINAY RAJ,Male,2020,B.Tech,Computer Science & Engineering,7.07,PES University,Benagaluru,PES University,92.6,84.48,FTE + Internship (Mandatory)
+253,1PE16EC044,Dushyant Suthar,Male,2020,B.Tech,Electronics & Communication Engineering,7,PESIT South Campus,"E-City, Bengaluru",VTU,79.80%,7.2,FTE
+254,01FB16ECS452,Vishruth Raghuraj Gollahalli,Male,2020,B.Tech,Computer Science & Engineering,8.5,PES University,Benagaluru,PES University,87%,9.8,FTE + Internship (Mandatory)
+255,1PE16CS190,Chinmoy Dutta,Male,2020,B.Tech,Computer Science & Engineering,7.46,PESIT South Campus,"E-City, Bengaluru",VTU,92,94.4,FTE
+256,01FB16ECS370,Shreyas BS,Male,2020,B.Tech,Computer Science & Engineering,8.56,PES University,Benagaluru,PES University,88.33,93.17,FTE
+257,01FB16EEC153,Manoj P N,Male,2020,B.Tech,Electronics & Communication Engineering,8.185,PES University,Benagaluru,PES University,93.8,96,FTE + Internship (Mandatory)
+258,01FB16ECS461,aditya lokesh,Male,2020,B.Tech,Computer Science & Engineering,7.5,PES University,Benagaluru,PES University,80,88,FTE + Internship (Mandatory)
+259,01FB16ECS086,B Shashank,Male,2020,B.Tech,Computer Science & Engineering,8.35,PES University,Benagaluru,PES University,94.6,95,FTE + Internship (Mandatory)
+260,01FB16EEC245,Sahana Ramu,Female,2020,B.Tech,Electronics & Communication Engineering,9.07,PES University,Benagaluru,PES University,93.5,10,FTE + Internship (Mandatory)
+261,01FB16ECS094,Chandan Gajanana Bhatta,Male,2020,B.Tech,Computer Science & Engineering,7.47,PES University,Benagaluru,PES University,97.67,96.16,FTE + Internship (Mandatory)
+262,01FB16ECS415,T S Varun,Male,2020,B.Tech,Computer Science & Engineering,8.2,PES University,Benagaluru,PES University,96.3,96.96,FTE + Internship (Mandatory)
+263,1PE16CS073,Shivani Manoj Kotian,Female,2020,B.Tech,Computer Science & Engineering,7.84,PESIT South Campus,"E-City, Bengaluru",VTU,97,92.3,FTE
+264,01FB16EEC377,Rakshit Shetty,Male,2020,B.Tech,Electronics & Communication Engineering,7.83,PES University,Benagaluru,PES University,87.5,89.4,FTE + Internship (Mandatory)
+265,01FB16EEC359,DEVISETTY YESWANTH NAVEEN KUMAR,Male,2020,B.Tech,Electronics & Communication Engineering,8.03,PES University,Benagaluru,PES University,98.7,90,FTE + Internship (Mandatory)
+266,1PE16IS106,Vinodaraddi Gogi,Male,2020,B.Tech,Infromation Science & Engineering,8.23,PESIT South Campus,"E-City, Bengaluru",VTU,94.83,95.68,FTE
+267,1PE16CS011,Akhilesh Raichur,Male,2020,B.Tech,Computer Science & Engineering,8,PESIT South Campus,"E-City, Bengaluru",VTU,91.3,9.4,FTE
+268,01FB16EEC258,Sharathkumar S,Male,2020,B.Tech,Electronics & Communication Engineering,8.24,PES University,Benagaluru,PES University,97.33,93.92,FTE + Internship (Mandatory)
+269,1PE16CS003,Abhineeth Jaideep Mishra,Male,2020,B.Tech,Computer Science & Engineering,7.05,PESIT South Campus,"E-City, Bengaluru",VTU,78.6,87.4,FTE
+270,01FB16ECS435,Varuna.K.S.,Female,2020,B.Tech,Computer Science & Engineering,8.23,PES University,Benagaluru,PES University,81.6,9,FTE + Internship (Mandatory)
+271,1PE16CS163,SUMAN DASH,Female,2020,B.Tech,Computer Science & Engineering,8.65,PESIT South Campus,"E-City, Bengaluru",VTU,96.17,95.83,FTE
+272,1PE16CS104,NITHIN M,Male,2020,B.Tech,Computer Science & Engineering,8.71,PESIT South Campus,"E-City, Bengaluru",VTU,88.3,77.9,FTE
+273,01FB16EEC167,Nagarjuna V,Male,2020,B.Tech,Electronics & Communication Engineering,7.46,PES University,Benagaluru,PES University,86.6,91.2,FTE + Internship (Mandatory)
+274,1PE16CS075,Kumari Shikha,Female,2020,B.Tech,Computer Science & Engineering,8,PESIT South Campus,"E-City, Bengaluru",VTU,90.4,95,FTE
+275,1PE16IS058,Mihir Chhatre,Male,2020,B.Tech,Infromation Science & Engineering,8.2,PESIT South Campus,"E-City, Bengaluru",VTU,93,83,FTE
+276,01fb16ecs027,Aditya Girisha,Male,2020,B.Tech,Computer Science & Engineering,8.3,PES University,Benagaluru,PES University,85,87,FTE + Internship (Mandatory)
+277,01FB16ECS324,Sachin Venugopalan,Male,2020,B.Tech,Computer Science & Engineering,7,PES University,Benagaluru,PES University,92,91,FTE + Internship (Mandatory)
+278,1PE16CS125,Rakesh Kumar P,Male,2020,B.Tech,Computer Science & Engineering,8.04,PESIT South Campus,"E-City, Bengaluru",VTU,93,93,FTE
+279,01FB16ECS475,Parul Tebriwal,Female,2020,B.Tech,Computer Science & Engineering,8.86,PES University,Benagaluru,PES University,88.6,100,FTE + Internship (Mandatory)
+280,01FB16ECS088,Bhavana.J,Female,2020,B.Tech,Computer Science & Engineering,7.64,PES University,Benagaluru,PES University,91,79.83,FTE + Internship (Mandatory)
+281,01FB16ECS411 ,Swathi Reddy ,Female,2020,B.Tech,Computer Science & Engineering,7.03,PES University,Benagaluru,PES University,84,83,FTE
+282,1PE16CS026,Anushka Vuppala,Female,2020,B.Tech,Computer Science & Engineering,8.3,PESIT South Campus,"E-City, Bengaluru",VTU,89,92,FTE
+283,1PE16EC170,Vaishnavi Rao,Female,2020,B.Tech,Electronics & Communication Engineering,8.1,PESIT South Campus,"E-City, Bengaluru",VTU,90.17,91.17,FTE
+284,1PE16CS097 ,NIKHIL YADAV ,Male,2020,B.Tech,Computer Science & Engineering,8.2,PESIT South Campus,"E-City, Bengaluru",VTU,94%,95,FTE
+285,1PE16CS036,Ayman Shafi,Male,2020,B.Tech,Computer Science & Engineering,8.01,PESIT South Campus,"E-City, Bengaluru",VTU,87.66,93.83,FTE
+286,01FB16ECS055,Amogh,Male,2020,B.Tech,Computer Science & Engineering,7.21,PES University,Benagaluru,PES University,93.5,9.2,FTE + Internship (Mandatory)
+287,01FB16EEC115,PRANAV K B,Male,2020,B.Tech,Electronics & Communication Engineering,8.638,PES University,Benagaluru,PES University,85.8,95,FTE + Internship (Mandatory)
+288,01FB16ECS066,Anup Bujurke,Male,2020,B.Tech,Computer Science & Engineering,8.17,PES University,Benagaluru,PES University,91.33,93.92,FTE + Internship (Mandatory)
+289,1pe16ec046,Ezaz Ahammed,Male,2020,B.Tech,Electronics & Communication Engineering,7.68,PESIT South Campus,"E-City, Bengaluru",VTU,88.7,96,FTE
+290,01FB16ECS059,Anirudh Murthy,Male,2020,B.Tech,Computer Science & Engineering,8.44,PES University,Benagaluru,PES University,89,93,FTE + Internship (Mandatory)
+291,01FB16EEC198,Prasanna Bhat,Male,2020,B.Tech,Electronics & Communication Engineering,8.84,PES University,Benagaluru,PES University,97.5,98.4,FTE + Internship (Mandatory)
+292,1PE16CS108,Parth Sachdev,Male,2020,B.Tech,Computer Science & Engineering,7.98,PESIT South Campus,"E-City, Bengaluru",VTU,91.2,9.4,FTE
+293,01FB16EEC302,Sumeet Sarkar,Male,2020,B.Tech,Electronics & Communication Engineering,7.58,PES University,Benagaluru,PES University,88,8.8,FTE
+294,01FB16EEC162,Mohith B,Male,2020,B.Tech,Electronics & Communication Engineering,8.85,PES University,Benagaluru,PES University,97,91.36,FTE + Internship (Mandatory)
+295,1PE16IS060,Mudit Nigam,Male,2020,B.Tech,Infromation Science & Engineering,7.85,PESIT South Campus,"E-City, Bengaluru",VTU,93,95,FTE
+296,1PE16CS156,SNEHA SARKAR,Female,2020,B.Tech,Computer Science & Engineering,8.35,PESIT South Campus,"E-City, Bengaluru",VTU,91,100,FTE
+297,1PE16IS076,Pranav Poddar,Male,2020,B.Tech,Infromation Science & Engineering,7.38,PESIT South Campus,"E-City, Bengaluru",VTU,77.4,84.67,FTE
+298,1PE16EC093,Nikita N,Female,2020,B.Tech,Electronics & Communication Engineering,7.41,PESIT South Campus,"E-City, Bengaluru",VTU,82,90,FTE
+299,01FB16EEC368,Ajay Kumar,Male,2020,B.Tech,Electronics & Communication Engineering,7.88,PES University,Benagaluru,PES University,93.6,85.6,FTE + Internship (Mandatory)
+300,1PE16EC033,Brunda Y. P,Female,2020,B.Tech,Electronics & Communication Engineering,8.57,PESIT South Campus,"E-City, Bengaluru",VTU,97.6,90.4,FTE
+301,1PE16CS179,Vraj Reshamdalal,Male,2020,B.Tech,Computer Science & Engineering,7.37,PESIT South Campus,"E-City, Bengaluru",VTU,88,9.2,FTE
+302,1PE16IS038,Harsha R,Male,2020,B.Tech,Infromation Science & Engineering,7.58,PESIT South Campus,"E-City, Bengaluru",VTU,96.66,94.33,FTE
+303,1PE16EC118,Raeesah Jahan Ahmed,Female,2020,B.Tech,Electronics & Communication Engineering,8.54,PESIT South Campus,"E-City, Bengaluru",VTU,94.6,93.5,FTE
+304,01fb16ecs108,Deepika H,Female,2020,B.Tech,Computer Science & Engineering,9.5,PES University,Benagaluru,PES University,95,93,FTE + Internship (Mandatory)
+305,1PE16CS157,Soha Jain,Female,2020,B.Tech,Computer Science & Engineering,7.54,PESIT South Campus,"E-City, Bengaluru",VTU,86.6,93.1,FTE
+306,1PE16IS015,Aman Singh,Male,2020,B.Tech,Infromation Science & Engineering,8.07,PESIT South Campus,"E-City, Bengaluru",VTU,88.2,76,FTE
+307,1PE16CS188,Rahul Suresh,Male,2020,B.Tech,Computer Science & Engineering,8.08,PESIT South Campus,"E-City, Bengaluru",VTU,92.67,90.4,FTE
+308,01FB16ECS085,B Rutvik ,Male,2020,B.Tech,Computer Science & Engineering,7.4,PES University,Benagaluru,PES University,87.6,8.2,FTE + Internship (Mandatory)
+309,1PE16CS110,Poulami Sarkar,Female,2020,B.Tech,Computer Science & Engineering,8.26,PESIT South Campus,"E-City, Bengaluru",VTU,91.8,10,FTE
+310,1PE16IS017,Ankit Kumar Jayswal,Male,2020,B.Tech,Infromation Science & Engineering,7.01,PESIT South Campus,"E-City, Bengaluru",VTU,77.5,78.6,FTE
+311,01FB16EEC085,DG SUHAAS KIRAN,Male,2020,B.Tech,Electronics & Communication Engineering,9.11,PES University,Benagaluru,PES University,97,10,FTE + Internship (Mandatory)
+312,01FB16ECS338,Samyama Y,Female,2020,B.Tech,Computer Science & Engineering,7.225,PES University,Benagaluru,PES University,88.33,86.33,FTE + Internship (Mandatory)
+313,1PE16CS006,Adish Rao,Male,2020,B.Tech,Computer Science & Engineering,8.27,PESIT South Campus,"E-City, Bengaluru",VTU,87,89,FTE
+314,1PE16EC070,Kushal Reddy M,Male,2020,B.Tech,Electronics & Communication Engineering,7.86,PESIT South Campus,"E-City, Bengaluru",VTU,90.8,91.3,FTE
+315,01FB16EEC097,Ganesh Krishnamurthy Shet,Male,2020,B.Tech,Electronics & Communication Engineering,9.07,PES University,Benagaluru,PES University,95.17,97.44,FTE + Internship (Mandatory)
+316,1PE16CS059,Gangabhagirathi Akalwadi,Female,2020,B.Tech,Computer Science & Engineering,8.65,PESIT South Campus,"E-City, Bengaluru",VTU,96.16,9.6,FTE
+317,1PE16CS187,Prachi Anil Biradar,Female,2020,B.Tech,Computer Science & Engineering,8.15,PESIT South Campus,"E-City, Bengaluru",VTU,93.6,94,FTE
+318,1PE16CS168,Tarun NT,Male,2020,B.Tech,Computer Science & Engineering,7.2,PESIT South Campus,"E-City, Bengaluru",VTU,93,92,FTE
+319,01FB16ECS442,Vijay Bhargav Eshappa,Male,2020,B.Tech,Computer Science & Engineering,8.82,PES University,Benagaluru,PES University,87.16,95,FTE + Internship (Mandatory)
+320,01FB16ECS185,M SUMUKHA,Male,2020,B.Tech,Computer Science & Engineering,8.34,PES University,Benagaluru,PES University,95,95,FTE + Internship (Mandatory)
+321,01FB16EEC001,Aadarsh Shekhar,Male,2020,B.Tech,Electronics & Communication Engineering,8.21,PES University,Benagaluru,PES University,90.6,91.8,FTE + Internship (Mandatory)
+322,1PE16CS018,Anant Moudgalya,Male,2020,B.Tech,Computer Science & Engineering,8.25,PESIT South Campus,"E-City, Bengaluru",VTU,96.1,100,FTE
+323,1PE16CS066,Jaysurya K,Male,2020,B.Tech,Computer Science & Engineering,8.42,PESIT South Campus,"E-City, Bengaluru",VTU,94.3,88.2,FTE
+324,1PE16IS052,Manasa U Hegde,Female,2020,B.Tech,Infromation Science & Engineering,8.92,PESIT South Campus,"E-City, Bengaluru",VTU,97.3,96.8,FTE
+325,1PE16EC083,Mohith K Parihar,Male,2020,B.Tech,Electronics & Communication Engineering,8.729,PESIT South Campus,"E-City, Bengaluru",VTU,93.33,92.96,FTE
+326,01FB16ECS443,Vijay C B,Male,2020,B.Tech,Computer Science & Engineering,8.39,PES University,Benagaluru,PES University,90.3,93.1,FTE + Internship (Mandatory)
+327,01FB16ECS345,Sayantan Nandy,Male,2020,B.Tech,Computer Science & Engineering,8.02,PES University,Benagaluru,PES University,90,95,FTE
+328,1PE16IS045,Karthikeyan P,Male,2020,B.Tech,Infromation Science & Engineering,8.08,PESIT South Campus,"E-City, Bengaluru",VTU,93.2,8.8,FTE
+329,1PE16CS005,Abhishek Udayakumar Guragol,Male,2020,B.Tech,Computer Science & Engineering,7.688,PESIT South Campus,"E-City, Bengaluru",VTU,87,92,FTE
+330,01FB16EEC339,Vineetha G Pai,Female,2020,B.Tech,Electronics & Communication Engineering,9.08,PES University,Benagaluru,PES University,93.33,88,FTE + Internship (Mandatory)
+331,01FB16EEC337,Vinay M,Male,2020,B.Tech,Electronics & Communication Engineering,7.44,PES University,Benagaluru,PES University,90.33,90.88,FTE + Internship (Mandatory)
+332,1PE16EC127 ,Rohit Hariharan ,Male,2020,B.Tech,Electronics & Communication Engineering,7.8,PESIT South Campus,"E-City, Bengaluru",VTU,89.8,89.3,FTE
+333,01FB16EEC289,Sourabh Kulkarni,Male,2020,B.Tech,Electronics & Communication Engineering,8.4,PES University,Benagaluru,PES University,91.16,97.44,FTE + Internship (Mandatory)
+334,1PE16IS110,Yash Kumar,Male,2020,B.Tech,Infromation Science & Engineering,7.36,PESIT South Campus,"E-City, Bengaluru",VTU,89.9,88,FTE
+335,1PE16CS040,Bhoomika N,Female,2020,B.Tech,Computer Science & Engineering,8.3,PESIT South Campus,"E-City, Bengaluru",VTU,95,94,FTE
+336,01FB16EEC284,Sindhu S,Female,2020,B.Tech,Electronics & Communication Engineering,8.13,PES University,Benagaluru,PES University,88,93.6,FTE + Internship (Mandatory)
+337,01FB16EEC110,Jayanth N Pisharody,Male,2020,B.Tech,Electronics & Communication Engineering,9.39,PES University,Benagaluru,PES University,94.2,10,FTE + Internship (Mandatory)
+338,1PE16IS107,Vishal Daniel,Male,2020,B.Tech,Infromation Science & Engineering,7.1,PESIT South Campus,"E-City, Bengaluru",VTU,90.5,85,FTE
+339,01FB16ECS123,Gourishankar,Male,2020,B.Tech,Computer Science & Engineering,7.91,PES University,Benagaluru,PES University,92.67,95.84,FTE + Internship (Mandatory)
+340,1PE16IS061,N SANTOSH GOKUL,Male,2020,B.Tech,Infromation Science & Engineering,7.69,PESIT South Campus,"E-City, Bengaluru",VTU,87.66,8.4,FTE
+341,01FB16EEC205,Priyanka Peddareddappa ,Female,2020,B.Tech,Electronics & Communication Engineering,8.02,PES University,Benagaluru,PES University,81.8,9.8,FTE + Internship (Mandatory)
+342,1pe16cs158,Sourabh adhikari,Male,2020,B.Tech,Computer Science & Engineering,7.42,PESIT South Campus,"E-City, Bengaluru",VTU,82,89,FTE
+343,01FB16EEC375,Nikhil Avina,Male,2020,B.Tech,Electronics & Communication Engineering,7.22,PES University,Benagaluru,PES University,92.17,94.56,FTE + Internship (Mandatory)
+344,1PE16CS144,Shashidhar V,Male,2020,B.Tech,Computer Science & Engineering,8.83,PESIT South Campus,"E-City, Bengaluru",VTU,94,93,FTE
+345,01FB16EEC334,Vijetha K A,Male,2020,B.Tech,Electronics & Communication Engineering,7,PES University,Benagaluru,PES University,92,91.5,FTE + Internship (Mandatory)
+346,1PE16IS022 ,Ashutosh gaur,Male,2020,B.Tech,Infromation Science & Engineering,7.72,PESIT South Campus,"E-City, Bengaluru",VTU,86.4,9,FTE
+347,1PE16IS032,Denzil Josteve Fernandes,Male,2020,B.Tech,Infromation Science & Engineering,8.44,PESIT South Campus,"E-City, Bengaluru",VTU,95.16,93.76,FTE
+348,1PE16CS041,BHUPENDRA DEWANGAN,Male,2020,B.Tech,Computer Science & Engineering,7.23,PESIT South Campus,"E-City, Bengaluru",VTU,76,79.6,FTE
+349,01FB16ECS480,Devashish S Vaishnav,Male,2020,B.Tech,Computer Science & Engineering,7.6,PES University,Benagaluru,PES University,84,82,FTE + Internship (Mandatory)
+350,01FB16EEC199,Pratheek S,Male,2020,B.Tech,Electronics & Communication Engineering,7.24,PES University,Benagaluru,PES University,84,94,FTE + Internship (Mandatory)
+351,1pe16ec085,MONISHA A,Female,2020,B.Tech,Electronics & Communication Engineering,7.84,PESIT South Campus,"E-City, Bengaluru",VTU,92.67,89.28,FTE
+352,01FB16EEC137,Kumar Divya Singh,Male,2020,B.Tech,Electronics & Communication Engineering,7.37,PES University,Benagaluru,PES University,82.8,95,FTE + Internship (Mandatory)
+353,01FB16EEC322,Trilok V,Male,2020,B.Tech,Electronics & Communication Engineering,8.68,PES University,Benagaluru,PES University,86,86,FTE + Internship (Mandatory)
+354,01FB16ECS106,Deekshith Godavarthi,Male,2020,B.Tech,Computer Science & Engineering,9.27,PES University,Benagaluru,PES University,88.5,91.33,FTE + Internship (Mandatory)
+355,01FB16EEC169,Naman Agarwal,Male,2020,B.Tech,Electronics & Communication Engineering,8.01,PES University,Benagaluru,PES University,91,94,FTE + Internship (Mandatory)
+356,01FB16ecs425,Utsav Chindalia,Male,2020,B.Tech,Computer Science & Engineering,8.05,PES University,Benagaluru,PES University,82,72,FTE + Internship (Mandatory)
+357,01FB16ECS355,Shashank M Bongale,Male,2020,B.Tech,Computer Science & Engineering,8.87,PES University,Benagaluru,PES University,93.5,95.3,FTE + Internship (Mandatory)
+358,01FB16EEC117,K M Manish Rao,Male,2020,B.Tech,Electronics & Communication Engineering,8.8,PES University,Benagaluru,PES University,91.6,9.4,FTE + Internship (Mandatory)
+359,01FB16EEC237,Rupith,Male,2020,B.Tech,Electronics & Communication Engineering,7.52,PES University,Benagaluru,PES University,92.5,91,FTE + Internship (Mandatory)
+360,1pe16ec076,Manas shetty,Male,2020,B.Tech,Electronics & Communication Engineering,7.1,PESIT South Campus,"E-City, Bengaluru",VTU,85,85,FTE
+361,01FB16EEC131,Kavya V,Female,2020,B.Tech,Electronics & Communication Engineering,7.33,PES University,Benagaluru,PES University,90,9,FTE + Internship (Mandatory)
+362,01fb16ecs177,lakshmitha,Female,2020,B.Tech,Computer Science & Engineering,7,PES University,Benagaluru,PES University,85,86,FTE + Internship (Mandatory)
+363,1PE16IS079,PULKIT JOSHI,Male,2020,B.Tech,Infromation Science & Engineering,7.76,PESIT South Campus,"E-City, Bengaluru",VTU,80.2,84,FTE
+364,1PE16IS042,Kajol Patira,Female,2020,B.Tech,Infromation Science & Engineering,7.48,PESIT South Campus,"E-City, Bengaluru",VTU,68,72,FTE
+365,01FB16EEC060,B GUNANVITHA,Female,2020,B.Tech,Electronics & Communication Engineering,7.5,PES University,Benagaluru,PES University,93,88,FTE + Internship (Mandatory)
+366,1PE16IS055,MANOJ S,Male,2020,B.Tech,Infromation Science & Engineering,8.4,PESIT South Campus,"E-City, Bengaluru",VTU,90.16,88,FTE
+367,01fb16eec311,Swapnil,Male,2020,B.Tech,Electronics & Communication Engineering,8.83,PES University,Benagaluru,PES University,85.8,97,FTE + Internship (Mandatory)
+368,01FB16EEC058,Azfar Nawaz Farooqui,Male,2020,B.Tech,Electronics & Communication Engineering,9.77,PES University,Benagaluru,PES University,89.6,95,FTE + Internship (Mandatory)
+369,1PE16CS154,Siddhanth J Ajri,Male,2020,B.Tech,Computer Science & Engineering,8.3716,PESIT South Campus,"E-City, Bengaluru",VTU,93.83,93.83,FTE
+370,01FB16EEC079,CHANDRASHEKHAR,Male,2020,B.Tech,Electronics & Communication Engineering,7.23,PES University,Benagaluru,PES University,92.3,9.8,FTE + Internship (Mandatory)
+371,01FB16EEC187,Parmesh Kaur,Female,2020,B.Tech,Electronics & Communication Engineering,9.202,PES University,Benagaluru,PES University,89,9.4,FTE + Internship (Mandatory)
+372,01FB16ECS361,Shashwat Mishra,Male,2020,B.Tech,Computer Science & Engineering,7.83,PES University,Benagaluru,PES University,90.6,10,FTE + Internship (Mandatory)
+373,01FB16EEC342,Vishrut R Harsoor,Male,2020,B.Tech,Electronics & Communication Engineering,8.04,PES University,Benagaluru,PES University,96.1,95,FTE + Internship (Mandatory)
+374,1PE16EC149,Shushank Shekhar,Male,2020,B.Tech,Electronics & Communication Engineering,7.68,PESIT South Campus,"E-City, Bengaluru",VTU,90.1,95,FTE
+375,1PE16CS166,T Pavan,Male,2020,B.Tech,Computer Science & Engineering,7.52,PESIT South Campus,"E-City, Bengaluru",VTU,91.17,79.36,FTE
+376,1pe16ec055,jai krishna kumar,Male,2020,B.Tech,Electronics & Communication Engineering,8.21,PESIT South Campus,"E-City, Bengaluru",VTU,83.80%,82,FTE
+377,1PE16CS074,Kshitij Porwal,Male,2020,B.Tech,Computer Science & Engineering,7.96,PESIT South Campus,"E-City, Bengaluru",VTU,91.8,95,FTE
+378,01FB16EEC269,Shrey Saksena ,Male,2020,B.Tech,Electronics & Communication Engineering,7.83,PES University,Benagaluru,PES University,84,92,FTE + Internship (Mandatory)
+379,1PE16EC003,AAKASH NARAYAN,Male,2020,B.Tech,Electronics & Communication Engineering,7.6,PESIT South Campus,"E-City, Bengaluru",VTU,81,92,FTE
+380,01FB16ECS264,Prameet Patil,Male,2020,B.Tech,Computer Science & Engineering,9.05,PES University,Benagaluru,PES University,89,93.44,FTE + Internship (Mandatory)
+381,01FB16ECS351,Sharath Menon,Male,2020,B.Tech,Computer Science & Engineering,9.046,PES University,Benagaluru,PES University,94..6,92.8,FTE + Internship (Mandatory)
+382,01FB16EEC272,Shreya Jaiswal,Female,2020,B.Tech,Electronics & Communication Engineering,8.6,PES University,Benagaluru,PES University,90.8,10,FTE + Internship (Mandatory)
+383,01FB16EEC355,Abhijith H,Male,2020,B.Tech,Electronics & Communication Engineering,8.25,PES University,Benagaluru,PES University,90.4,95,FTE + Internship (Mandatory)
+384,1PE16CS089,Naren Anant Kulkarni,Male,2020,B.Tech,Computer Science & Engineering,7.45,PESIT South Campus,"E-City, Bengaluru",VTU,85,88,FTE
+385,01FB16EEC275,Shruti Mohanty,Female,2020,B.Tech,Electronics & Communication Engineering,9.1,PES University,Benagaluru,PES University,93.2,100,FTE + Internship (Mandatory)
+386,1PE16IS117,Shamitha Shridhar Honnavar,Female,2020,B.Tech,Infromation Science & Engineering,8.2,PESIT South Campus,"E-City, Bengaluru",VTU,90.8,90.3,FTE
+387,1PE16IS121,Prakhar Chandra Pathak,Male,2020,B.Tech,Infromation Science & Engineering,7.53,PESIT South Campus,"E-City, Bengaluru",VTU,90.6,92,FTE
+388,01FB16EEC063,B. Sai Raghava Mukund,Male,2020,B.Tech,Electronics & Communication Engineering,8.03,PES University,Benagaluru,PES University,90.2,91.2,FTE + Internship (Mandatory)
+389,01FB16ECS342,Sankarshana H Rao,Male,2020,B.Tech,Computer Science & Engineering,8.21,PES University,Benagaluru,PES University,87.5,98,FTE
+390,01FB16ECS033,Advithi Nair,Female,2020,B.Tech,Computer Science & Engineering,9.16,PES University,Benagaluru,PES University,96.3,95,FTE + Internship (Mandatory)
+391,1PE16EC135,Sampriti Poddar,Female,2020,B.Tech,Electronics & Communication Engineering,8.53,PESIT South Campus,"E-City, Bengaluru",VTU,94.6,93.67,FTE
+392,1PE16CS170,Uddip Yalamanchili,Male,2020,B.Tech,Computer Science & Engineering,7.9,PESIT South Campus,"E-City, Bengaluru",VTU,83.2,9.8,FTE
+393,01FB16EEC164,N Laxman,Male,2020,B.Tech,Electronics & Communication Engineering,8.2,PES University,Benagaluru,PES University,93,96.64,FTE + Internship (Mandatory)
+394,01FB16EEC202,Preet Bedi,Male,2020,B.Tech,Electronics & Communication Engineering,9.07,PES University,Benagaluru,PES University,83,95,FTE + Internship (Mandatory)
+395,01fb16ecs440,vemula sai saketh,Male,2020,B.Tech,Computer Science & Engineering,8.38,PES University,Benagaluru,PES University,89.6,92.15,FTE + Internship (Mandatory)
+396,01FB16ECS031,Aditya Raj,Male,2020,B.Tech,Computer Science & Engineering,7.57,PES University,Benagaluru,PES University,89.4,95,FTE + Internship (Mandatory)
+397,1PE16CS186,Shambhavi Ramesh,Female,2020,B.Tech,Computer Science & Engineering,8.75,PESIT South Campus,"E-City, Bengaluru",VTU,96.50%,95,FTE
+398,01FB16EEC113,Joseph Sunil,Male,2020,B.Tech,Electronics & Communication Engineering,7.84,PES University,Benagaluru,PES University,84.6,93.1,FTE + Internship (Mandatory)
+399,01FB16EEC172,Nikhil Kumar,Male,2020,B.Tech,Electronics & Communication Engineering,8.32,PES University,Benagaluru,PES University,85.33,91.2,FTE + Internship (Mandatory)
+400,1PE16CS064,Imran pasha,Male,2020,B.Tech,Computer Science & Engineering,7.61,PESIT South Campus,"E-City, Bengaluru",VTU,92.33,88.88,FTE
+401,1pe16cs027,Anushri Nayak,Female,2020,B.Tech,Computer Science & Engineering,7.52,PESIT South Campus,"E-City, Bengaluru",VTU,89.5,94.56,FTE
+402,01FB16ECS323,Sachin S,Male,2020,B.Tech,Computer Science & Engineering,7.7,PES University,Benagaluru,PES University,86,92,FTE + Internship (Mandatory)
+403,01FB16EEC253,Saurav S Shetty,Male,2020,B.Tech,Electronics & Communication Engineering,8.01,PES University,Benagaluru,PES University,91,88,FTE + Internship (Mandatory)
+404,01FB16ECS329,Sai Pranav K,Male,2020,B.Tech,Computer Science & Engineering,8.2,PES University,Benagaluru,PES University,85,95,FTE + Internship (Mandatory)
+405,01FB16ECS457,Yash Patil,Male,2020,B.Tech,Computer Science & Engineering,7.87,PES University,Benagaluru,PES University,94.8,98,FTE + Internship (Mandatory)
+406,01FB16EEC274,Shreyas Mohan Iyer,Male,2020,B.Tech,Electronics & Communication Engineering,7.49,PES University,Benagaluru,PES University,93.33,98,FTE + Internship (Mandatory)
+407,01FB16EEC047,Arnab Chakraborty,Male,2020,B.Tech,Electronics & Communication Engineering,8.07,PES University,Benagaluru,PES University,85.6,95,FTE + Internship (Mandatory)
+408,01FB16EEC308,Suraj Kunar Mohan Kabbur,Male,2020,B.Tech,Electronics & Communication Engineering,8.1,PES University,Benagaluru,PES University,90.5,96.48,FTE + Internship (Mandatory)
+409,1PE16CS034,ASHWINI KELKAR,Female,2020,B.Tech,Computer Science & Engineering,8.01,PESIT South Campus,"E-City, Bengaluru",VTU,84,93.33,FTE
+410,01FB16ECS265,Pranav Pahwa,Male,2020,B.Tech,Computer Science & Engineering,8.29,PES University,Benagaluru,PES University,91.4,95,FTE + Internship (Mandatory)
+411,01FB16ECS148,K P Arjun Rajesh,Male,2020,B.Tech,Computer Science & Engineering,8.67,PES University,Benagaluru,PES University,86,91,FTE + Internship (Mandatory)
+412,1PE16IS101,Tharanath Rai Mithrampady,Male,2020,B.Tech,Infromation Science & Engineering,7.82,PESIT South Campus,"E-City, Bengaluru",VTU,85.4,87.4,FTE
+413,01FB16EEC295,sudarshan V Kudli,Male,2020,B.Tech,Electronics & Communication Engineering,8.1,PES University,Benagaluru,PES University,87.5,9.2,FTE + Internship (Mandatory)
+414,01FB16EEC315,Tanush S,Male,2020,B.Tech,Electronics & Communication Engineering,7.1,PES University,Benagaluru,PES University,92,97.44,FTE + Internship (Mandatory)
+415,1PE16IS075,Pranav Kumar,Male,2020,B.Tech,Infromation Science & Engineering,7.55,PESIT South Campus,Benagaluru,VTU,81.4,95,FTE
+416,01FB16ECS454,Vivek Partal,Male,2020,B.Tech,Computer Science & Engineering,7.3,PES University,Benagaluru,PES University,92,8.4,FTE + Internship (Mandatory)
+417,1PE16EC018,Ansh Bhatnagar,Male,2020,B.Tech,Electronics & Communication Engineering,7.85,PESIT South Campus,"E-City, Bengaluru",VTU,90.5,92.4,FTE
+418,01FB16ECS384,Simrita Jayasimha,Female,2020,B.Tech,Computer Science & Engineering,8.81,PES University,Benagaluru,PES University,80,93,FTE
+419,01FB16ECS133,Hemanth M,Male,2020,B.Tech,Computer Science & Engineering,7.48,PES University,Benagaluru,PES University,92,89.6,FTE + Internship (Mandatory)
+420,01FB16ECS010,Abhimanyu Roy,Male,2020,B.Tech,Computer Science & Engineering,7.86,PES University,Benagaluru,PES University,95,95,FTE + Internship (Mandatory)
+421,01FB16ECS002,A. OM SAI VIVEK REDDY,Male,2020,B.Tech,Computer Science & Engineering,8.78,PES University,Benagaluru,PES University,97.6,9.7,FTE + Internship (Mandatory)
+422,1PE16CS100,Ninad Rajesh Dighe,Male,2020,B.Tech,Computer Science & Engineering,8.03,PESIT South Campus,"E-City, Bengaluru",VTU,84.15,93,FTE
+423,01FB16EEC160,Mohammed Suhail ,Male,2020,B.Tech,Electronics & Communication Engineering,8,PES University,Benagaluru,PES University,93.67,91.87,FTE + Internship (Mandatory)
+424,01FB16EEC373,M Manohar Prabhu,Male,2020,B.Tech,Electronics & Communication Engineering,8.57,PES University,Benagaluru,PES University,97.3,9.8,FTE + Internship (Mandatory)
+425,01FB16ECS020,Aby babu Alappat,Male,2020,B.Tech,Computer Science & Engineering,7.5,PES University,Benagaluru,PES University,94,98,FTE + Internship (Mandatory)
+426,01FB16EEC379,Sumukh Suresh,Male,2020,B.Tech,Electronics & Communication Engineering,8.12,PES University,Benagaluru,PES University,94,91,FTE + Internship (Mandatory)
+427,01FB16ECS266,Praneet S Y,Male,2020,B.Tech,Computer Science & Engineering,8.3,PES University,Benagaluru,PES University,96,85,FTE + Internship (Mandatory)
+428,01FB16ECS225,Neha Mohan,Female,2020,B.Tech,Computer Science & Engineering,8.98,PES University,Benagaluru,PES University,84.76,90.08,FTE + Internship (Mandatory)
+429,01FB16ECS304,Ritik Kumar,Male,2020,B.Tech,Computer Science & Engineering,8.36,PES University,Benagaluru,PES University,91,92.7,FTE + Internship (Mandatory)
+430,01FB16ECS187,Maanvi Nunna,Female,2020,B.Tech,Computer Science & Engineering,9.53,PES University,Benagaluru,PES University,95.8,95,FTE + Internship (Mandatory)
+431,01FB16ECS488,Manmath Sahoo,Male,2020,B.Tech,Computer Science & Engineering,9.15,PES University,Benagaluru,PES University,89.4,91.13,FTE + Internship (Mandatory)
+432,01FB16EEC279,siddalingappa uppar,Male,2020,B.Tech,Electronics & Communication Engineering,7.33,PES University,Benagaluru,PES University,86.33,85.28,FTE + Internship (Mandatory)
+433,01FB16ECS487,Alka Simon,Female,2020,B.Tech,Computer Science & Engineering,9.06,PES University,Benagaluru,PES University,92.1,95.6,FTE + Internship (Mandatory)
+434,01FB16EEC032,Amogh. M.P,Male,2020,B.Tech,Electronics & Communication Engineering,7.7,PES University,Benagaluru,PES University,84,9.4,FTE + Internship (Mandatory)
+435,1PE16CS051,Devanand H R,Male,2020,B.Tech,Computer Science & Engineering,7.24,PESIT South Campus,"E-City, Bengaluru",VTU,94.66,10,FTE
+436,01FB16ECS089,Bhavani Shankar,Male,2020,B.Tech,Computer Science & Engineering,7.51,PES University,Benagaluru,PES University,94,89.3,FTE + Internship (Mandatory)
+437,01FB16EEC094,Diya Dhiraj,Female,2020,B.Tech,Electronics & Communication Engineering,8.57,PES University,Benagaluru,PES University,89.4,93.1,FTE + Internship (Mandatory)
+438,1PE16IS120,Gopal Bhartia,Male,2020,B.Tech,Infromation Science & Engineering,7.7,PESIT South Campus,"E-City, Bengaluru",VTU,92.6,89,FTE
+439,1PE16EC114,Priya Y Pawar,Female,2020,B.Tech,Electronics & Communication Engineering,8.46,PESIT South Campus,"E-City, Bengaluru",VTU,95.33,87.33,FTE
+440,01FB16ECS373,Shreyas Chandrashekara,Male,2020,B.Tech,Computer Science & Engineering,8.59,PES University,Benagaluru,PES University,85,95,FTE + Internship (Mandatory)
+441,01FB16ECS150,K Praneeth Kumar,Male,2020,B.Tech,Computer Science & Engineering,9.05,PES University,Benagaluru,PES University,96.8,9.4,FTE + Internship (Mandatory)
+442,1pe16cs004,Abhishek K,Male,2020,B.Tech,Computer Science & Engineering,7.34,PESIT South Campus,"E-City, Bengaluru",VTU,84.2,95,FTE
+443,01FB106EEC177,Nischith B O,Male,2020,B.Tech,Electronics & Communication Engineering,8.91,PES University,Benagaluru,PES University,94,10,FTE + Internship (Mandatory)
+444,1PE16IS006,ABHISHEK SRIVASTAVA,Male,2020,B.Tech,Infromation Science & Engineering,8.07,PESIT South Campus,"E-City, Bengaluru",VTU,88.4,9.4,FTE
+445,1pe16is122 ,Karthick k d ,Male,2020,B.Tech,Infromation Science & Engineering,7.2,PESIT South Campus,"E-City, Bengaluru",VTU,75,80,FTE
+446,01FB16ECS473,Nikita Hitesh Singh ,Female,2020,B.Tech,Computer Science & Engineering,7.6,PES University,Benagaluru,PES University,86,94,FTE + Internship (Mandatory)
+447,01FB16EEC077,Chaithanya M G,Female,2020,B.Tech,Electronics & Communication Engineering,7.6,PES University,Benagaluru,PES University,96.16,94.08,FTE + Internship (Mandatory)
+448,1PE16CS008,Aditya Singhania,Male,2020,B.Tech,Computer Science & Engineering,8.2,PESIT South Campus,"E-City, Bengaluru",VTU,92,95,FTE
+449,01FB16EEC049,Arya Mohan,Female,2020,B.Tech,Electronics & Communication Engineering,8.63,PES University,Benagaluru,PES University,86.5,90,FTE + Internship (Mandatory)
+450,01FB16ECS078,Ashwin Ashok,Male,2020,B.Tech,Computer Science & Engineering,9.05,PES University,Benagaluru,PES University,92.2,89.3,FTE + Internship (Mandatory)
+451,1PE16CS067,Karthik Dakdar,Male,2020,B.Tech,Computer Science & Engineering,7.5,PESIT South Campus,"E-City, Bengaluru",VTU,91.83,85.5,FTE
+452,1PE16CS001,Aashi Garg,Female,2020,B.Tech,Computer Science & Engineering,7.86,PESIT South Campus,"E-City, Bengaluru",VTU,86.8,90,FTE
+453,1pe16is078,Preetha S,Female,2020,B.Tech,Infromation Science & Engineering,7.47,PESIT South Campus,"E-City, Bengaluru",VTU,90%,8.2,FTE
+454,01fb16eec119,K U VARUNKUMAR,Male,2020,B.Tech,Electronics & Communication Engineering,9.33,PES University,Benagaluru,PES University,94,94,FTE + Internship (Mandatory)
+455,01FB16EEC242,Safal Deepak Pansare,Male,2020,B.Tech,Electronics & Communication Engineering,9.24,PES University,Benagaluru,PES University,93.83,96.8,FTE + Internship (Mandatory)
+456,01FB16EEC282,SIDDHARTH SINGH,Male,2020,B.Tech,Electronics & Communication Engineering,8.6,PES University,Benagaluru,PES University,90.17,91,FTE + Internship (Mandatory)
+457,01FB16EEC020,Aditya Mandeep Vakani,Male,2020,B.Tech,Electronics & Communication Engineering,8.1,PES University,Benagaluru,PES University,89,86,FTE + Internship (Mandatory)
+458,01FB16EEC204,Priyanka Koganti,Female,2020,B.Tech,Electronics & Communication Engineering,7.84,PES University,Benagaluru,PES University,88.50%,6.8,FTE + Internship (Mandatory)
+459,1PE16EC080,Meghana S,Female,2020,B.Tech,Electronics & Communication Engineering,7.66,PESIT South Campus,"E-City, Bengaluru",VTU,90.33,90.08,FTE
+460,1PE16CS142,Sanjana K Rao,Female,2020,B.Tech,Computer Science & Engineering,8.48,PESIT South Campus,"E-City, Bengaluru",VTU,94,93.33,FTE
+461,01FB16EEC367,PRANATHI B S,Female,2020,B.Tech,Electronics & Communication Engineering,9.026,PES University,Benagaluru,PES University,97,95,FTE
+462,1PE16CS175,Vibudh Vishal,Male,2020,B.Tech,Computer Science & Engineering,7.63,PESIT South Campus,"E-City, Bengaluru",VTU,87.8,95,FTE
+463,1PE16CS053,DEVINENI SAI KIRAN,Male,2020,B.Tech,Computer Science & Engineering,7.1,PESIT South Campus,"E-City, Bengaluru",VTU,96.80%,9.5,FTE
+464,01fb16ecs186,M Vinay rathnam ,Male,2020,B.Tech,Computer Science & Engineering,7.4,PES University,Benagaluru,PES University,96.5,9.4,FTE + Internship (Mandatory)
+465,01FB16ECS021,Achyutha B,Male,2020,B.Tech,Computer Science & Engineering,8.55,PES University,Benagaluru,PES University,97,97,FTE + Internship (Mandatory)
+466,1PE16IS100,T CHAITRA,Female,2020,B.Tech,Infromation Science & Engineering,8.26,PESIT South Campus,"E-City, Bengaluru",VTU,92.7,9.8,FTE
+467,1PE16IS108,Vishnu R Kumar,Male,2020,B.Tech,Infromation Science & Engineering,8.01,PESIT South Campus,"E-City, Bengaluru",VTU,92,92.16,FTE
+468,01FB16ECS255,Pragati Kamble,Female,2020,B.Tech,Computer Science & Engineering,7.79,PES University,Benagaluru,PES University,87,85,FTE + Internship (Mandatory)
+469,01FB16ECS372,Shreyas Sridhar,Male,2020,B.Tech,Computer Science & Engineering,9.07,PES University,Benagaluru,PES University,95%,10,FTE + Internship (Mandatory)
+470,01FB16EEC226,Riffath Sheriff,Female,2020,B.Tech,Electronics & Communication Engineering,8.42,PES University,Benagaluru,PES University,96.16,91.33,FTE + Internship (Mandatory)
+471,01fb16ecs197,Manoj H C,Male,2020,B.Tech,Computer Science & Engineering,7.86,PES University,Benagaluru,PES University,92,86,FTE + Internship (Mandatory)
+472,01FB16EEC365,Akshay,Male,2020,B.Tech,Electronics & Communication Engineering,9.5,PES University,Benagaluru,PES University,93.4,95,FTE + Internship (Mandatory)
+473,01FB16ECS437,Vedant Sethia,Male,2020,B.Tech,Computer Science & Engineering,8.28,PES University,Benagaluru,PES University,95.4,95,FTE + Internship (Mandatory)
+474,01FB16EEC165 ,N SANDESH KUMAR ,Male,2020,B.Tech,Electronics & Communication Engineering,7.86,PES University,Benagaluru,PES University,91.8,93,FTE + Internship (Mandatory)
+475,1PE16CS136,S Shraddha ,Female,2020,B.Tech,Computer Science & Engineering,8.15,PESIT South Campus,"E-City, Bengaluru",VTU,92.16,95,FTE
+476,01FB16EEC299 ,Sumanth Bhargava ,Male,2020,B.Tech,Electronics & Communication Engineering,7.03,PES University,Benagaluru,PES University,79.67,96,FTE + Internship (Mandatory)
+477,01FB16ECS064,Anmol Aeron,Male,2020,B.Tech,Computer Science & Engineering,8.33,PES University,Benagaluru,PES University,86,96,FTE + Internship (Mandatory)
+478,01FB16EEC118,K Shrilakshmi Bhat,Female,2020,B.Tech,Electronics & Communication Engineering,9.1,PES University,Benagaluru,PES University,96.6,97.6,FTE + Internship (Mandatory)
+479,01FB16ECS092,Burada Vivek,Male,2020,B.Tech,Computer Science & Engineering,7,PES University,Benagaluru,PES University,93.28,94.5,FTE + Internship (Mandatory)
+480,01FB16EEC133,Komal Chavan,Female,2020,B.Tech,Electronics & Communication Engineering,8.02,PES University,Benagaluru,PES University,87,96.8,FTE + Internship (Mandatory)
+481,01FB16ECS485,Akshara Gupta,Female,2020,B.Tech,Computer Science & Engineering,9.45,PES University,Benagaluru,PES University,93.4,100,FTE + Internship (Mandatory)
+482,01FB16EEC356,Aditya tripathi,Male,2020,B.Tech,Electronics & Communication Engineering,8.75,PES University,Benagaluru,PES University,82.4,95,FTE + Internship (Mandatory)
+483,01FB16ECS193,Manish Soni,Male,2020,B.Tech,Computer Science & Engineering,8.95,PES University,Benagaluru,PES University,96.16,90.56,FTE + Internship (Mandatory)
+484,01fb16eec290,Sourav Mahanty,Male,2020,B.Tech,Electronics & Communication Engineering,7.42,PES University,Benagaluru,PES University,86,95,FTE + Internship (Mandatory)
+485,01FB16ECS215,Muhammad Usman,Male,2020,B.Tech,Computer Science & Engineering,7.86,PES University,Benagaluru,PES University,91.67,91.17,FTE + Internship (Mandatory)
+486,01FB16ECS011,Abhin S Lingamaneni,Male,2020,B.Tech,Computer Science & Engineering,8.73,PES University,Benagaluru,PES University,88,95,FTE + Internship (Mandatory)
+487,01FB16ECS211,Mohammed Faizan,Male,2020,B.Tech,Computer Science & Engineering,7.82,PES University,Benagaluru,PES University,91.33,93.6,FTE + Internship (Mandatory)
+488,01FB16ECS467,Yashvanth Kumar,Male,2020,B.Tech,Computer Science & Engineering,7.7,PES University,Benagaluru,PES University,87,95,FTE + Internship (Mandatory)
+489,1PE16IS053,Manish Kumar,Male,2020,B.Tech,Infromation Science & Engineering,7.99,PESIT South Campus,"E-City, Bengaluru",VTU,87.4,94.4,FTE
+490,1PE16IS064,Gaurav Rajesh Naik,Male,2020,B.Tech,Infromation Science & Engineering,8.051,PESIT South Campus,"E-City, Bengaluru",VTU,83.16,91,FTE
+491,01FB16ECS060,Anirudh R Jakati,Male,2020,B.Tech,Computer Science & Engineering,8,PES University,Benagaluru,PES University,91.3,7.8,FTE
+492,01FB16ECS371,Shreyas Nitin Pujari,Male,2020,B.Tech,Computer Science & Engineering,7.65,PES University,Benagaluru,PES University,86.3,79.8,FTE
+493,01FB16ECS258,Pragya Agrawal,Female,2020,B.Tech,Computer Science & Engineering,9.18,PES University,Benagaluru,PES University,94.4,89.3,FTE
+494,01fb16ecs158,Karthik R,Male,2020,B.Tech,Computer Science & Engineering,7.76,PES University,Benagaluru,PES University,94,92,FTE + Internship (Mandatory)
+495,01FB16ECS322,Saahitya E,Male,2020,B.Tech,Computer Science & Engineering,9.21,PES University,Benagaluru,PES University,91,9.4,FTE
+496,01FB16ECS318,S Jayasurya,Male,2020,B.Tech,Computer Science & Engineering,8.31,PES University,Benagaluru,PES University,94,9.4,FTE
+497,01FB16ECS111,Devika Vishnu,Female,2020,B.Tech,Computer Science & Engineering,8.1,PES University,Benagaluru,PES University,91.3,87,FTE
+498,01FB16EEC194,Prajna Sadananda Hebbar,Female,2020,B.Tech,Electronics & Communication Engineering,7.58,PES University,Benagaluru,PES University,95.16,96.16,FTE + Internship (Mandatory)
+499,01FB16ECS046,Akshari nataraj,Female,2020,B.Tech,Computer Science & Engineering,7,PES University,Benagaluru,PES University,81,88,FTE + Internship (Mandatory) for PESU students
+500,01FB16EEC006,Abhinav Bohara,Male,2020,B.Tech,Electronics & Communication Engineering,8.1,PES University,Benagaluru,PES University,88.6,91,FTE + Internship (Mandatory) for PESU students
+501,01FB16ECS044,Akondi VyasaSai Ashish Kumar,Male,2020,B.Tech,Computer Science & Engineering,7.87,PES University,Benagaluru,PES University,97.2,85.6,FTE + Internship (Mandatory) for PESU students
+502,01FB16ECS006,Aayushi Sanghi,Female,2020,B.Tech,Computer Science & Engineering,9.2,PES University,Benagaluru,PES University,96,95,FTE + Internship (Mandatory) for PESU students
+503,1PE16CS184,Fazil Nisar Sheergogri,Male,2020,B.Tech,Computer Science & Engineering,7,PESIT South Campus,"E-City, Bengaluru",VTU,91,9.4,FTE for PESIT South Campus students
+504,1pe16ec112,Preeti Mehtre,Female,2020,B.Tech,Electronics & Communication Engineering,7.499,PESIT South Campus,"E-City, Bengaluru",VTU,89.19,95,FTE for PESIT South Campus students
+505,01FB16ECS151,K Rahul Kudva,Male,2020,B.Tech,Computer Science & Engineering,8.2,PES University,Benagaluru,PES University,95.5,9.8,FTE for PESIT South Campus students
+506,01FB16ECS408,Harshvardhan Surolia,Male,2020,B.Tech,Computer Science & Engineering,9.46,PES University,Benagaluru,PES University,88,92,FTE + Internship (Mandatory) for PESU students
+507,01FB16ECS414,T H Sanjana,Female,2020,B.Tech,Computer Science & Engineering,7.3,PES University,Benagaluru,PES University,88,92,FTE for PESIT South Campus students
+508,01FB16ECS219,Nakul Srivathsa,Male,2020,B.Tech,Computer Science & Engineering,9.35,PES University,Benagaluru,PES University,95.2,9.6,FTE for PESIT South Campus students
