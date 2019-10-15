@@ -10,7 +10,8 @@ final_df['CGPA'] = cgpa
 # final_df.to_dict('records')
 
 
-client = MongoClient('mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb', 27017)
+# client = MongoClient('mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb', 27017)
+client = MongoClient('localhost', 27017)
 db = client.sepcs
 collection = db.user_data
 collection.insert_many(final_df.to_dict('records'))
