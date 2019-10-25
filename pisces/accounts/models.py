@@ -1,5 +1,5 @@
 from mongoengine import Document, fields
-import datetime
+from datetime import datetime
 
 
 # Create your models here.
