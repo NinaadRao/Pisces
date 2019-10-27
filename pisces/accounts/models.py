@@ -4,6 +4,7 @@ from datetime import datetime
 
 # Create your models here.
 class Company(Document):
+    meta = {'collection':'company_data'}
     company = fields.StringField()
     postal_address = fields.StringField()
     about_the_company = fields.StringField()
@@ -22,3 +23,18 @@ class Company(Document):
     registration_deadline = fields.DateTimeField(default=datetime.now, blank=True)
     test_date = fields.DateTimeField(default=datetime.now, blank=True)
     interview_date = fields.DateTimeField(default=datetime.now, blank=True)
+
+
+class User(Document):
+    meta = {'collection':'user_data'}
+    name = fields.StringField()
+    srn = fields.StringField()
+    gender = fields.StringField()
+    cgpa = fields.StringField()
+    tenth = fields.FloatField()
+    twelfth = fields.FloatField()
+    year_of_pass = fields.IntField()
+    highest_qualification = fields.StringField()
+    college = fields.StringField()
+    department = fields.StringField()
+    password = fields.StringField()
