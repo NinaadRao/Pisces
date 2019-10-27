@@ -17,12 +17,18 @@ class login(TemplateView):
         if(form.is_valid()):
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
-            query = {'srn__exact':username,'password__exact':password}
-            result = User(query)
+            print(username,password)
+            query = {'srn':username,'password':password}
+            result = User.objects.filter(srn=username,password=password)
+            print(len(result))
+            #print(result)
+
             form = UsersLoginForm()
-            if(result):
+            #print(type(result),result.objects)
+            
+            if(len(result)):
                 return render(request,'success.html',{"form":form})
-            return render(request,self.template_name,{"form":form})
+            return render(request,self.template_name,{"form":form,"title":'Login'})
 
 
 '''def login_view(request):
