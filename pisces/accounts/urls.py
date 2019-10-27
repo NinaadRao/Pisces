@@ -1,10 +1,10 @@
 from django.conf.urls import url
-from .views import (
-    login_view,
-    register_view,
-    logout_view,
-)
+from .views import *
 
+urlpatterns = [
+	url(r"^login$",login.as_view(),name = "login")
+	]
+'''
 urlpatterns = [
     url(r"^login/$", login_view, name = "login"),
 ]
@@ -15,4 +15,4 @@ urlpatterns += [
 
 urlpatterns += [
     url(r'^logout/$', logout_view, name = "logout"),
-]
+]'''
