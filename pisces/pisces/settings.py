@@ -84,9 +84,7 @@ WSGI_APPLICATION = 'pisces.wsgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': '',
-    }
+    
 }
 
 # Password validation
@@ -128,6 +126,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MONGO_DATABASE_NAME = 'sepcs'
-MONGO_HOST = '127.0.0.1'
+MONGO_HOST = 'mongodb://127.0.0.1'
 MONGO_PORT = 27017
 connect(MONGO_DATABASE_NAME, host=MONGO_HOST, port=MONGO_PORT)
