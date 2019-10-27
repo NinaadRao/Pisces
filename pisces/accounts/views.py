@@ -2,17 +2,37 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import UsersLoginForm, UsersRegisterForm
 from django.http import HttpResponseRedirect
-
+from django.views.generic import TemplateView
 # Create your views here.
+from mongoengine import *
+from .models import *
+
+class login(TemplateView):
+    template_name='accounts/form.html'
+    def get(self,request):
+        form = UsersLoginForm()
+        return render(request, self.template_name, {"form":form,"title":'Login'})
+    def post(self,request):
+        form = UsersLoginForm(request.POST)
+        if(form.is_valid()):
+            username = form.cleaned_data.get("username")
+            password = form.cleaned_data.get("password")
+            query = {'srn__exact':username,'password__exact':password}
+            result = User(query)
+            form = UsersLoginForm()
+            if(result):
+                return render(request,'success.html',{"form":form})
+            return render(request,self.template_name,{"form":form})
 
 
-def login_view(request):
+'''def login_view(request):
     form = UsersLoginForm(request.POST or None)
+    print(form.is_valid())
     if form.is_valid():
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password")
-        user = authenticate(username = username, password = password)
-        login(request, user)
+        #user = authenticate(username = username, password = password)
+        #login(request, user)
         return redirect("/")
     return render(request, "accounts/form.html", {
         "form" : form,
@@ -38,4 +58,4 @@ def register_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect("/")
+    return HttpResponseRedirect("/")'''
