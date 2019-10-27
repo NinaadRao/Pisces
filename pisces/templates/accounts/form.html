@@ -62,7 +62,7 @@ body {
                 {{form.as_p }}
                 </label>
                 <br>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">{{title}}</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" name ="login">{{title}}</button>
                 <br>
                 {% if title == "Login" %}<h5>Forgot Password? <a href = "/accounts/register">Click Here</a></h5>{% endif %}
                 {% if title == "Register" %}<h5>Already Registered? <a href = "/accounts/login">Login Here</a></h5>{% endif %}
