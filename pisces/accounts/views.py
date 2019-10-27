@@ -7,7 +7,6 @@ from django.views.generic import TemplateView
 from mongoengine import *
 from .models import *
 
-from ..pisces import settings
 
 class login(TemplateView):
     template_name = 'accounts/form.html'
