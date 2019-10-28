@@ -1,25 +1,24 @@
 from django.contrib.auth import authenticate, get_user_model
 from django import forms
-
+from .models import  *
 
 class UsersLoginForm(forms.Form):
     username = forms.CharField()
-    password = forms.CharField(widget = forms.PasswordInput ,)
+    password = forms.CharField(widget=forms.PasswordInput, )
 
     def __init__(self, *args, **kwargs):
         super(UsersLoginForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({
             'class': 'form-control',
-            "name" :"username"})
+            "name": "username"})
         self.fields['password'].widget.attrs.update({
             'class': 'form-control',
-            "name" :"password"})
+            "name": "password"})
 
     def clean(self, *args, **keyargs):
         username = self.cleaned_data.get("username")
         password = self.cleaned_data.get("password")
 
-        
         return super(UsersLoginForm, self).clean(*args, **keyargs)
 
 
@@ -69,9 +68,6 @@ class UsersRegisterForm(forms.ModelForm):
         if email_qs.exists():
             raise forms.ValidationError("Email is already registered")
 
-        username_qs = User.objects.filter(username=username)
-        if username_qs.exists():
-            raise forms.ValidationError("User with this username already registered")
 
         # you can add more validations for password
 
@@ -79,3 +75,32 @@ class UsersRegisterForm(forms.ModelForm):
             raise forms.ValidationError("Password must be greater than 8 characters")
 
         return super(UsersRegisterForm, self).clean(*args, **keyargs)
+
+
+class UserUpdatePassword(forms.ModelForm):
+    oldPassword = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput)
+    confirmPassword = forms.CharField(widget=forms.PasswordInput)
+
+    def __init__(self, *args, **kwargs):
+        super(UserUpdatePassword, self).__init__(*args, **kwargs)
+        self.fields['oldPassword'].widget.attrs.update({
+            'class': 'form-control',
+            "name": "oldPassword"})
+        self.fields['password'].widget.attrs.update({
+            'class': 'form-control',
+            "name": "password"})
+        self.fields['confirmPassword'].widget.attrs.update({
+            'class': 'form-control',
+            "name": "confirmPassword"})
+
+    def clean(self,*args,**kwargs):
+        password = self.cleaned_data.get("password")
+        cPassword = self.cleaned_data.get("confirmPassword")
+        oldPassword = self.cleaned_data.get("oldPassword")
+
+        if len(password)<8:
+            raise forms.ValidationError('Password must be greater than 8 characters')
+        if password!=cPassword:
+            raise forms.ValidationError("password does not match")
+        return super(UserUpdatePassword, self).clean(*args, **kwargs)

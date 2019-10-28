@@ -33,5 +33,4 @@ from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # print('This is the static root',settingsSTATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
-print('hello',settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)

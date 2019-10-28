@@ -24,7 +24,8 @@ SECRET_KEY = 'w^v=s139#x)7xi3s5a*i^buaj&#6g3g+(%+xlkg^@)6yqr^jv('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+SESSION_ENGINE = 'django_mongoengine.sessions'
+SESSION_SERIALIZER = 'django_mongoengine.sessions.BSONSerializer'
 ALLOWED_HOSTS = []
 
 # Application definition
