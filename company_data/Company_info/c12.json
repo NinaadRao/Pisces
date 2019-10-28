@@ -1,0 +1,55 @@
+{
+    "Company": "NXP Semiconductors",
+    "Postal address": "Building no. 2 and 3 , sector 16-A Filmcity , Noida, UP - 201301",
+    "About the Company": "",
+    "Company Sector": "Engineering/R & D/Semiconductor",
+    "Mode of Selection": [
+        "Written",
+        "Interview"
+    ],
+    "Interview Process": "Campus",
+    "Job Description": null,
+    "Disciplines": {
+        "BE/BTech": [
+            "Electronics & Communication Engineering",
+            "Computer Science Engineering",
+            "Information Science and Engineering",
+            "Electrical and Electronics Engineering"
+        ],
+        "MTech": [
+            "Electronics & Communication Engineering",
+            "Computer Science Engineering",
+            "Electrical and Electronics Engineering"
+        ]
+    },
+    "Criteria": {
+        "10th": null,
+        "12th": null,
+        "BE": {
+            "CGPA": 7.5,
+            "Percentage": null
+        },
+        "MTech/MCA": {
+            "CGPA": 7.5,
+            "Percentage": null
+        }
+    },
+    "Position": "Graduate Hire- G1",
+    "Location": "Noida and Bangalore",
+    "Job Status": [
+        "Full Time Employment + Internship (Mandatory)",
+        "Full Time Employment only",
+        "Internship only"
+    ],
+    "Compensation": {
+        "Full Time": {
+            "Total CTC UG": "12.15 L",
+            "Total CTC PG": "13.15 L"
+        }
+    },
+    "Bond/Service agreement details": "No",
+    "Website": "www.nxp.com",
+    "Registration Deadline": "2019-10-29T10:30:0.0Z",
+    "Test Date": "2019-10-30",
+    "Interview Data": "2019-10-30"
+}
