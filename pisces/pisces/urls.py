@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf.urls import url, include
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
-
+from .settings import *
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
@@ -26,5 +26,11 @@ urlpatterns = [
 urlpatterns += [
 
     url(r'^accounts/', include(("accounts.urls", "accounts"), namespace="accounts")),
-    url(r'^$', login_required(TemplateView.as_view(template_name="home.html"))),
+
 ]
+from . import  settings
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+# print('This is the static root',settingsSTATIC_ROOT)
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)
