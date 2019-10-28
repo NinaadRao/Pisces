@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from .forms import UsersLoginForm, UsersRegisterForm
-from django.http import HttpResponseRedirect
+from .forms import UsersLoginForm, UserUpdatePassword
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import TemplateView
 # Create your views here.
 from mongoengine import *
@@ -30,9 +30,47 @@ class login(TemplateView):
             # print(type(result),result.objects)
 
             if len(result):
-                # request.session['username'] = username
+                request.session['username'] = username
                 return render(request, 'success.html', {"form": form})
             return render(request, self.template_name, {"form": form, "title": 'Login'})
+
+
+class logout(TemplateView):
+    template_name = 'accounts/form.html'
+
+    def get(self, request):
+        if 'username' in request.session:
+            del request.session['username']
+            form = UsersLoginForm()
+            return redirect('/accounts/login')
+        else:
+            return HttpResponse(status=400)
+
+    def post(self, request):
+        return HttpResponse(status=400)
+
+
+class updatePassword(TemplateView):
+    template_name = 'success.html'
+    def post(self, request):
+        form = UserUpdatePassword(request.POST)
+        if form.is_valid():
+            if 'username' in request.session:
+                password = form.cleaned_data.get("password")
+                oldPassword = form.cleaned_data.get('oldPassword')
+                actualPassword = (User.objects.get(srn = request.session['username'])).password
+                if actualPassword == oldPassword:
+                    updatePasswordObject = User.objects.get(srn=request.session['username'])
+                    updatePasswordObject.password = password
+                    updatePasswordObject.save()
+                    return HttpResponse(status = 200)
+                else:
+                    return HttpResponse(status = 400)
+            else:
+                return HttpResponse(status = 400)
+        return HttpResponse(status = 400)
+
+
 
 
 '''def login_view(request):
