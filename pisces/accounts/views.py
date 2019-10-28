@@ -7,28 +7,32 @@ from django.views.generic import TemplateView
 from mongoengine import *
 from .models import *
 
+
 class login(TemplateView):
-    template_name='accounts/form.html'
-    def get(self,request):
+    template_name = 'accounts/form.html'
+
+    def get(self, request):
         form = UsersLoginForm()
-        return render(request, self.template_name, {"form":form,"title":'Login'})
-    def post(self,request):
+        return render(request, self.template_name, {"form": form, "title": 'Login'})
+
+    def post(self, request):
         form = UsersLoginForm(request.POST)
-        if(form.is_valid()):
+        if form.is_valid():
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
-            print(username,password)
-            query = {'srn':username,'password':password}
-            result = User.objects.filter(srn=username,password=password)
+            print(username, password)
+            query = {'srn': username, 'password': password}
+            result = User.objects.filter(srn=username, password=password)
             print(len(result))
-            #print(result)
+            # print(result)
 
             form = UsersLoginForm()
-            #print(type(result),result.objects)
-            
-            if(len(result)):
-                return render(request,'success.html',{"form":form})
-            return render(request,self.template_name,{"form":form,"title":'Login'})
+            # print(type(result),result.objects)
+
+            if len(result):
+                # request.session['username'] = username
+                return render(request, 'success.html', {"form": form})
+            return render(request, self.template_name, {"form": form, "title": 'Login'})
 
 
 '''def login_view(request):
