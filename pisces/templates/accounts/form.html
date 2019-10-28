@@ -56,10 +56,10 @@ body {
 
 {% block content %}
 <div class = "container">
-    <div class = "col-md-6 col-md-offset-0">
+    <div class = "col-md-6 mx-auto">
         <img src="{% static 'images/peslogo.png' %}" alt="PES Logo">
     </div>
-    <div class = "col-md-6 col-md-offset-6">
+    <div class = "col-md-6 mx-auto">
         <div class="wrapper">
             <form class="form-signin" method = 'POST' action= '' enctype = "multipart/form-data" style="margin-top: -30px; margin-bottom: -18px;">
                 {% csrf_token %}

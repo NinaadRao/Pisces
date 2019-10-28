@@ -31,7 +31,7 @@ class login(TemplateView):
 
             if len(result):
                 request.session['username'] = username
-                return render(request, 'success.html', {"form": form})
+                return render(request, 'home_user.html', {"form": form})
             return render(request, self.template_name, {"form": form, "title": 'Login'})
 
 
