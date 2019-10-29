@@ -26,6 +26,7 @@ urlpatterns = [
 urlpatterns += [
 
     url(r'^accounts/', include(("accounts.urls", "accounts"), namespace="accounts")),
+    url(r'^coordinator/', include(("coordinator.urls", "coordinator"), namespace="coordinator"))
 
 ]
 from . import  settings
