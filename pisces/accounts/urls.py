@@ -3,7 +3,9 @@ from .views import *
 
 urlpatterns = [
     url(r"^login$", login.as_view(), name="login"),
-    url(r"^logout$", logout.as_view(), name='logout')
+    url(r"^logout$", logout.as_view(), name='logout'),
+    url(r"^update",updatePassword.as_view(),name="updatePassword"),
+    url(r"^policy$",policy.as_view(),name="policy")
 ]
 '''
 urlpatterns = [

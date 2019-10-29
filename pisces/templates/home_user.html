@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+
 {% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
 {% block style %}
 <style>
 body {
@@ -12,11 +15,10 @@ body {
 <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      
+      
+      <div class="collapse navbar-collapse" id="navbarResponsive" style="font-size:20px;">
+         <img src="{% static 'images/peslogo.png' %}" alt="PES Logo" height="55px">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home
@@ -33,108 +35,86 @@ body {
             <a class="nav-link" href="#">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Policy</a>
+            <a class="nav-link" href="/accounts/policy">Policy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/accounts/logout">Logout</a>
+          <div class="dropdown">
+            <span class="caret" style="color:white"></span>
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="color:white;">
+           </button>
+            <ul class="dropdown-menu" background-color="#212529">
+              <li background-color="#212529">  <a class="nav-link" href="/accounts/logout"><font color="grey">Logout</font></a></li>
+            <li background-color="#212529"><a class="nav-link" href="/accounts/update"><font color="grey">Update Password</font></a></li></ul></div>
+          </li>
+              
+            </ul>
+          </div>
+          
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <!-- Header -->
-  <header class="bg-primary py-5 mb-5">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">Placement Coordination System</h1>
-          <p class="lead mb-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
-        </div>
-      </div>
+<br>
+<div class="text-center">
+{% if gender == "male" %}
+<div class = "text-center">
+        <img class="img-circle" src="{% static 'images/male.png' %}" alt="gender" width="200"  >
     </div>
-  </header>
+    {% endif %}
 
-  <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-      <div class="col-md-8 mb-5">
-        <h2>What We Do</h2>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-        <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
-      </div>
-      <div class="col-md-4 mb-5">
-        <h2>Contact Us</h2>
-        <hr>
-        <address>
-          <strong>Start Bootstrap</strong>
-          <br>3481 Melrose Place
-          <br>Beverly Hills, CA 90210
-          <br>
-        </address>
-        <address>
-          <abbr title="Phone">P:</abbr>
-          (123) 456-7890
-          <br>
-          <abbr title="Email">E:</abbr>
-          <a href="mailto:#">name@example.com</a>
-        </address>
-      </div>
+{% if gender == "female" %}
+<div class = "text-center">
+        <img class="img-circle" src="{% static 'images/female.png' %}" alt="gender" width="200"  >
     </div>
-    <!-- /.row -->
+    {% endif %}
+  <div class = "text-center"><font size="7">{{name}}</font></div>
 
-    <div class="row">
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
+</div>
+<div class="container text-center hoverable">
+  <div class = "row">
+
+  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">Pursuing</h3>
+      <h4 class="card-text">{{highest_qualification}}</h4>
     </div>
-    <!-- /.row -->
-
+    </div>
+  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">Branch</h3>
+      <h4 class="card-text">{{department}}</h4>
+    </div>
   </div>
-  <!-- /.container -->
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; PisCeS 2019</p>
+  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">Year of Pass</h3>
+      <h4 class="card-text">{{year_of_pass}}</h4>
     </div>
-    <!-- /.container -->
-  </footer>
+  
+  </div>
+</div>
+<div class = "row">
+  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">CGPA</h3>
+      <h4 class="card-text">{{cgpa}}</h4>
+    </div>
+  </div>
+  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">10th Standard</h3>
+      <h4 class="card-text">{{tenth}}%</h4>
+    </div>
+  </div>
+  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">12th Standard</h3>
+      <h4 class="card-text">{{twelfth}}%</h4>
+    </div>
+  </div>
+</div>
+
+</div>
 {% endblock %}
 
