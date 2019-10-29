@@ -1,0 +1,51 @@
+{
+    "Company": "Itron India Pvt Ltd.",
+    "Postal Address": "Itron India Private Limited, Unit No. 501, 502 at 5th & Unit 602 at 6th Floor",
+    "About the Company": "ITRON : is an American technology company ",
+    "Company Sector": "IT & ITES",
+    "Mode of Selection": [
+        "Online, Interview"
+    ],
+    "Interview Process": "Campus",
+    "Job Description": "",
+    "Disciplines": {
+        "BE/BTech": [
+            "Electronics & Communication Engineering, Computer Science Engineering, Information Science and Engineering, Electrical and Electronics Engineering"
+        ],
+        "MTech": [
+            "Electronics & Communication Engineering, Computer Science Engineering, Information Science and Engineering, Electrical and Electronics Engineering"
+        ],
+        "MCA": [
+            ""
+        ]
+    },
+    "Criteria": {
+        "10th": "70%",
+        "12th": "70%",
+        "BE/BTech": {
+            "CGPA": "7",
+            "Percentage": "70"
+        },
+        "MTech/MCA": {
+            "CGPA": "7",
+            "Percentage": "70"
+        }
+    },
+    "Position": "Software Engineer",
+    "Location": "Bangalore",
+    "Job Status": [
+        "Full Time Employment only, Internship only"
+    ],
+    "Compensation": {
+        "Full Time": {
+            "Base Pay": "800000",
+            "Total CTC": ""
+        },
+        "Internship": "25000"
+    },
+    "Bond/Service agreement details": "",
+    "Website": "www.itron.com",
+    "Registration Deadline": "2019-11-21",
+    "Test Date": "11/27/2019",
+    "Interview Date": "2019-11-28"
+}
