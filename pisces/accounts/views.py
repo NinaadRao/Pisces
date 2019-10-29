@@ -13,6 +13,21 @@ class login(TemplateView):
 
     def get(self, request):
         form = UsersLoginForm()
+        if 'username' in request.session:
+            result = User.objects.filter(srn=request.session['username'])
+            if len(result):
+
+                details = {}
+                for i in result[0]:
+                    details[i]=result[0][i]
+                print(details)
+                details['form'] = form
+                del details['password']
+                del details['id']
+                details['gender']= str(details['gender']).lower()
+                return render(request, 'home_user.html', details)
+            return render(request, 'home_user.html', details)
+
         return render(request, self.template_name, {"form": form, "title": 'Login'})
 
     def post(self, request):
@@ -31,9 +46,20 @@ class login(TemplateView):
 
             if len(result):
                 request.session['username'] = username
-                return render(request, 'home_user.html', {"form": form})
+                details = {}
+                for i in result[0]:
+                    details[i]=result[0][i]
+                print(details)
+                details['form'] = form
+                del details['password']
+                del details['id']
+                details['gender']= str(details['gender']).lower()
+                return render(request, 'home_user.html', details)
             return render(request, self.template_name, {"form": form, "title": 'Login'})
-
+class policy(TemplateView):
+    template_name = 'policy.html'
+    def get(self, request):
+        return render(request,self.template_name)
 
 class logout(TemplateView):
     template_name = 'accounts/form.html'
@@ -51,26 +77,38 @@ class logout(TemplateView):
 
 
 class updatePassword(TemplateView):
-    template_name = 'success.html'
+    template_name = 'accounts/updatePassword.html'
+
+    def get(self, request):
+        if 'username' in request.session:
+            form = UserUpdatePassword()
+            return render(request, self.template_name,
+                          {'form': form, 'title': 'Change Password', 'user': request.session['username']})
+
     def post(self, request):
         form = UserUpdatePassword(request.POST)
         if form.is_valid():
             if 'username' in request.session:
-                password = form.cleaned_data.get("password")
+                password = form.cleaned_data.get("newPassword")
                 oldPassword = form.cleaned_data.get('oldPassword')
-                actualPassword = (User.objects.get(srn = request.session['username'])).password
+                actualPassword = (User.objects.get(srn=request.session['username'])).password
+                print('passwords', actualPassword, password, oldPassword)
                 if actualPassword == oldPassword:
+                    print('new', password)
                     updatePasswordObject = User.objects.get(srn=request.session['username'])
-                    updatePasswordObject.password = password
+                    updatePasswordObject.update(set__password=password)
+                    print(updatePasswordObject.password)
+
                     updatePasswordObject.save()
-                    return HttpResponse(status = 200)
+                    print(request.session)
+                    del request.session['username']
+                    # del request.session['password']
+                    return redirect("/accounts/login")
                 else:
-                    return HttpResponse(status = 400)
+                    return HttpResponse(status=400)
             else:
-                return HttpResponse(status = 400)
-        return HttpResponse(status = 400)
-
-
+                return HttpResponse(status=400)
+        return HttpResponse(status=400)
 
 
 '''def login_view(request):
