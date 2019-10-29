@@ -11,3 +11,10 @@ class Company(DynamicDocument):
 class User(DynamicDocument):
     meta = {'collection': 'user_data'}
 
+
+class Scheduling(DynamicDocument):
+    meta = {'collection': 'scheduling_information'}
+
+
+class Labs(DynamicDocument):
+    meta = {'collection': 'labs'}
