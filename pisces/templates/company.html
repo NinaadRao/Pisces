@@ -25,12 +25,12 @@ body {
          <img src="{% static 'images/peslogo.png' %}" alt="PES Logo" height="55px">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="/students/homepage">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/students/company">Companies</a>
+            <a class="nav-link" href="#">Companies</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Schedule</a>
@@ -161,65 +161,77 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
           </div>
       </div>
         </div></div></div>
-<div class="text-center">
-{% if gender == "male" %}
-<div class = "text-center">
-        <img class="img-circle" src="{% static 'images/male.png' %}" alt="gender" width="200"  >
-    </div>
-    {% endif %}
+ {% for company in details %}
+    <div  id = "{{ company.id }}" class="modal fade"  role="dialog" >
+                <div class="modal-dialog" >
+                    <div class="modal-content" >
+                        <div class="modal-body">
 
-{% if gender == "female" %}
-<div class = "text-center">
-        <img class="img-circle" src="{% static 'images/female.png' %}" alt="gender" width="200"  >
-    </div>
-    {% endif %}
-  <div class = "text-center"><font size="7">{{name}}</font></div>
+                        {% for key,value in company.items %}
+                {% if key == "Company" %}
+                    {{key}} : {{value}}<br>
+                {% elif key == "Company Sector" %}
+                    {{key}} : {{value}}<br>
+                {% elif key == "Compensation" %}
+                    {% for j,k in value.items %}
+                        {{j}}:<br>
+                        {% if j == "Full Time" %}
+                            {% for total,cost in k.items %}
 
-</div>
-<div class="container text-center hoverable">
-  <div class = "row">
+                                    &nbsp &nbsp &nbsp &nbsp{{total}}:{{cost}} <br>
 
-  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
-    <div class="card-body">
-      <h3 class="card-title">Pursuing</h3>
-      <h4 class="card-text">{{highest_qualification}}</h4>
+                            {% endfor %}
+                        {% elif j == "Internship" %}
+                            &nbsp &nbsp &nbsp &nbsp{{k}}<br>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+<</div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+<div class="container text-center">
+
+    {% for company in details %}
+
+    <div class ="card bg-light" style="margin:15px;">
+        <div class="card-body">
+            {% for key,value in company.items %}
+
+                {% if key == "Company" %}
+                    {{key}} : {{value}}<br>
+                {% elif key == "Company Sector" %}
+                    {{key}} : {{value}}<br>
+                {% elif key == "Compensation" %}
+                    {% for j,k in value.items %}
+                        {{j}}:
+                        {% if j == "Full Time" %}
+                            {% for total,cost in k.items %}
+                                {% if total == 'Total CTC' %}
+                                    {{cost}} <br>
+                                {% endif %}
+                            {% endfor %}
+                        {% elif j == "Internship" %}
+                            {{k}}<br>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            <a href="#{{ company.id }}" class="btn btn-primary" data-toggle="modal" data-target="#{{ company.id }}">Details</a>
+        </div>
+
+
+
+
     </div>
-    </div>
-  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
-    <div class="card-body">
-      <h3 class="card-title">Branch</h3>
-      <h4 class="card-text">{{department}}</h4>
-    </div>
-  </div>
-  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
-    <div class="card-body">
-      <h3 class="card-title">Year of Pass</h3>
-      <h4 class="card-text">{{year_of_pass}}</h4>
-    </div>
-  
-  </div>
-</div>
-<div class = "row">
-  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
-    <div class="card-body">
-      <h3 class="card-title">CGPA</h3>
-      <h4 class="card-text">{{cgpa}}</h4>
-    </div>
-  </div>
-  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
-    <div class="card-body">
-      <h3 class="card-title">10th Standard</h3>
-      <h4 class="card-text">{{tenth}}%</h4>
-    </div>
-  </div>
-  <div class="col-md-4 card bg-light hoverable" style="width: 18rem;">
-    <div class="card-body">
-      <h3 class="card-title">12th Standard</h3>
-      <h4 class="card-text">{{twelfth}}%</h4>
-    </div>
-  </div>
+
+
+
+  {% endfor %}
 </div>
 
-</div>
 {% endblock %}
 

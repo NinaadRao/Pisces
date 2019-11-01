@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 # Create your models here.
-class Company(Document):
+class Company(DynamicDocument):
     meta = {'collection':'company_data'}
     # company = fields.StringField()
     # postal_address = fields.StringField()
@@ -38,3 +38,10 @@ class User(DynamicDocument):
     # college = fields.StringField()
     # department = fields.StringField()
     # password = fields.StringField()
+
+class scheduling_information(DynamicDocument):
+    meta = {'collection':'scheduling_information'}
+
+
+class labs(DynamicDocument):
+    meta = {'collection':'labs'}
