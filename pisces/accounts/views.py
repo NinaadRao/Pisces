@@ -13,20 +13,7 @@ class login(TemplateView):
 
     def get(self, request):
         form = UsersLoginForm()
-        if 'username' in request.session:
-            result = User.objects.filter(srn=request.session['username'])
-            if len(result):
 
-                details = {}
-                for i in result[0]:
-                    details[i]=result[0][i]
-                print(details)
-                details['form'] = form
-                del details['password']
-                del details['id']
-                details['gender']= str(details['gender']).lower()
-                return render(request, 'home_user.html', details)
-            return render(request, 'home_user.html', details)
 
         return render(request, self.template_name, {"form": form, "title": 'Login'})
 
@@ -54,12 +41,9 @@ class login(TemplateView):
                 del details['password']
                 del details['id']
                 details['gender']= str(details['gender']).lower()
-                return render(request, 'home_user.html', details)
+                return redirect('/students/homepage')
             return render(request, self.template_name, {"form": form, "title": 'Login'})
-class policy(TemplateView):
-    template_name = 'policy.html'
-    def get(self, request):
-        return render(request,self.template_name)
+
 
 class logout(TemplateView):
     template_name = 'accounts/form.html'
