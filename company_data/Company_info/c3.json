@@ -48,7 +48,7 @@
     },
     "Bond/Service agreement details": "No",
     "Website": "https://draup.com/",
-    "Registration Deadline": "2019-10-06",
+    "Registration Deadline": "2019-10-06T23:59:0.0Z",
     "Test Date": "2019-10-22",
     "Interview Data": "2019-10-23"
 }
