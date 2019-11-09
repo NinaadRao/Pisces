@@ -1,0 +1,47 @@
+{
+    "Company": "Atlassian LLP",
+    "Postal address": "4C, 10th Floor, Ecoworld, Adarsh Palms Retreat, Bangalore 560103",
+    "About the Company": "www.atlassian.com",
+    "Company Sector": "IT & ITES",
+    "Mode of Selection": [
+        "Online",
+        "Interview"
+    ],
+    "Interview Process": "Campus",
+    "Job Description": null,
+    "Disciplines": {
+        "BE/BTech": [
+            "Electronics & Communication Engineering",
+            "Computer Science Engineering",
+            "Information Science and Engineering"
+        ]
+    },
+    "Criteria": {
+        "10th": null,
+        "12th": null,
+        "BE": {
+            "CGPA": 7,
+            "Percentage": null
+        },
+        "MTech/MCA": {
+            "CGPA": null,
+            "Percentage": null
+        }
+    },
+    "Position": "Member of Technical Team (Software Development Engineer)",
+    "Location": "Bangalore",
+    "Job Status": [
+        "Full Time Employment + Internship (Mandatory)"
+    ],
+    "Compensation": {
+        "Full Time": {
+            "Total CTC": "49 LPA"
+        },
+        "Internship": ""
+    },
+    "Bond/Service agreement details": "No",
+    "Website": "www.atlassian.com",
+    "Registration Deadline": "2019-10-25T14:30:0.0Z",
+    "Test Date": "2019-10-30",
+    "Interview Data": "2019-10-31"
+}
