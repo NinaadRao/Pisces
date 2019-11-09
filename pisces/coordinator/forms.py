@@ -12,10 +12,9 @@ class DateForm(forms.Form):
 
 
 class BookForm(forms.Form):
-
-    CHOICES = [(['B-101', '10:00'], 'B-101'), (['B-201', '10:00'], 'B-201')]
-    choice_field = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=CHOICES)
+    chosen_labs_field = forms.CharField(widget=forms.HiddenInput())
 
     def __init__(self, *args, **kwargs):
         super(BookForm, self).__init__(*args, **kwargs)
-        self.fields['choice_field'].widget.attrs.update({})
+        print(self.fields)
+        self.fields['chosen_labs_field'].widget.attrs.update({'id': "csn_labs_field"})
