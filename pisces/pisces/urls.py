@@ -29,9 +29,10 @@ urlpatterns += [
     url(r'^students/',include(("students.urls","accounts"), namespace = "students")),
 
 ]
-from . import  settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # print('This is the static root',settingsSTATIC_ROOT)
+from django.conf import settings
+
 urlpatterns += staticfiles_urlpatterns()
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
