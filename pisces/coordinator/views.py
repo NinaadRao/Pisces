@@ -2,7 +2,7 @@ from bson import ObjectId
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
-from .forms import DateForm
+from .forms import *
 from .models import *
 
 
@@ -12,6 +12,35 @@ class DateView(TemplateView):
     def get(self, request):
         form = DateForm()
         return render(request, self.template_name, {"form": form, "title": 'Date'})
+
+
+class BookView(TemplateView):
+    template_name = "coordinator/booking.html"
+
+    def get(self, request):
+        form = BookForm()
+        return render(request, self.template_name, {"form": form, "title": 'Book'})
+
+    def post(self, request):
+        choices = request.POST.getlist("choice_field")
+        # company_visit_id = request.POST["company_visit_id"]
+
+        company_visit_id = "5da49c32106ac2329399c81a"
+
+        lab_object_ids = []
+        Labs.objects
+
+        Scheduling.update_many({"_id": company_visit_id},
+                               {
+                                   "$set": {
+                                       "time": ["11:00", "12:00"],
+                                       "labs": []
+                                   }
+                               })
+
+
+        print(choices)
+        return render(request, self.template_name)
 
 
 class LabListView(TemplateView):
