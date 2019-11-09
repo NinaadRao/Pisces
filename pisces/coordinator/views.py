@@ -5,68 +5,54 @@ from django.views.generic import TemplateView
 from .forms import *
 from .models import *
 
-
-class DateView(TemplateView):
-    template_name = "coordinator/labs_list.html"
-
-    def get(self, request):
-        form = DateForm()
-        return render(request, self.template_name, {"form": form, "title": 'Date'})
-
-
-class BookView(TemplateView):
-    template_name = "coordinator/booking.html"
-
-    def get(self, request):
-        form = BookForm()
-        return render(request, self.template_name, {"form": form, "title": 'Book'})
-
-    def post(self, request):
-        choices = request.POST.getlist("choice_field")
-        # company_visit_id = request.POST["company_visit_id"]
-
-        company_visit_id = "5da49c32106ac2329399c81a"
-
-        lab_object_ids = []
-        Labs.objects
-
-        Scheduling.update_many({"_id": company_visit_id},
-                               {
-                                   "$set": {
-                                       "time": ["11:00", "12:00"],
-                                       "labs": []
-                                   }
-                               })
-
-
-        print(choices)
-        return render(request, self.template_name)
+import datetime
 
 
 class LabListView(TemplateView):
     template_name = "coordinator/labs_list.html"
-    all_labs = Labs.objects()
-    all_labs_id = [ObjectId(i.id) for i in all_labs]
-    all_labs_capacity = [i.capacity for i in all_labs]
-    all_labs_room_no = [i.room_no for i in all_labs]
-    all_time_slots = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"]
 
     def get(self, request):
-        print(request.GET["date"])
+        year, month, date = (int(x) for x in "2019-08-05".split('-'))
+        ans = datetime.date(year, month, date)
+        day = ans.strftime("%A")
+        global_slots_info = Labs.objects.filter(__raw__={"Day": day})
         result = Company.objects.filter(__raw__={"Test Date": "2019-08-05"})
         lab_time_slots = []
+        free_slots = global_slots_info[0].free_slots
         for index in range(len(result)):
             r = Scheduling.objects.filter(__raw__={"_id": result[index].id})
             labs_taken = r[0].seating_information["labs"]
-            lab_ids = [str(i) for i in labs_taken]
-            time_slots = r[0].seating_information["time"]
-            for j in range(len(self.all_labs_id)):
-                if self.all_labs_id[j] not in lab_ids:
-                    for slot in self.all_time_slots:
-                        if slot not in time_slots:
-                            lab_time_slots.append({'room_id': self.all_labs_room_no[j],
-                                                   'time_slot': slot,
-                                                   'capacity': self.all_labs_capacity[j]})
+            lab_ids_taken = [str(i) for i in labs_taken]
+            time_slots_taken = r[0].seating_information["time"]
+            for free_slot in free_slots:
+                time_slot = free_slot["time_slot"]
+                free_labs = free_slot["free_labs"]
+                if time_slot not in time_slots_taken:
+                    for lab in free_labs:
+                        if lab not in lab_ids_taken:
+                            lab_time_slots.append({'room_id': lab,
+                                                   "time_slot": time_slot})
         print("slots:")
         print(lab_time_slots)
-        return render(request, self.template_name, {'available': lab_time_slots})
+
+        book_form = BookForm()
+
+        return render(request, self.template_name, {'available': lab_time_slots, "book_form": book_form})
+
+    def post(self, request):
+        # company_visit_id = request.POST("company_visit_id")
+        chosen_labs_field_value = request.POST["chosen_labs_field"]
+        labs_chosen = chosen_labs_field_value.split(";")
+        lab_numbers = []
+        times = []
+        for lab in labs_chosen:
+            values = lab.split(",")
+            lab_numbers.append(values[0])
+            times.append(values[1])
+
+        company_visit_id = "5da49c32106ac2329399c81a"
+
+        print(Scheduling.objects(id=company_visit_id))
+        Scheduling.objects(id=company_visit_id).update_one(set__seating_information={"time": times, "labs": lab_numbers})
+
+        return render(request, self.template_name)
