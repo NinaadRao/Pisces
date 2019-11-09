@@ -5,9 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/coordinator/lab-list" method="GET">
+    <form action="/coordinator/booking" method="POST">
+        {% csrf_token %}
         {{form}}
         <input type="submit">
     </form>
+
 </body>
 </html>
