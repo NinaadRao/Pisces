@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+
+{% block content %}
+<body><br>
+<div class="container card bg-light">
+<div class="text-center">
+  <h2>You've already Registered </h2>            
+  <img src="{% static 'images/alr.jpg' %}" class="img-rounded" alt="Cinque Terre" width="150" height="200">
+</div>
+</br>
+</br>
+</br>
+
+
+<div class="text-center">
+     <h2>please go back to home</h2>
+  <form method="get" action="/students/homepage" style="margin:10px;">
+                <button type="submit" class="btn btn-primary">Home</button>
+            </form>
+
+</div>
+</div>
+</body>
+{% endblock %}
+</html>
