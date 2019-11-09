@@ -218,8 +218,30 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
       <h4 class="card-text">{{twelfth}}%</h4>
     </div>
   </div>
+    <div class="col-md-12 card bg-light hoverable" >
+        <div class="card-body">
+            <h3 class="card-title">Resume</h3>
+            {% if file %}
+            <a href="media/{{file}}" download><h4 class="card-text">Uploaded</h4></a>
+            {% else %}
+            <h4 class="card-text">Not Uploaded</h4>
+    {% endif %}
+        </div>
+    </div>
 </div>
 
 </div>
+<br>
+<div class="container card bg-light">
+    <h3 class="card-text">Upload Resume</h3>
+<form class="form-inline" action="/students/uploadResume" method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <div class="form-group">
+
+        <input type="file" name = "resume" class="form-control-file" id ="file"></div>
+    <div class="form-group">
+    <input type = "submit" class="btn btn-primary" style="margin:10px"></div>
+</form>
+    </div>
 {% endblock %}
 
