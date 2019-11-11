@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from django.http import JsonResponse
 import requests
 
 from .forms import *
@@ -17,11 +18,20 @@ class ListLabs(APIView):
 
     def get(self, request):
         print(self.api_name)
-        year, month, date = (int(x) for x in request.GET["date"].split('-'))
+        try:
+            year, month, date = (int(x) for x in request.GET["date"].split('-'))
+        except ValueError:
+            print("date request unpacking error - not enough values")
+            return Response({'message': 'invalid date'}, status=status.HTTP_400_BAD_REQUEST)
         print(year)
         print(month)
         print(date)
-        ans = datetime.date(year, month, date)
+        try:
+            ans = datetime.date(year, month, date)
+        except ValueError:
+            print("value error datetime")
+            return Response({'message': 'invalid date'}, status=status.HTTP_400_BAD_REQUEST)
+
         day = ans.strftime("%A")
         global_slots_info = Labs.objects.filter(__raw__={"Day": day})
         company_result = Company.objects.filter(__raw__={"Test Date": request.GET["date"]})
@@ -123,12 +133,15 @@ class UpsertBooking(APIView):
 
 
 class LabListView(TemplateView):
-    template_name = "coordinator/labs_list_2.html"
+    template_name = "coordinator/labs_list_3.html"
 
     def get(self, request):
         print(self.template_name)
         params = {"date": request.GET["date"]}
-        lab_time_slots = requests.get("http://0.0.0.0:8001/coordinator/list_labs",
-                                      params=params).json()["available"]
+        response = requests.get("http://0.0.0.0:8001/coordinator/list_labs",
+                                params=params)
+        if response.status_code != 200:
+            return JsonResponse({'message': "Invalid request"}, status=status.HTTP_400_BAD_REQUEST)
+        lab_time_slots = response.json()["available"]
         book_form = BookForm()
         return render(request, self.template_name, {"available": lab_time_slots, "book_form": book_form})
