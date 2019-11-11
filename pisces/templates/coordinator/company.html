@@ -15,6 +15,7 @@ body {
 </style>
 {% endblock %}
 {% block content %}
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -27,13 +28,16 @@ body {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/students/company">Companies</a>
+                        <a class="nav-link" href="/coordinator/company">Companies</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Schedule</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/coordinator/search">Search</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#policy" href="#policy">Policy</a>
@@ -45,16 +49,15 @@ body {
                             </button>
                             <ul class="dropdown-menu" background-color="#212529">
                                 <li background-color="#212529">  <a class="nav-link" href="/students/logout"><font color="grey">Logout</font></a></li>
-                                <li background-color="#212529"><a class="nav-link" href="/students/update"><font color="grey">Update Password</font></a></li>
                             </ul>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
     <br>
+
 <div id="policy" class="modal fade" role="dialog" style="margin:5px;">
     <div class="modal-dialog modal-xl" >
         <div class="modal-content" >
@@ -156,73 +159,66 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
           </div>
       </div>
         </div></div></div>
- {% for company in details %}
-    <div  id = "company{{ company.id }}" class="modal fade"  role="dialog"  >
+        {% for company in details %}
+            <div  id = "company{{ company.id }}" class="modal fade"  role="dialog"  >
                 <div class="modal-dialog modal-lg" >
                     <div class="modal-content" >
                         <div class="modal-body">
                             {% for key,value in company.items %}
-
-                {% if key == "Company" %}
-                            <b>{{key}}</b> : &nbsp&nbsp{{value}}<br>
-                            {% elif key == "Disciplines" %}
-                            <b>{{key}}:</b> <br>
-                                 {% for j,k in value.items %}
-                                &nbsp &nbsp{{j}} : &nbsp; <br>
-                            {% for l in k %}
-                                &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp{{l}}<br>
-                            {% endfor %}
-                            {% endfor %}
-                            {% elif key == "Criteria" %}
-                            <b>{{key}}</b>:<br>
-                            {% for j,k in value.items %}
-                                {% if j == "BE" or j == "MTech/MCA" %}
-                                   &nbsp &nbsp &nbsp &nbsp{{j}}:<br>
-                            {% for l,m in k.items %}
-                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{l}}: &nbsp &nbsp{{m}}<br>
-                            {% endfor %}
-                            {% else %}
-                            &nbsp &nbsp &nbsp &nbsp {{j}} : {{k}}<br>
+                                {% if key == "Company" %}
+                                    <b>{{key}}</b> : &nbsp&nbsp{{value}}<br>
+                                {% elif key == "Disciplines" %}
+                                    <b>{{key}}:</b> <br>
+                                    {% for j,k in value.items %}
+                                        &nbsp &nbsp{{j}} : &nbsp; <br>
+                                        {% for l in k %}
+                                            &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp{{l}}<br>
+                                        {% endfor %}
+                                    {% endfor %}
+                                {% elif key == "Criteria" %}
+                                    <b>{{key}}</b>:<br>
+                                    {% for j,k in value.items %}
+                                        {% if j == "BE" or j == "MTech/MCA" %}
+                                            &nbsp &nbsp &nbsp &nbsp{{j}}:<br>
+                                                {% for l,m in k.items %}
+                                                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{l}}: &nbsp &nbsp{{m}}<br>
+                                                {% endfor %}
+                                        {% else %}
+                                            &nbsp &nbsp &nbsp &nbsp {{j}} : {{k}}<br>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% elif key == "Compensation" %}
+                                    <b>{{key}}</b> : <br>
+                                    {% for j,k in value.items %}
+                                        &nbsp &nbsp &nbsp &nbsp{{j}}:<br>
+                                        {% if j == "Full Time" %}
+                                            {% for total,cost in k.items %}
+                                                    &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp{{total}}:&nbsp&nbsp{{cost}} <br>
+                                            {% endfor %}
+                                        {% elif j == "Internship" %}
+                                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{k}}<br>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% elif key == "Mode of Selection" %}
+                                    <b>{{key}}</b> : <br>
+                                    {% for j in value %}
+                                        &nbsp &nbsp &nbsp &nbsp{{j}} <br>
+                                    {% endfor %}
+                                {% elif key == "Job Status" %}
+                                    <b>{{key}}</b>: <br>
+                                    {% for j in value %}
+                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{j}}<br>{% endfor %}
+                                {% elif key not in notRendered %}
+                                    <b>{{key}}</b> : &nbsp&nbsp{{value}}<br>
                                 {% endif %}
-
-
                             {% endfor %}
-
-                {% elif key == "Compensation" %}
-                            <b>{{key}}</b> : <br>
-                    {% for j,k in value.items %}
-                        &nbsp &nbsp &nbsp &nbsp{{j}}:<br>
-                        {% if j == "Full Time" %}
-                            {% for total,cost in k.items %}
-
-                                    &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp{{total}}:&nbsp&nbsp{{cost}} <br>
-
-                            {% endfor %}
-                        {% elif j == "Internship" %}
-                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{k}}<br>
-                        {% endif %}
-                    {% endfor %}
-                            {% elif key == "Mode of Selection" %}
-                            <b>{{key}}</b> : <br>
-                            {% for j in value %}
-                                &nbsp &nbsp &nbsp &nbsp{{j}} <br>
-                            {% endfor %}
-                {% elif key == "Job Status" %}
-                            <b>{{key}}</b>: <br>
-                            {% for j in value %}
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{j}}<br>{% endfor %}
-                {% elif key not in notRendered %}
-                            <b>{{key}}</b> : &nbsp&nbsp{{value}}<br>
-                {% endif %}
-
-
-            {% endfor %}
-</div> <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
     {% endfor %}
 <div class="container text-center">
@@ -253,14 +249,13 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
                 {% endif %}
             {% endfor %}
             <a href="#{{ company.id }}" class="btn btn-primary" data-toggle="modal" data-target="#company{{ company.id }}">Details</a>
-            <form method="get" action="/students/register" style="margin:10px;">
-                <button type="submit" class="btn btn-primary" name="companyId" value="{{ company.id }}">Register</button>
+            <form method="get" action="/coordinator/schedule" style="margin:10px;">
+                <button type="submit" class="btn btn-primary" name="companyId" value="{{ company.id }}">(Re-)Schedule</button>
+            </form>
+            <form method="get" action="/coordinator/schedule" style="margin:10px;">
+                <button type="submit" class="btn btn-primary" name="companyId" value="{{ company.id }}">Cancel Schedule</button>
             </form>
         </div>
-
-
-
-
     </div>
 
 

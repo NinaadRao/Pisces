@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% block style %}
+<style>
+    .form-control:focus {
+        box-shadow: none;
+    }
+
+    .form-control-underlined {
+        border-width: 0;
+        border-bottom-width: 1px;
+        border-radius: 0;
+        padding-left: 0;
+    }
+
+    body {
+        background: #ffd89b;
+        background: -webkit-linear-gradient(to right, #ffd89b, #19547b);
+        background: linear-gradient(to right, #ffd89b, #19547b);
+        min-height: 100vh;
+    }
+
+    .form-control::placeholder {
+        font-size: 0.95rem;
+        color: #aaa;
+        font-style: italic;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarResponsive" style="font-size:20px;">
+                <img src="{% static 'images/peslogo.png' %}" alt="PES Logo" height="55px">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                          <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/coordinator/company">Companies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/coordinator/search">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#policy" href="#policy">Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <span class="caret" style="color:white"></span>
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="color:white;">
+                            </button>
+                            <ul class="dropdown-menu" background-color="#212529">
+                                <li background-color="#212529">  <a class="nav-link" href="/students/logout"><font color="grey">Logout</font></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="bg-white p-5 rounded shadow">
+                <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                    <div class="input-group">
+                        <input type="search" placeholder="Enter USN" id="search-usn"
+                            aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                        <div class="input-group-append">
+                            <button id="button-addon1" type="submit" onclick="getSearchUSN()" class="btn btn-link text-primary"><i
+                                    class="fa fa-search"></i>Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="holder">
+        <ul class="list-group" id="student-details">
+        </ul>
+    </div>
+
+
+    <div id="dropdown" class= "d1" style="display:none">
+        <form>
+            <select class="form-control" name='myfield' onchange='this.form.submit()'>
+                <option selected>Only Internship</option>
+                <option>Only full time </option>
+                <option>opt3</option>
+                <option>opt4</option>
+                <option>opt5</option>
+            </select>
+            <noscript><input type="submit" value="Submit"></noscript>
+        </form>
+
+    </div>
+    <script>
+
+        function studentDetails(json)
+        {
+            try
+            {
+                $('#student-details').remove();
+            }
+            catch(e)
+            {
+            }
+            $("#holder").append($("<ul></ul>").attr("id","student-details"))
+            $('#student-details').append($("<li class='list-group-item'></li>").text(json['srn']));
+            $('#student-details').append($("<li class='list-group-item'></li>").text(json['name']));
+            $('#student-details').append($("<li class='list-group-item'></li>").text(json['gender']));
+            $('#student-details').append($("<li class='list-group-item'></li>").text(json['tenth']));
+            $('#student-details').append($("<li class='list-group-item'></li>").text(json['twelfth']));
+            $('#student-details').append($("<li class='list-group-item'></li>").text(json['year_of_pass']));
+            $('#student-details').append($("<li class='list-group-item'></li>").text(json['highest_qualification']));
+            $('#student-details').append($("<li class='list-group-item'></li>").text(json['college']));
+            $('#student-details').append($("<li class='list-group-item'></li>").text(json['department']));
+            $('#dropdown').show()
+        }
+
+        function getSearchUSN()
+        {
+            $.ajax({
+                url:'http://127.0.0.1:8000/coordinator/search',
+                method:'POST',
+                data:{'usn':$('#search-usn').val(), csrfmiddlewaretoken:'{{ csrf_token }}'},
+                dataType:'json',
+                success:function(data)
+                {
+                    console.log(data)
+                    studentDetails(data)
+                }
+            })
+        }
+    </script>
+{% endblock %}

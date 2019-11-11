@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 # Create your views here.
 import os
 from django.shortcuts import render, redirect
@@ -31,10 +29,11 @@ class HomePage(TemplateView):
                 del details['password']
                 del details['id']
                 details['gender']= str(details['gender']).lower()
-                return render(request, 'home_user.html', details)
+                return render(request, 'home.html', details)
 
         else:
             return redirect('/accounts/login')
+
 
 class logout(TemplateView):
     template_name = 'accounts/form.html'
@@ -85,6 +84,7 @@ class updatePassword(TemplateView):
                 return HttpResponse(status=400)
         return HttpResponse(status=400)
 
+
 class Company_list(TemplateView):
     template_name = 'company.html'
     def get(self, request):
@@ -98,6 +98,7 @@ class Company_list(TemplateView):
             details[i]['id'] = details[i]['_id']['$oid']
             #print(type(details[i]['Compensation']))
         return render(request,self.template_name,{'details':details,'notRendered':["_id","id",]})
+
 
 class register(TemplateView):
     job_stat=dict()
@@ -166,7 +167,7 @@ class register(TemplateView):
                             return render(request,'registered.html')
                         # already_registered
                         print('Already registered',currentStatus)
-                        return render(request,'home_user.html')
+                        return render(request,'home.html')
                     else:
                         # not allowed to register
                         print("Not allowed to register")
@@ -206,23 +207,21 @@ class register(TemplateView):
                         print("already registered")
                         return render(request,'already.html')
                     else:
-                        #not allowed to register
+                        # not allowed to register
                         print('not allowed to register')
                         return render(request,'icant.html')
                 elif(currentStatus==4):
-                    #Not allowed to register
+                    # Not allowed to register
                     print("not allowed to register",currentStatus)
                     return render(request,'icant.html')
-
-
 
             else:
                 # Not meeting eligibility criteria
                 return HttpResponse(status=200)
             return HttpResponse(status=200)
 
-
         return HttpResponse(status=400)
+
 
 class uploadResume(TemplateView):
     def post(self,request):

@@ -26,7 +26,8 @@ urlpatterns = [
 urlpatterns += [
 
     url(r'^accounts/', include(("accounts.urls", "accounts"), namespace="accounts")),
-    url(r'^students/',include(("students.urls","accounts"), namespace = "students")),
+    url(r'^students/', include(("students.urls", "accounts"), namespace="students")),
+    url(r'^coordinator/', include(("coordinator.urls", "accounts"), namespace="coordinator")),
 
 ]
 from django.contrib.staticfiles.urls import static

@@ -13,8 +13,6 @@ class login(TemplateView):
 
     def get(self, request):
         form = UsersLoginForm()
-
-
         return render(request, self.template_name, {"form": form, "title": 'Login'})
 
     def post(self, request):
@@ -32,16 +30,27 @@ class login(TemplateView):
             # print(type(result),result.objects)
 
             if len(result):
-                request.session['username'] = username
-                details = {}
-                for i in result[0]:
-                    details[i]=result[0][i]
-                print(details)
-                details['form'] = form
-                del details['password']
-                del details['id']
-                details['gender']= str(details['gender']).lower()
-                return redirect('/students/homepage')
+                if username == "admin":
+                    request.session['username'] = username
+                    details = {}
+                    for i in result[0]:
+                        details[i]=result[0][i]
+                    print(details)
+                    details['form'] = form
+                    del details['password']
+                    del details['id']
+                    return redirect('/coordinator/homepage')
+                else:
+                    request.session['username'] = username
+                    details = {}
+                    for i in result[0]:
+                        details[i] = result[0][i]
+                    print(details)
+                    details['form'] = form
+                    del details['password']
+                    del details['id']
+                    details['gender'] = str(details['gender']).lower()
+                    return redirect('/students/homepage')
             return render(request, self.template_name, {"form": form, "title": 'Login'})
 
 
