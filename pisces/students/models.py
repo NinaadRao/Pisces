@@ -42,6 +42,7 @@ class User(DynamicDocument):
     # department = fields.StringField()
     # password = fields.StringField()
 
+
 class scheduling_information(DynamicDocument):
     meta = {'collection':'scheduling_information'}
 
