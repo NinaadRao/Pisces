@@ -33,7 +33,7 @@
         align-items: center;
     }
     .main_p{
-        background-image: url('{% static 'images/Chalk-on-Board.jpg' %}');
+        /*background-image: url('{% static 'images/Chalk-on-Board.jpg' %}');*/
         padding: 105px;
         background-origin: content-box;
         background-repeat: no-repeat;
@@ -52,7 +52,7 @@
             ele.style.backgroundColor = "yellow";
             children = ele.children;
             labs += children[0].innerHTML.trim() + ","
-            labs += children[1].innerHTML.trim() + ";"
+            labs += children[1].innerHTML.trim() + ","
         }
         function submit_b_form() {
             input_field = document.getElementById("csn_labs_field");
@@ -80,7 +80,7 @@
     <br/>
     <br>
     <div>
-    <form action="/coordinator/schedule" method="POST" id="b_form">
+    <form action="/coordinator/upsert_booking" method="POST" id="b_form">
         {% csrf_token %}
         {{book_form.as_p}}
         <input type="button" value="Book" onclick="submit_b_form()" class="button btn"></button>
