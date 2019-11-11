@@ -26,7 +26,7 @@ SECRET_KEY = 'w^v=s139#x)7xi3s5a*i^buaj&#6g3g+(%+xlkg^@)6yqr^jv('
 DEBUG = True
 SESSION_ENGINE = 'django_mongoengine.sessions'
 SESSION_SERIALIZER = 'django_mongoengine.sessions.BSONSerializer'
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 # Application definition
 
