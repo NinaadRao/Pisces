@@ -22,13 +22,11 @@ class UsersLoginForm(forms.Form):
 
 
 class DateForm(forms.Form):
-    date = forms.CharField()
+    date = forms.CharField(widget=forms.HiddenInput())
 
     def __init__(self, *args, **kwargs):
         super(DateForm, self).__init__(*args, **kwargs)
-        self.fields['date'].widget.attrs.update({
-            'class': 'form-control',
-            "name": "date"})
+        self.fields['date'].widget.attrs.update({})
 
 
 class BookForm(forms.Form):
