@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+        {% load staticfiles %}
+        {% load static %}
+<style>    
+    input{
+        padding: 10px 500px;
+        border: 2px solid blue;
+        font-weight: bold;
+        color: blue;
+        box-align: center;
+        background-color: white;
+    }
+    ul{
+        border: 3px;
+        align-items: center;
+        float: left;
+
+    }
+    .main{
+        align-items: center;
+    }
+    .image1{
+        width: 30px;
+        height: 30px;
+    }
+    h1{
+        display: inline-block;
+        font-weight: bold;
+
+    }
+    header{
+        align-items: center;
+    }
+    .main_p{
+        /*background-image: url('{% static 'images/Chalk-on-Board.jpg' %}');*/
+        padding: 105px;
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    </style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        labs = ""
+        function add_to_list(id) {
+        //alert("")
+            ele = document.getElementById(id);
+            ele.style.backgroundColor = "yellow";
+            children = ele.children;
+            labs += children[0].innerHTML.trim() + ","
+            labs += children[1].innerHTML.trim() + ","
+        }
+        function submit_b_form() {
+            input_field = document.getElementById("csn_labs_field");
+            input_field.value = labs.slice(0, labs.length-1);
+            document.getElementById("b_form").submit();
+        }
+    </script>
+</head>
+<header>
+    {% load static %}
+    <img src="{% static 'images/images.png' %}" alt="image" height="55px">
+    <h1 >Placement Coordination</h1>
+</header>
+<body>
+    <div class="main_p">
+    <p class="main">
+        {% for item in available %}
+        <ul style="list-style-type: none" id="{{item}}" onclick="add_to_list(this.id)">
+                {% for key, value in item.items %}
+                    <li> {{value}} </li>
+                {% endfor %}
+        </ul>
+        {% endfor %}
+    </p>
+    <br/>
+    <br>
+    <div>
+    <form action="/coordinator/upsert_booking" method="POST" id="b_form">
+        {% csrf_token %}
+        {{book_form.as_p}}
+        <input type="button" value="Book" onclick="submit_b_form()" class="button btn"></button>
+    </form>
+    </div>
+</div>
+</body>
+</html>

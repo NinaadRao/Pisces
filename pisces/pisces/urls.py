@@ -26,7 +26,8 @@ urlpatterns = [
 urlpatterns += [
 
     url(r'^accounts/', include(("accounts.urls", "accounts"), namespace="accounts")),
-    url(r'^students/',include(("students.urls","accounts"), namespace = "students")),
+    url(r'^students/', include(("students.urls", "accounts"), namespace="students")),
+    url(r'^coordinator/', include(("coordinator.urls", "accounts"), namespace="coordinator")),
 
 ]
 from django.contrib.staticfiles.urls import static
@@ -35,4 +36,5 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 
 urlpatterns += staticfiles_urlpatterns()
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+print('hello',settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)

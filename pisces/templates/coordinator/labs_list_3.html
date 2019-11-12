@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+        {% load staticfiles %}
+        {% load static %}
+<style>  
+    hr{
+        border: 1px solid black;
+    }
+    .image1{
+        filter: blur(3px);
+    }
+    input{
+        padding: 10px 600px;
+        border: 2px solid blue;
+        font-weight: bold;
+        color: blue;
+        box-align: center;
+        background-color: white;
+    }
+    ul{
+        border: solid;
+        border-width: thin;
+        align-items: center;
+        float: left;
+        background: white;
+        color: black;
+    }
+    li{
+        align-items: center;
+        padding: 5px;
+    }
+    .main{
+        align-items: center;
+    }
+    .image2{
+        position: absolute;
+        left: 10%;
+        top: 5%;
+        
+        width: 30px;
+        height: 30px;
+    }
+    .heading{
+        font-weight: bold;
+        color: white;
+        font-size: 30px;
+        position: absolute;
+        top: 12%;
+         left: 16%;
+
+        transform: translate(-50%, -50%);
+    }
+    header{
+        align-items: center;
+    }
+    .main_p{
+        background-color: black; 
+        /*background-image: url('{% static 'images/Chalk-on-Board.jpg' %}');*/
+        border-style: solid;
+        padding: 50px;
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .side{
+        background:linear-gradient(to right, #5c0741,#0a1a59);
+        position: relative;
+        text-align: center;
+        background-size: 100%; 
+        max-height: 200px;
+        overflow: hidden;
+    }
+    </style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        labs = ""
+        company_visit_id = "{{ company_visit_id }}";
+        booked_labs = "{{ booked_labs }}"
+        booked_slots = "{{ booked_slots }}"
+        booked_labs = booked_labs.replace(/&#39;/g,"'").replace("[","").replace("]","").split(",")
+        booked_slots = booked_slots.replace(/&#39;/g,"'").replace("[","").replace("]","").split(",")
+
+        lab_slot_pair = [];
+
+        for(i = 0; i < booked_labs.length; i++) {
+            lab_slot_pair.push(booked_labs[i].trim() + ";" + booked_slots[i].trim());
+        }
+
+        function remove_from_list(id) {
+            ele = document.getElementById(id);
+            children = ele.children;
+            items = labs.split(",");
+            items.pop();
+            console.log(items);
+            console.log("Before");
+            console.log(items.length);
+            for(i=0;i<items.length;i++) {
+                if((items[i] == children[0].innerHTML.trim())) {
+                    if(items[i+1] == children[1].innerHTML.trim()) {
+                        items.splice(i, 2);
+                        break;
+                    }
+                }
+            }
+            console.log("After");
+            console.log(items.length);
+            labs = "";
+            for(i = 0;i < items.length;i++) {
+                labs += items[i] + ",";
+            }
+            return labs;
+
+        }
+
+        function add_to_list(id) {
+            ele = document.getElementById(id);
+            if(ele.style.backgroundColor == "yellow") {
+                ele.style.backgroundColor = "white";
+                labs = remove_from_list(id);
+                return;
+            }
+            ele.style.backgroundColor = "yellow";
+            children = ele.children;
+            labs += children[0].innerHTML.trim() + ","
+            labs += children[1].innerHTML.trim() + ","
+        }
+        function submit_b_form() {
+            input_field = document.getElementById("csn_labs_field");
+            input_field.value = labs.slice(0, labs.length-1);
+            document.getElementById("b_form").submit();
+        }
+    </script>
+</head>
+<header>
+        {% load static %}
+    <div class="side">
+    
+    <img src="{% static 'images/keyboard.jpg' %}" class="image1" >
+    <img src="{% static 'images/ssss.png' %}" class="image2">
+    <div class="heading" style="font-family: 'Times New Roman', Times, serif">Pisces</div>
+
+    </div>
+</header>
+<body>
+    <div class="main_p">
+        {% for item in available %}
+        <ul style="list-style-type: none" id="{{item}}" onclick="add_to_list(this.id)">
+                {% for key, value in item.items %}
+                    <li> {{value}} </li>
+                {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+    <script>
+        ul_tags = document.getElementsByTagName("ul");
+        for(i = 0; i < ul_tags.length; i++) {
+
+            children = ul_tags[i].children;
+            room_id = children[0].innerHTML.trim()
+            time_slot = children[1].innerHTML.trim()
+            if(lab_slot_pair.includes("'"+room_id + "';" + "'"+time_slot+"'")) {
+                add_to_list(ul_tags[i].id)
+                console.log("true")
+                ul_tags[i].style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+    <div>
+
+    <form action="/coordinator/upsert_booking" method="POST" id="b_form">
+        {% csrf_token %}
+        {{book_form.as_p}}
+        <input type="button" value="Book" onclick="submit_b_form()" class="button btn"></button>
+    </form>
+    </div>
+</div>
+</body>
+</html>
