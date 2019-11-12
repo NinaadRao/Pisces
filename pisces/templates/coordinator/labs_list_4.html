@@ -3,6 +3,12 @@
         {% load staticfiles %}
         {% load static %}
 <style>  
+    body{
+        background: #ffd89b;
+        background: -webkit-linear-gradient(to right, #ffd89b, #19547b);
+        background: linear-gradient(to right, #ffd89b, #19547b);
+        min-height: 100vh;
+    }
     hr{
         border: 1px solid black;
     }
@@ -10,10 +16,10 @@
         filter: blur(3px);
     }
     input{
-        padding: 10px 600px;
-        border: 2px solid blue;
+        padding: 10px 500px;
+        border: 2px solid #19547b;
         font-weight: bold;
-        color: blue;
+        color: #19547b;
         box-align: center;
         background-color: white;
     }
@@ -23,20 +29,22 @@
         align-items: center;
         float: left;
         background: white;
-        color: black;
+        color: #19547b;
+        border-color: #19547b;
     }
     li{
-        align-items: center;
+        font-style: oblique;
+        font-size: 100%;
+        color: black;
+        font-weight: bold;
         padding: 5px;
+
     }
     .main{
         align-items: center;
     }
     .image2{
-        position: absolute;
-        left: 10%;
-        top: 5%;
-        
+       
         width: 30px;
         height: 30px;
     }
@@ -44,31 +52,18 @@
         font-weight: bold;
         color: white;
         font-size: 30px;
-        position: absolute;
-        top: 12%;
-         left: 16%;
-
-        transform: translate(-50%, -50%);
+        display: inline;
     }
     header{
         align-items: center;
     }
-    .main_p{
-        background-color: black; 
+    .main_p{ 
         /*background-image: url('{% static 'images/Chalk-on-Board.jpg' %}');*/
-        border-style: solid;
+        background: #131145;
         padding: 50px;
-        background-origin: content-box;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .side{
-        background:linear-gradient(to right, #5c0741,#0a1a59);
-        position: relative;
-        text-align: center;
-        background-size: 100%; 
-        max-height: 200px;
-        overflow: hidden;
+        width: 80%;
+        border-radius: 25px;
+        margin: auto;
     }
     </style>
 
@@ -136,13 +131,9 @@
 </head>
 <header>
         {% load static %}
-    <div class="side">
-    
-    <img src="{% static 'images/keyboard.jpg' %}" class="image1" >
     <img src="{% static 'images/ssss.png' %}" class="image2">
     <div class="heading" style="font-family: 'Times New Roman', Times, serif">Pisces</div>
 
-    </div>
 </header>
 <body>
     <div class="main_p">
@@ -169,7 +160,6 @@
         }
     </script>
     <div>
-
     <form action="/coordinator/upsert_booking" method="POST" id="b_form">
         {% csrf_token %}
         {{book_form.as_p}}

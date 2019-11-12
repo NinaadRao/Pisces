@@ -26,14 +26,14 @@ from django.core.files.storage import FileSystemStorage
 
 
 class HomePage(TemplateView):
-    def get(self,request):
+    def get(self, request):
         if 'username' in request.session:
             result = User.objects.filter(srn=request.session['username'])
             if len(result):
 
                 details = {}
                 for i in result[0]:
-                    details[i]=result[0][i]
+                    details[i] = result[0][i]
                 print(details)
 
                 del details['password']
@@ -81,25 +81,28 @@ class Company_list(TemplateView):
     template_name = 'coordinator/company.html'
 
     def get(self, request):
-
         companies = Company.objects.filter()
         details = json.loads(companies.to_json())
-        #print(details)
+        # print(details)
         for i in range(len(details)):
             details[i]['Compensation'] = dict(details[i]['Compensation'])
-            print(details[i]['_id'],type(details[i]['_id']))
+            print(details[i]['_id'], type(details[i]['_id']))
             details[i]['id'] = details[i]['_id']['$oid']
-            #print(type(details[i]['Compensation']))
-        return render(request,self.template_name,{'details':details,'notRendered':["_id","id",]})
+            # print(type(details[i]['Compensation']))
+        return render(request, self.template_name, {'details': details, 'notRendered': ["_id", "id", ]})
 
 
 class ListLabs(APIView):
     api_name = "list_labs"
 
     def get(self, request):
+        date_request = Company.objects.filter(__raw__={"_id": ObjectId(request.GET["company_visit_id"])})
+        if len(date_request) == 0:
+            return Response({'message': 'invalid company visit'}, status=status.HTTP_400_BAD_REQUEST)
+        date_request = date_request[0]["Test Date"]
         print(self.api_name)
         try:
-            year, month, date = (int(x) for x in request.GET["date"].split('-'))
+            year, month, date = (int(x) for x in date_request.split('-'))
         except ValueError:
             print("date request unpacking error - not enough values")
             return Response({'message': 'invalid date'}, status=status.HTTP_400_BAD_REQUEST)
@@ -114,7 +117,7 @@ class ListLabs(APIView):
 
         day = ans.strftime("%A")
         global_slots_info = Labs.objects.filter(__raw__={"Day": day})
-        company_result = Company.objects.filter(__raw__={"Test Date": request.GET["date"]})
+        company_result = Company.objects.filter(__raw__={"Test Date": date_request})
         free_slots = global_slots_info[0].free_slots
 
         lab_time_slot_pair_set = set()
@@ -126,6 +129,7 @@ class ListLabs(APIView):
 
         for index in range(len(company_result)):
             print("Index = " + str(index))
+            print(company_result[index].id)
             scheduling_result = Scheduling.objects.filter(__raw__={"_id": company_result[index].id})
             if len(scheduling_result) == 0:
                 continue
@@ -138,7 +142,12 @@ class ListLabs(APIView):
                 if time_slot in time_slots_taken:
                     for lab in free_labs:
                         if lab in lab_ids_taken:
-                            lab_time_slot_pair_set.remove(lab + "," + time_slot)
+                            if company_result[index].id != ObjectId(request.GET["company_visit_id"]):
+                                print(len(company_result[index].id))
+                                print(len(request.GET["company_visit_id"]))
+                                lab_time_slot_pair_set.remove(lab + "," + time_slot)
+                            else:
+                                print("Dont remove")
 
         lab_time_slots = []
         for pair in lab_time_slot_pair_set:
@@ -167,9 +176,8 @@ class DisplayBooking(APIView):
 
     def get(self, request):
         print(self.api_name)
-        # company_visit_id = request.POST("company_visit_id")
-        company_visit_id = "5dc6eac7106ac20a0ef0543e"
-        scheduling_result = Scheduling.objects.filter(__raw__={"_id": company_visit_id})
+        company_visit_id = request.GET["company_visit_id"]
+        scheduling_result = Scheduling.objects.filter(__raw__={"_id": ObjectId(company_visit_id)})
 
         if len(scheduling_result) == 0:
             return Response({'message': 'Company visit does not exist'}, status=status.HTTP_400_BAD_REQUEST)
@@ -213,15 +221,28 @@ class UpsertBooking(APIView):
 
 
 class LabListView(TemplateView):
-    template_name = "coordinator/labs_list_3.html"
+    template_name = "coordinator/labs_list_4.html"
 
     def get(self, request):
         print(self.template_name)
-        params = {"date": request.GET["date"]}
-        response = requests.get("http://0.0.0.0:8001/coordinator/list_labs",
-                                params=params)
-        if response.status_code != 200:
+        params = {"company_visit_id": request.GET["company_visit_id"]}
+        free_labs_response = requests.get("http://0.0.0.0:8001/coordinator/list_labs",
+                                          params=params)
+        if free_labs_response.status_code != 200:
             return JsonResponse({'message': "Invalid request"}, status=status.HTTP_400_BAD_REQUEST)
-        lab_time_slots = response.json()["available"]
+        lab_time_slots = free_labs_response.json()["available"]
         book_form = BookForm()
-        return render(request, self.template_name, {"available": lab_time_slots, "book_form": book_form})
+        booked_labs_response = requests.get("http://0.0.0.0:8001/coordinator/get_booking",
+                                            params=params)
+        if booked_labs_response.status_code != 200:
+            return JsonResponse({'message': "Invalid request"}, status=status.HTTP_400_BAD_REQUEST)
+        booked_labs = booked_labs_response.json()["labs_taken"]
+        booked_slots = booked_labs_response.json()["time_slots_taken"]
+        print(booked_labs)
+        booked_labs = [i.replace("'", r"\'") for i in booked_labs]
+        booked_slots = [i.replace("'", r"\'") for i in booked_slots]
+        print(lab_time_slots)
+
+        return render(request, self.template_name, {"available": lab_time_slots, "book_form": book_form,
+                                                    "booked_labs": booked_labs, "booked_slots": booked_slots,
+                                                    "company_visit_id": request.GET["company_visit_id"]})
