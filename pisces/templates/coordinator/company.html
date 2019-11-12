@@ -250,10 +250,10 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
             {% endfor %}
             <a href="#{{ company.id }}" class="btn btn-primary" data-toggle="modal" data-target="#company{{ company.id }}">Details</a>
             <form method="get" action="/coordinator/schedule" style="margin:10px;">
-                <button type="submit" class="btn btn-primary" name="companyId" value="{{ company.id }}">(Re-)Schedule</button>
+                <button type="submit" class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">(Re-)Schedule</button>
             </form>
             <form method="get" action="/coordinator/schedule" style="margin:10px;">
-                <button type="submit" class="btn btn-primary" name="companyId" value="{{ company.id }}">Cancel Schedule</button>
+                <button type="submit" class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">Cancel Schedule</button>
             </form>
         </div>
     </div>
