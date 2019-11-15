@@ -49,3 +49,12 @@ class scheduling_information(DynamicDocument):
 
 class labs(DynamicDocument):
     meta = {'collection':'labs'}
+
+class blogging(DynamicDocument):
+    posted = models.DateTimeField(db_index=True, auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+    meta = {'collection':'blog'}
+    created_on = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ['-created_on']
+
