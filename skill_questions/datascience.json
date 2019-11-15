@@ -1,0 +1,499 @@
+[
+
+    {
+        "q_no": 1,
+        "q": "which of the following is important language for Datascience?",
+        "o1": "Java",
+        "o2": "Ruby",
+        "o3": "R",
+        "o4": "Python",
+        "a": 3
+    },
+    {
+        "q_no": 2,
+        "q": "which of the following approach should be used to ask Data Analysis question?",
+        "o1": "Data cleansing",
+        "o2": "Data integration",
+        "o3": "Data replication",
+        "o4": "All of the above",
+        "a": 1
+    },
+    {
+        "q_no": 3,
+        "q": "which is the correct statement?",
+        "o1": "Data mining",
+        "o2": "Big Data",
+        "o3": "Data wrangling",
+        "o4": "Machine Learning",
+        "a": 3
+    },
+    {
+        "q_no": 4,
+        "q": "Which of the following uses data on some object to predict values for other object",
+        "o1": "Fast",
+        "o2": "Accuracy",
+        "o3": "Scalable",
+        "o4": "All of the Mentioned",
+        "a": 4
+    },
+    {
+        "q_no": 5,
+        "q": "which of the following is common goal of statistical modelling?",
+        "o1": "find only one solution for particular problem",
+        "o2": "find out the question which is to be answered",
+        "o3": "find out answer from dataset without asking question",
+        "o4": "none of the mentioned",
+        "a": 2
+    },
+    {
+        "q_no": 6,
+        "q": "which of the following model is usually gold standard for data analysis? ",
+        "o1": "Inference",
+        "o2": "Summarizing",
+        "o3": "Subsetting",
+        "o4": "None of th above",
+        "a": 1
+    },
+    {
+        "q_no": 7,
+        "q": "Which of the following model include a backwards elimination feature selection routine?",
+        "o1": "Inferential",
+        "o2": "Exploratory",
+        "o3": "Predictive",
+        "o4": "None of the above",
+        "a": 3
+    },
+    {
+        "q_no": 8,
+        "q": "which of the following is a categorical outcome?",
+        "o1": "Inferential",
+        "o2": "Descriptive",
+        "o3": "Causal",
+        "o4": "All of the above",
+        "a": 3
+    },
+    {
+        "q_no": 9,
+        "q": "which of the following can be used to impute data sets based only on information in the training set?",
+        "o1": "Inferential",
+        "o2": "Explorative",
+        "o3": "Causal",
+        "o4": "Mechanistic",
+        "a": 4
+    },
+    {
+        "q_no": 10,
+        "q": "which of the following analysis is usually modeled by deterministic set of equations?",
+        "o1": "MCV",
+        "o2": "MARS",
+        "o3": "MCRS",
+        "o4": "All of the mentioned",
+        "a": 2
+    },
+    {
+        "q_no": 11,
+        "q": "which of the following analysis are incredibly hard to implement?",
+        "o1": "post process",
+        "o2": "pre process",
+        "o3": "process",
+        "o4": "All the above",
+        "a": 2
+    },
+    {
+        "q_no": 12,
+        "q": "Which of the following is characteristic of best machine learning method?",
+        "o1": "Predictive",
+        "o2": "causal",
+        "o3": "Mechanistic",
+        "o4": "All of the above",
+        "a": 3
+    },
+    {
+        "q_no": 13,
+        "q": "which of the following characteristic of big data is relatively more concerned to data science?",
+        "o1": "Raw data is original source of data",
+        "o2": "preprocessed data is original source of data",
+        "o3": "Raw data is the data obtained after processing steps",
+        "o4": "None of the above",
+        "a": 1
+    },
+    {
+        "q_no": 14,
+        "q": "which of the following step is performed by data scientist after acquiring the data?",
+        "o1": "RMSE",
+        "o2": "RSsquad",
+        "o3": "Accuracy",
+        "o4": "All of the above",
+        "a": 3
+    },
+    {
+        "q_no": 15,
+        "q": "which of the following focuses on the discovery of(previously) unknown properties on the data?",
+        "o1": "velocity",
+        "o2": "variety",
+        "o3": "volume",
+        "o4": "none of the above",
+        "a": 2
+    },
+    {
+        "q_no": 16,
+        "q": "How much percentage of the interesting information can be obtained by using SQL?",
+        "o1": "80",
+        "o2": "70",
+        "o3": "40",
+        "o4": "50",
+        "a": 1
+    },
+    {
+        "17": 17,
+        "q": "The un-normalized relation containing all attributes that exist in database is?",
+        "o1": "actual relation",
+        "o2": "transparent relation",
+        "o3": "verified relation",
+        "o4": "universal relation",
+        "a": 4
+    },
+    {
+        "q_no": 18,
+        "q": "Enrichment means?",
+        "o1": "adding external data",
+        "o2": "deleting data",
+        "o3": "selecting data",
+        "o4": "cleaning data",
+        "a": 1
+    },
+
+
+    {
+        "q_no": 19,
+        "q": "The system that can be used without knowledge of internal operation?",
+        "o1": "black box",
+        "o2": "white box",
+        "o3": "case based learning",
+        "o4": "bias",
+        "a": 1
+    },
+
+
+    {
+        "q_no": 20,
+        "q": "The distance between two points that is calculated using Pythagoras theorem is",
+        "o1": "cartesian distance",
+        "o2": "eucleian distance",
+        "o3": "extensible distance",
+        "o4": "heuristic distance",
+        "a": 2
+    },
+
+
+    {
+        "q_no": 21,
+        "q": "Which of the following is closely related to statistical significance and transperancy?",
+        "o1": "Classification accuracy",
+        "o2": "Transperancy",
+        "o3": "Statistical significance",
+        "o4": "Search Complexity",
+        "a": 2
+    },
+
+
+    {
+        "q_no": 22,
+        "q": "what is a creative activity that has to be performed repeatedly in order to get best results",
+        "o1": "cleaning",
+        "o2": "Reporting",
+        "o3": "Coding",
+        "o4": "Selection",
+        "a": 3
+    },
+
+
+    {
+        "q_no": 23,
+        "q": "The decision support system is used only for",
+        "o1": "cleaning",
+        "o2": "coding",
+        "o3": "selecting",
+        "o4": "queries",
+        "a": 4
+    },
+
+
+    {
+        "q_no": 24,
+        "q": "deep knowledge can be found only by using",
+        "o1": "clues",
+        "o2": "OLAP",
+        "o3": "SQL",
+        "o4": "algorithm",
+        "a": 1
+    },
+
+
+    {
+        "q_no": 25,
+        "q": "Foriegn key constraints are also referred as",
+        "o1": "consistancy constraints",
+        "o2": "referential integrity",
+        "o3": "conditional integrity",
+        "o4": "domain constraints",
+        "a": 2
+    },
+
+
+    {
+        "q_no": 26,
+        "q": "What are the two important qualities of good learning algorithm",
+        "o1": "Consistent, complete",
+        "o2": "Information content, complex",
+        "o3": "Complete,complex",
+        "o4": "Transperant, complex",
+        "a": 1
+    },
+
+
+    {
+        "q_no": 27,
+        "q": "Metadata describes",
+        "o1": "contents of database",
+        "o2": "structure of contents of database",
+        "o3": "sructure of database",
+        "o4": "database itself",
+        "a": 3
+    },
+
+
+    {
+        "q_no": 28,
+        "q": "what itself have become a production  factor of importance",
+        "o1": "data",
+        "o2": "information",
+        "o3": "program",
+        "o4": "algorithm",
+        "a": 2
+    },
+
+
+    {
+        "q_no": 29,
+        "q": "The partition of overall data warehouse is",
+        "o1": "database",
+        "o2": "data cube",
+        "o3": "data mart",
+        "o4": "operational data",
+        "a": 3
+    },
+
+
+    {
+        "q_no": 30,
+        "q": "DSS stands for",
+        "o1": "Deciding support system",
+        "o2": "Decision support system",
+        "o3": "Decision support system",
+        "o4": "Decision system of system",
+        "a": 1
+    },
+
+    {
+        "q_no": 31,
+        "q": "which one example of case based learning",
+        "o1": "Decision tress",
+        "o2": "neural networks",
+        "o3": "Genetic algorithm",
+        "o4": "K-nearest neighbor",
+        "a": 4
+    },
+
+    {
+        "q_no": 32,
+        "q": "Redundancy referes to the elements  of a message that can be derived from other parts of",
+        "o1": "different message",
+        "o2": "irrelevent message",
+        "o3": "same message",
+        "o4": "complete message",
+        "a": 3
+    },
+
+    {
+        "q_no": 33,
+        "q": "Data mining algorithms require",
+        "o1": "efficient sampling method",
+        "o2": "storage of intermediate results",
+        "o3": "none of the above",
+        "o4": "all the above",
+        "a": 4
+    },
+
+    {
+        "q_no": 34,
+        "q": "The next stage to data selection in KDD process",
+        "o1": "enrichment",
+        "o2": "coding",
+        "o3": "cleaning",
+        "o4": "reporting",
+        "a": 3
+    },
+
+    {
+        "q_no": 35,
+        "q": "what is the first stage in genetic algorithm",
+        "o1": "evaluation of each string",
+        "o2": "selection of string ",
+        "o3": "creation of population of string",
+        "o4": "genetic manupulation",
+        "a": 3
+    },
+
+    {
+        "q_no": 36,
+        "q": " What happens when we introduce more variables to a linear regression model?",
+        "o1": "The r squared value may increase or remain constant, the adjusted r squared may increase or decrease",
+        "o2": "The r squared may increase or decrease while the adjusted r squared always increases",
+        "o3": "Both r square and adjusted r square always increase on the introduction of new variables in the model",
+        "o4": "Both might increase or decrease depending on the variables introduced",
+        "a": 4
+    },
+
+    {
+        "q_no": 37,
+        "q": "In univariate linear least squares regression, relationship between correlation coefficient and coefficient of determination is ______ ?",
+        "o1": "Both are unrelated False",
+        "o2": "The coefficient of determination is the coefficient of correlation squared True",
+        "o3": "The coefficient of determination is the square root of the coefficient of correlation False",
+        "o4": "Both are same F",
+        "a": 2
+    },
+
+    {
+        "q_no": 38,
+        "q": "What is the relationship between significance level and confidence level?",
+        "o1": " Significance level = Confidence level",
+        "o2": "Significance level = 1- Confidence level",
+        "o3": "Significance level = 1/Confidence level",
+        "o4": "Significance level = sqrt (1 – Confidence level)",
+        "a": 2
+    },
+
+    {
+        "q_no": 39,
+        "q": "The line described by the linear regression equation (OLS) attempts to ____ ?",
+        "o1": "Pass through as many points as possible",
+        "o2": "Pass through as few points as possible",
+        "o3": "Minimize the number of points it touches",
+        "o4": " Minimize the squared distance from the points",
+        "a": 4
+    },
+
+
+    {
+        "q_no": 40,
+        "q": "What is the value of t-statistic?",
+        "o1": "3.191",
+        "o2": "3.395",
+        "o3": "Cannot be determined",
+        "o4": "None of the above",
+        "a": 1
+    },
+
+    {
+        "q_no": 41,
+        "q": "Which of the following statement is correct?",
+        "o1": "The doctor has a valid evidence that dieting reduces blood sugar level.",
+        "o2": "The doctor does not have enough evidence that dieting reduces blood sugar level",
+        "o3": "If the doctor makes all future patients diet in a similar way, the mean blood pressure will fall below 160",
+        "o4": "None of the above",
+        "a": 2
+    },
+
+    {
+        "q_no": 42,
+        "q": "What is the probability of getting a mean of 175 or less after all the patients start dieting?",
+        "o1": "20%",
+        "o2": "25%",
+        "o3": "15%",
+        "o4": "12%",
+        "a": 1
+    },
+
+    {
+        "q_no": 43,
+        "q": "What is the standard error of the mean?",
+        "o1": "9",
+        "o2": "6",
+        "o3": "7.5",
+        "o4": "18",
+        "a": 2
+    },
+
+    {
+        "q_no": 44,
+        "q": "A researcher concludes from his analysis that a placebo cures AIDS. What type of error is he making?",
+        "o1": "Type 1 error",
+        "o2": "Type 2 error",
+        "o3": "None",
+        "o4": "Cannot be determined",
+        "a": 4
+    },
+
+    {
+        "q_no": 45,
+        "q": "After performing the Z-test, what can we conclude ____ ?",
+        "o1": "Listening to music does not improve memory",
+        "o2": "Listening to music significantly improves memory at p",
+        "o3": "The information is insufficient for any conclusion",
+        "o4": "None",
+        "a": 2
+    },
+
+    {
+        "q_no": 46,
+        "q": "What is the null hypothesis in this case?",
+        "o1": "Listening to music while studying will not impact memory",
+        "o2": "Listening to music while studying will may worsen memory",
+        "o3": "Listening to music while studying may improve memory",
+        "o4": "Listening to music while studying will not improve memory but can make it worse",
+        "a": 4
+    },
+
+    {
+        "q_no": 47,
+        "q": "What would be the critical values of Z for 98% confidence interval for a two-tailed test ?",
+        "o1": "+/- 2.33",
+        "o2": "+/- 1.96",
+        "o3": "+/- 1.64",
+        "o4": "+/- 2.55",
+        "a": 1
+    },
+
+    {
+        "q_no": 48,
+        "q": " If the variance of a dataset is correctly computed with the formula using (n – 1) in the denominator, which of the following option is true?",
+        "o1": "Dataset is a sample",
+        "o2": "Dataset is a population",
+        "o3": "Dataset is from a census",
+        "o4": "None",
+        "a": 1
+    },
+
+    {
+        "q_no": 49,
+        "q": "If a positively skewed distribution has a median of 50, which of the following statement is true?",
+        "o1": "Mean is greater than 50",
+        "o2": "Mode is less than 50",
+        "o3": "All the above",
+        "o4": "None",
+        "a": 3
+    },
+
+    {
+        "q_no": 50,
+        "q": "Which of the following measures of central tendency will always change if a single value in the data changes?",
+        "o1": "Mean",
+        "o2": "median",
+        "o3": "All the above",
+        "o4": "None",
+        "a": 1
+    }
+
+]
