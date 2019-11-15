@@ -22,7 +22,7 @@ body {
                 <img src="{% static 'images/peslogo.png' %}" alt="PES Logo" height="55px">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
+                        <a class="nav-link" href="/students/homepage">Home
                           <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -30,10 +30,10 @@ body {
                         <a class="nav-link" href="/students/company">Companies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Schedule</a>
+                        <a class="nav-link" href="/students/viewSchedule">Schedule</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="/students/blog">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#policy" href="#policy">Policy</a>
@@ -227,8 +227,11 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
     {% endfor %}
 <div class="container text-center">
 
+<div class = "card bg-success"><div class="card-header" ><font color="white" size="4px">Open for Registrations</font></div></div>
+
     {% for company in details %}
 
+            {% if company.allowed == 1 %}
     <div class ="card bg-light" style="margin:15px;">
         <div class="card-body">
             {% for key,value in company.items %}
@@ -253,20 +256,52 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
                 {% endif %}
             {% endfor %}
             <a href="#{{ company.id }}" class="btn btn-primary" data-toggle="modal" data-target="#company{{ company.id }}">Details</a>
+
             <form method="get" action="/students/register" style="margin:10px;">
                 <button type="submit" class="btn btn-primary" name="companyId" value="{{ company.id }}">Register</button>
             </form>
+            {% endif %}
         </div>
-
-
-
-
     </div>
-
-
-
   {% endfor %}
 </div>
 
+<div class="container text-center">
+    <div class = "text-center card bg-secondary"><div class="card-header" ><font color="white"><h4>Closed for Registrations</h4></font></div></div>
+
+
+
+    {% for company in details %}
+    {% if company.allowed == 0  %}
+    <div class ="card bg-light" style="margin:15px;">
+        <div class="card-body">
+
+            {% for key,value in company.items %}
+
+                {% if key == "Company" %}
+                    {{key}} : {{value}}<br>
+                {% elif key == "Company Sector" %}
+                    {{key}} : {{value}}<br>
+                {% elif key == "Compensation" %}
+                    {% for j,k in value.items %}
+                        {{j}}:
+                        {% if j == "Full Time" %}
+                            {% for total,cost in k.items %}
+                                {% if total == 'Total CTC' %}
+                                    {{cost}} <br>
+                                {% endif %}
+                            {% endfor %}
+                        {% elif j == "Internship" %}
+                            {{k}}<br>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            <a href="#{{ company.id }}" class="btn btn-primary" data-toggle="modal" data-target="#company{{ company.id }}">Details</a>
+            {% endif %}
+        </div>
+    </div>
+  {% endfor %}
+</div>
 {% endblock %}
 
