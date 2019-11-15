@@ -16,13 +16,6 @@
         padding-left: 0;
     }
 
-    body {
-        background: #ffd89b;
-        background: -webkit-linear-gradient(to right, #ffd89b, #19547b);
-        background: linear-gradient(to right, #ffd89b, #19547b);
-        min-height: 100vh;
-    }
-
     .form-control::placeholder {
         font-size: 0.95rem;
         color: #aaa;
@@ -74,43 +67,54 @@
         </div>
     </nav>
     <br>
-
-    <div class="row mb-5">
-        <div class="col-lg-8 mx-auto">
-            <div class="bg-white p-5 rounded shadow">
-                <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                    <div class="input-group">
-                        <input type="search" placeholder="Enter USN" id="search-usn"
-                            aria-describedby="button-addon1" class="form-control border-0 bg-light">
-                        <div class="input-group-append">
-                            <button id="button-addon1" type="submit" onclick="getSearchUSN()" class="btn btn-link text-primary"><i
-                                    class="fa fa-search"></i>Search</button>
+    <div class="container-fluid">
+        <div class="row mb-5" style="margin-top:50px">
+            <div class="col-lg-8 mx-auto">
+                <div class="bg-white p-5 rounded shadow">
+                    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                        <div class="input-group">
+                            <input type="search" placeholder="Enter USN" id="search-usn"
+                                aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                            <div class="input-group-append">
+                                <button id="button-addon1" type="submit" onclick="getSearchUSN()" class="btn btn-link text-primary"><i
+                                        class="fa fa-search"></i>Search</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="holder">
-        <ul class="list-group" id="student-details">
-        </ul>
-    </div>
 
 
-    <div id="dropdown" class= "d1" style="display:none">
-        <form>
-            <select class="form-control" name='myfield' onchange='this.form.submit()'>
-                <option selected>Only Internship</option>
-                <option>Only full time </option>
-                <option>opt3</option>
-                <option>opt4</option>
-                <option>opt5</option>
-            </select>
-            <noscript><input type="submit" value="Submit"></noscript>
-        </form>
-
+        <div class="d-flex justify-content-center" id="holder">
+            <ul class="list-group" id="student-details">
+            </ul>
+            <div class="d-inline-flex flex-column">
+                <div id="dropdown" class= "d1" style="display:none">
+                    <select class="form-control" name='myfield'>
+                        <option selected value="0">Not Offered</option>
+                        <option value="1">Only Internship</option>
+                        <option value="2">Tier-2 FTE</option>
+                        <option value="3">Tier-1 FTE</option>
+                        <option value="4">Internship + FTE</option>
+                        <option value="5">2 Offers</option>
+                    </select>
+                </div>
+                <br>
+                <div id="dropdown-search" style="display:none">
+                    <select id='company-list' style='width: 200px;'>
+                    </select>
+                </div>
+                <br>
+                <input class="btn btn-primary" id="submit-btn" onclick="sendData()" value="Submit" style="display:none">
+            </div>
+        </div>
     </div>
     <script>
+        $(document).ready(function(){
+            // Initialize select2
+            $("#company-list").select2();
+        });
 
         function studentDetails(json)
         {
@@ -131,7 +135,13 @@
             $('#student-details').append($("<li class='list-group-item'></li>").text(json['highest_qualification']));
             $('#student-details').append($("<li class='list-group-item'></li>").text(json['college']));
             $('#student-details').append($("<li class='list-group-item'></li>").text(json['department']));
+            for (i = 0;i < json['company_list'].length;i++)
+            {
+                $('#company-list').append($('<option></option>').attr('value',json['company_list'][i]).text(json['company_list'][i]));
+            }
             $('#dropdown').show()
+            $('#dropdown-search').show()
+            $('#submit-btn').show()
         }
 
         function getSearchUSN()
@@ -148,5 +158,22 @@
                 }
             })
         }
+
+        function sendData()
+        {
+            $.ajax({
+                url:'http://127.0.0.1:8000/coordinator/search_results',
+                method:'GET',
+                data:{'student_option': $('#dropdown').find(":selected").attr('value'),
+                      'company_name': $('#dropdown-search').find(":selected").attr('value'),
+                      'srn':$('#search-usn').val(),
+                      csrfmiddlewaretoken:'{{ csrf_token }}'},
+                success:function(data) {
+                    location.reload()
+                }
+            })
+        }
+
+
     </script>
 {% endblock %}

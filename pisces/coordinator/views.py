@@ -66,15 +66,46 @@ class Search(TemplateView):
         return render(request, self.template_name)
 
     def post(self, request):
-        result = User.objects.filter(srn=request.POST["usn"])
+        result = User.objects.filter(srn=request.POST['usn'])
         if len(result):
+            companies = Company.objects.filter()
+            company_details = json.loads(companies.to_json())
             details = {}
+            details['company_list'] = []
+            for i in range(len(company_details)):
+                details['company_list'].append(company_details[i]['Company'])
             for i in result[0]:
                 details[i] = result[0][i]
             del details['id']
             del details['password']
             print(details)
             return JsonResponse(details)
+
+
+class SearchResults(TemplateView):
+    def get(self, request):
+        srn = request.GET['srn']
+        student_option = request.GET['student_option']
+        company_name = request.GET['company_name']
+        User.objects(srn=srn).update_one(status=student_option)
+        if student_option == 1:
+            User.objects(srn=srn).update_one(company_details={'FTE': "not placed", 'Internship': company_name})
+        elif student_option == 2:
+            User.objects(srn=srn).update_one(company_details={'FTE': company_name, 'Internship': "not placed"})
+        elif student_option == 3:
+            User.objects(srn=srn).update_one(company_details={'FTE': company_name, 'Internship': "not placed"})
+        elif student_option == 4:
+            User.objects(srn=srn).update_one(company_details={'FTE': company_name, 'Internship': company_name})
+        elif student_option == 5:
+            User.objects(srn=srn).update_one(company_details={'FTE': company_name, 'Internship': company_name})
+        result = User.objects.filter(srn=srn)
+        updated_details = {}
+        for i in result[0]:
+            updated_details[i] = result[0][i]
+        del updated_details['id']
+        del updated_details['password']
+        print(updated_details)
+        return HttpResponse("updated")
 
 
 class Company_list(TemplateView):
