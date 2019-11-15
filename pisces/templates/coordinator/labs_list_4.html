@@ -59,10 +59,11 @@
     }
     .main_p{ 
         /*background-image: url('{% static 'images/Chalk-on-Board.jpg' %}');*/
-        background: #131145;
-        padding: 50px;
+        /*background-color: #131145;*/
+        padding: 10%;
         width: 80%;
-        border-radius: 25px;
+        height: 70%;
+        border-radius: 10%;
         margin: auto;
     }
     </style>
@@ -136,7 +137,7 @@
 
 </header>
 <body>
-    <div class="main_p">
+    <div class="main_p" >
         {% for item in available %}
         <ul style="list-style-type: none" id="{{item}}" onclick="add_to_list(this.id)">
                 {% for key, value in item.items %}
@@ -158,7 +159,7 @@
                 ul_tags[i].style.backgroundColor = "yellow";
             }
         }
-    </script>
+    </script>-
     <div>
     <form action="/coordinator/upsert_booking" method="POST" id="b_form">
         {% csrf_token %}
