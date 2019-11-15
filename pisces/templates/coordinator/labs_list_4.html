@@ -124,8 +124,11 @@
             labs += children[1].innerHTML.trim() + ","
         }
         function submit_b_form() {
-            input_field = document.getElementById("csn_labs_field");
-            input_field.value = labs.slice(0, labs.length-1);
+            input_field_labs = document.getElementById("csn_labs_field");
+            input_field_labs.value = labs.slice(0, labs.length-1);
+
+            input_field_company_visit_id = document.getElementById("csn_company_visit_id_field")
+            input_field_company_visit_id.value = company_visit_id;
             document.getElementById("b_form").submit();
         }
     </script>

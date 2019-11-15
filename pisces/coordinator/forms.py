@@ -31,8 +31,10 @@ class DateForm(forms.Form):
 
 class BookForm(forms.Form):
     chosen_labs_field = forms.CharField(widget=forms.HiddenInput())
+    chosen_company_visit_id = forms.CharField(widget=forms.HiddenInput())
 
     def __init__(self, *args, **kwargs):
         super(BookForm, self).__init__(*args, **kwargs)
         print(self.fields)
         self.fields['chosen_labs_field'].widget.attrs.update({'id': "csn_labs_field"})
+        self.fields['chosen_company_visit_id'].widget.attrs.update({'id': "csn_company_visit_id_field"})

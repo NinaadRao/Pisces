@@ -195,8 +195,8 @@ class UpsertBooking(APIView):
 
     def post(self, request):
         print(self.api_name)
-        # company_visit_id = request.POST("company_visit_id")
-        company_visit_id = "5dc6eac7106ac20a0ef0543e"
+        print(request.POST)
+        company_visit_id = request.POST["chosen_company_visit_id"]
         chosen_labs_field_value = request.POST["chosen_labs_field"]
         labs_chosen = chosen_labs_field_value.split(",")
 
@@ -215,9 +215,11 @@ class UpsertBooking(APIView):
             i += 2
 
         print(Scheduling.objects(id=company_visit_id))
+        print("Before update")
         Scheduling.objects(id=company_visit_id).update_one(
             set__seating_information={"time": times, "labs": lab_numbers})
-        return Response({'message': "Added schedule for company"}, status=status.HTTP_200_OK)
+        print("After update")
+        return HttpResponse(status=200)
 
 
 class LabListView(TemplateView):
