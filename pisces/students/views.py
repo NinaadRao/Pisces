@@ -7,13 +7,32 @@ from .forms import UsersLoginForm, UserUpdatePassword, BlogPost
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import TemplateView
 import re
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
+from keras.models import load_model
+import keras
+import numpy as np
+from numpy import array
+from keras.models import Sequential
+from keras.layers import LSTM
+from keras.layers import Dense
+
+
+from plotly.subplots import make_subplots
+from collections import Counter
 # Create your views here.
+import io
+import base64
 import pandas as pd
 from django.contrib import messages
 from django.conf import settings
 from mongoengine import *
 from .models import *
 import json
+import pandas as pd
+import os
+import plotly.graph_objs as go
+import plotly
 from django.core.files.storage import FileSystemStorage
 
 
@@ -400,3 +419,206 @@ class BlogDetails(TemplateView):
         blog['content'] = list(blog['content'])
         del blog['_id']
         return render(request,self.template_name,{'blog':blog,'form':form})
+
+
+
+def ctc(df):
+    print(df.columns)
+    dates = list(df['Date that the company has come'])
+    dates = [datetime.strptime(i, "%Y-%m-%d") for i in dates]
+    df['Date that the company has come'] = dates
+    df = df.sort_values(by='Date that the company has come')
+    trace1 = go.Scatter(x=df['Date that the company has come'], y=df['CTC'], mode='lines+markers',
+                        hovertext=df['Name of company visited'],
+                        marker=dict(
+                            color='blue'
+                        ))
+    data = [trace1]
+    layout = dict(
+        title='CTC of companies over time',
+        xaxis=dict(
+            rangeselector=dict(
+                buttons=list([
+                    dict(count=1,
+                         label='1m',
+                         step='month',
+                         stepmode='backward'),
+                    dict(count=6,
+                         label='6m',
+                         step='month',
+                         stepmode='backward'),
+                    dict(count=1,
+                         label='YTD',
+                         step='year',
+                         stepmode='todate'),
+                    dict(count=1,
+                         label='1y',
+                         step='year',
+                         stepmode='backward'),
+                    dict(step='all')
+                ])
+            ),
+            rangeslider=dict(
+                visible=True
+            ),
+            type='date'
+        )
+    )
+    fig = dict(data=data, layout=layout)
+    fig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    plots = [fig]
+
+    ctc = df['CTC']
+    dates = df['Date that the company has come']
+    tier = dict(Counter(df['Tier']))
+    data = [go.Bar(x=list(tier.keys()), y=list(tier.values()))]
+    layout = dict(title='Tier based division of companies', xaxis=dict(title="Tier"),
+                  yaxis=dict(title="Number of companies"))
+    fig = go.Figure(data=data, layout=layout)
+    fig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    plots += [fig]
+
+    fig = make_subplots(rows=3, cols=2, subplot_titles=('July', "August", "September", "October", "November"))
+    current = 1
+    current_col = 1
+    for i in range(8, 13):
+        modified = df[(df['Date that the company has come'] < datetime.strptime("2019-" + str(i) + "-01","%Y-%m-%d")) & (df['Date that the company has come'] > datetime.strptime("2019-" + str(i - 1) + "-01", "%Y-%m-%d"))]
+        # print('modified',modified)
+        if (len(modified)):
+            tier = dict(Counter(modified['Tier']))
+            # print(current,current_col)
+            fig.add_trace(go.Bar(x=list(tier.keys()), y=list(tier.values()), hovertext=list(tier.values())),
+                          row=current, col=current_col)
+            current_col += 1
+            # print(current,current_col)
+            if (current_col == 3):
+                current_col = 1
+                current += 1
+    fig.update_layout(showlegend=False, height=1000, width=800, title="Tier division for different months")
+
+    fig.update_yaxes(title_text="Number of companies", row=1, col=1)
+    fig.update_yaxes(title_text="Number of companies", row=1, col=2)
+    fig.update_yaxes(title_text="Number of companies", row=2, col=1)
+    fig.update_yaxes(title_text="Number of companies", row=2, col=2)
+    fig.update_yaxes(title_text="Number of companies", row=3, col=1)
+
+    fig.update_xaxes(title_text="Tier", row=1, col=1)
+    fig.update_xaxes(title_text="Tier", row=1, col=2)
+    fig.update_xaxes(title_text="Tier", row=2, col=1)
+    fig.update_xaxes(title_text="Tier", row=2, col=2)
+    fig.update_xaxes(title_text="Tier", row=3, col=1)
+    fig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    plots += [fig]
+
+    counts = (Counter(df['category']))
+    del counts['Others']
+    a = counts.most_common()
+    x_value = []
+    y_value = []
+    for i in a:
+        x_value.append(i[0])
+        y_value.append(i[1])
+    print(a)
+    data = [go.Bar(x=x_value, y=y_value)]
+    layout = dict(title='Different Company categories', xaxis=dict(title="Company categories"),
+                  yaxis=dict(title="Number of companies"))
+    fig = go.Figure(data=data, layout=layout)
+    fig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    plots+=[fig]
+
+    values = []
+    for i in range(8, 13):
+        modified = df[(df['Date that the company has come'] < datetime.strptime("2019-" + str(i) + "-01",
+                                                                                         "%Y-%m-%d")) & (df['Date that the company has come'] > datetime.strptime("2019-" + str(i - 1) + "-01", "%Y-%m-%d"))]
+        # print('modified',modified)
+        if (len(modified)):
+            tier = sum(modified['number'])
+            values.append(tier)
+
+    data = [go.Bar(x=['July', 'August', 'September', 'October', 'November'], y=values)]
+    layout = dict(title='How many students are placed?', xaxis=dict(title="Month"),
+                  yaxis=dict(title="Number of students"))
+    fig = go.Figure(data=data, layout=layout)
+    fig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    plots += [fig]
+
+    values = []
+    for i in range(1, 4):
+        modified = df[df['Tier'] == i]
+        values.append(sum(modified['number']))
+
+    data = [go.Bar(x=['Tier-1', 'Tier-2', 'Tier-3'], y=values)]
+    layout = dict(title='Students composition based on company tiers', xaxis=dict(title="Month"),
+                  yaxis=dict(title="Number of students"))
+    fig = go.Figure(data=data, layout=layout)
+    fig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    plots += [fig]
+
+    data = [go.Box(x=df['CTC'], name='CTC offered', boxmean=True)]
+    layout = dict(title='CTC summary', xaxis=dict(title='CTC'))
+    fig = go.Figure(data=data, layout=layout)
+    fig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    plots += [fig]
+
+    return plots
+
+
+
+def wordCloud(df):
+    d = {}
+    for i in range(len(df)):
+        d[df['Name of company visited'][i]] = float(df["CTC"][i].replace(',', ''))
+
+    wordcloud = WordCloud()
+    wordcloud.generate_from_frequencies(frequencies=d)
+
+    plt.figure(figsize=(10, 10), facecolor=None)
+    plt.imshow(wordcloud, interpolation="bilinear")
+    plt.axis("off")
+    plt.title('Companies that visited in 2019')
+
+
+    img = io.BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    graph_url = base64.b64encode(img.getvalue()).decode()
+    plt.close()
+    return 'data:image/png;base64,{}'.format(graph_url)
+
+df = pd.read_csv("detail.csv")
+df = df.sort_values(by='Date that the company has come')
+df = df.reset_index(drop=True)
+a = list(df['CTC'])
+print(len(a))
+first=float(a[-1].replace(',',''))
+first = first/100000
+second = float(a[-2].replace(',',''))
+second = second/100000
+to_be_predicted=np.array([[second,first]])
+to_be_predicted = to_be_predicted.reshape(to_be_predicted.shape[0],to_be_predicted.shape[1],1)
+model = load_model('ctc_lstm.h5')
+value = model.predict(to_be_predicted,verbose=0)
+print('This is the value',value)
+
+
+class ViewStatistics(TemplateView):
+    template_name = 'stats.html'
+    def get(self,request):
+        print(os.listdir())
+        df = pd.read_csv("detail.csv")
+
+        df = df.sort_values(by='Date that the company has come')
+        df = df.reset_index(drop=True)
+        a = list(df['CTC'])
+        print(len(a))
+        first=float(a[-1].replace(',',''))
+        first = first/100000
+        second = float(a[-2].replace(',',''))
+        second = second/100000
+        to_be_predicted=np.array([[second,first]])
+        to_be_predicted = to_be_predicted.reshape(to_be_predicted.shape[0],to_be_predicted.shape[1],1)
+        all_plots = []
+        all_plots += ctc(df)
+        plot2 = wordCloud(df)
+        global value
+        return render(request,self.template_name,{"all_plots":all_plots,"wordCloud": plot2,'next':str(value[0][0])})

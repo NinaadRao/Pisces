@@ -13,7 +13,8 @@ urlpatterns = [
     url(r"^uploadResume", uploadResume.as_view(), name="upload_resume"),
     url(r"^viewSchedule",viewSchedule.as_view(),name = "viewSched"),
     url(r"^blog$",Blog.as_view(),name = "blogView"),
-    url(r"^blogdetails$",BlogDetails.as_view(),name="blogDetailsView")
+    url(r"^blogdetails$",BlogDetails.as_view(),name="blogDetailsView"),
+    url(r"^stats",ViewStatistics.as_view(),name='stats')
 ]
 
 if settings.DEBUG:
