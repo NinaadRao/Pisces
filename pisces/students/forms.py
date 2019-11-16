@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, get_user_model
 from django import forms
-from .models import  *
+from .models import *
 
 
 class UserUpdatePassword(forms.Form):
@@ -20,14 +20,14 @@ class UserUpdatePassword(forms.Form):
             'class': 'form-control',
             "name": "Confirm Password"})
 
-    def clean(self,*args,**kwargs):
+    def clean(self, *args, **kwargs):
         password = self.cleaned_data.get("newPassword")
         cPassword = self.cleaned_data.get("confirmPassword")
         oldPassword = self.cleaned_data.get("oldPassword")
 
-        if len(password)<8:
+        if len(password) < 8:
             raise forms.ValidationError('Password must be greater than 8 characters')
-        if password!=cPassword:
+        if password != cPassword:
             raise forms.ValidationError("password does not match")
         return super(UserUpdatePassword, self).clean(*args, **kwargs)
 
@@ -98,7 +98,6 @@ class UsersRegisterForm(forms.ModelForm):
         if email_qs.exists():
             raise forms.ValidationError("Email is already registered")
 
-
         # you can add more validations for password
 
         if len(password) < 8:
@@ -107,3 +106,13 @@ class UsersRegisterForm(forms.ModelForm):
         return super(UsersRegisterForm, self).clean(*args, **keyargs)
 
 
+class SearchForm(forms.Form):
+    search_field = forms.CharField()
+
+    def __init__(self, *args, **kwargs):
+        super(SearchForm, self).__init__(*args, **kwargs)
+        self.fields['search_field'].widget.attrs.update({
+            'type': 'text',
+            'class': 'form-control',
+            "name": "search",
+            "placeholder": "Search"})
