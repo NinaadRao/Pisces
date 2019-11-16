@@ -20,6 +20,7 @@ from .forms import UsersLoginForm
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.views.generic import TemplateView
 import re
+import smtplib, ssl
 import json
 from django.core.files.storage import FileSystemStorage
 
@@ -105,6 +106,31 @@ class SearchResults(TemplateView):
         del updated_details['password']
         print(updated_details)
         return HttpResponse("updated")
+
+
+class Automail(TemplateView):
+    template_name = 'coordinator/automail.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
+
+    def post(self, request):
+        port = 465  # For SSL
+        smtp_server = "smtp.gmail.com"
+        sender_email = "placement.officer138@gmail.com"  # Enter your address
+        # print(request.form.get("email"))
+        receiver_email = request.form["email"]  # Enter receiver address
+        password = '0987nes10'
+        message = """\
+            Subject: Company Details
+            https://docs.google.com/forms/d/e/1FAIpQLSf2MGbsfMb7ohyeFNLckLK99r6EJJLvmdiImaL0_mR1LDzUcQ/viewform?vc=0&c=0&w=1
+            Please fill the above form.
+            """
+        context = ssl.create_default_context()
+        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message)
+        return HttpResponse('success')
 
 
 class Company_list(TemplateView):
