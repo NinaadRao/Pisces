@@ -22,7 +22,7 @@ class BlogPost(forms.Form):
             "name": "blogType","required":True})
         self.fields['shortDescription'].widget.attrs.update({
             'class': 'form-control',
-            "name": "shortDescription",'maxlength':100, "required": True})
+            "name": "shortDescription",'maxlength':500, "required": True})
     def clean(self,*args,**kwargs):
         return super(BlogPost, self).clean(*args, **kwargs)
 class UserUpdatePassword(forms.Form):
