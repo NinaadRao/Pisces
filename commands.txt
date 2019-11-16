@@ -1,0 +1,13 @@
+
+
+db.user_data.update({},{$set :{"company_details":{"FTE":"not placed","Internship":"not placed"}}},false,true)
+
+db.createCollection("blog")
+
+db.user_data.update({},{$set :{"score_al":0}},false,true)
+
+db.user_data.update({},{$set :{"score_cn":0}},false,true)
+
+db.user_data.update({},{$set :{"score_op":0}},false,true)
+
+db.user_data.update({},{$set :{"score_ds":0}},false,true)

@@ -11,9 +11,11 @@ urlpatterns = [
     url(r"^company", Company_list.as_view(), name="company_list"),
     url(r"^register", register.as_view(), name="register_company"),
     url(r"^uploadResume", uploadResume.as_view(), name="upload_resume"),
-    url(r"^searchCompanyPage", SearchView.as_view(), name="searchCompanyPage"),
-    url(r"^searchCompany", SearchCompany.as_view(), name="searchCompany"),
-    url(r"^searchResults", SearchResultsView.as_view(), name="searchResults")
+    url(r"^viewSchedule",viewSchedule.as_view(),name = "viewSched"),
+    url(r"^blog$",Blog.as_view(),name = "blogView"),
+    url(r"^blogdetails$",BlogDetails.as_view(),name="blogDetailsView"),
+    url(r"^stats",ViewStatistics.as_view(),name='stats'),
+    url(r"^searchBlog",SearchBlog.as_view(),name='searchblog')
 ]
 
 if settings.DEBUG:
