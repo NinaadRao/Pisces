@@ -14,6 +14,11 @@ urlpatterns = [
     url(r"^searchCompanyPage", SearchView.as_view(), name="searchCompanyPage"),
     url(r"^searchCompany", SearchCompany.as_view(), name="searchCompany"),
     url(r"^searchResults", SearchResultsView.as_view(), name="searchResults")
+    url(r"^viewSchedule",viewSchedule.as_view(),name = "viewSched"),
+    url(r"^blog$",Blog.as_view(),name = "blogView"),
+    url(r"^blogdetails$",BlogDetails.as_view(),name="blogDetailsView"),
+    url(r"^stats",ViewStatistics.as_view(),name='stats'),
+    url(r"^searchBlog",SearchBlog.as_view(),name='searchblog')
 ]
 
 if settings.DEBUG:
