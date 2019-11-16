@@ -1,0 +1,87 @@
+Name of company visited,CTC,Tier,Date that the company has come,category,number
+Cure.Fit,"3,100,000",1,2019-07-19,Others,4
+Cisco,"2,917,633",1,2019-07-20,Networking hardware,7
+Thoughtspot,"3,400,000",1,2019-07-22,Analytics,11
+Intuit,"2,516,750",1,2019-07-24,Enterprise software,6
+Morgan Stanley,"2,533,000",1,2019-07-25,Financial services,6
+Goldman Sachs,"1,600,000",1,2019-07-27,Financial services,1
+MuSigma,"350,000",3,2019-07-28,Others,4
+Couch Base,"2,000,000",1,2019-07-29,Others,8
+Palo Alto,"2,212,000",1,2019-08-01,Others,3
+Novartis,"711,000",1,2019-08-03,Pharmaceuticals,9
+Zscaler,"2,092,000",1,2019-08-05,Network security,1
+Clumio,"2,000,000",1,2019-08-05,Others,12
+Schneider Electric,"650,000",2,2019-08-06,Electrical equipment,6
+Akamai,"1,630,000",1,2019-08-07,Internet,3
+Hewlett Packard,"900,000",1,2019-08-08,Computer hardware,1
+Walmart,"1,857,700",1,2019-08-09,Retail,1
+PWC,"843,000",1,2019-08-13,Professional services,2
+Infibeam,"1,000,000",1,2019-08-13,Internet,5
+Logmein,"1,582,000",1,2019-08-14,Computer software,5
+Perpule,"1,400,000",1,2019-08-15,Others,1
+Gartner,"1,067,646",1,2019-08-17,Others,2
+Danske IT,"1,100,000",1,2019-08-19,Others,1
+Optum,"1,159,400",1,2019-08-20,Others,2
+General Electric,"940,000",1,2019-08-21,Conglomerate,3
+Epsilon,"1,000,000",1,2019-08-22,Others,8
+Societe Generale,"1,225,000",1,2019-08-24,Financial services,12
+Deloitte USI,"760,000",2,2019-08-24,Others,3
+Nuclei,"1,600,000",1,2019-08-24,Others,1
+Exotel,"1,700,000",1,2019-08-25,Telecommunications,1
+IBM,"1,100,000",1,2019-08-25,Cloud computing,1
+Mathworks,"1,275,000",1,2019-08-26,Others,3
+Komprise,"1,900,000",1,2019-08-26,Others,13
+Standard Chartered GBS,"610,000",2,2019-08-28,Others,5
+Deloitte India,"620,000",2,2019-08-29,Others,8
+Accenture,"425,000",2,2019-08-31,Professional services,2
+SIXT R & D,"1,000,000",1,2019-08-31,Others,5
+Commvault,"1,550,000",1,2019-09-01,Information technology,7
+VM Ware,"700,000",2,2019-09-03,Others,5
+Robert Bosch,"500,000",2,2019-09-05,Others,1
+NetSkope,"1,400,000",1,2019-09-06,Others,6
+Prodapt Solutions,"550,000",2,2019-09-06,Others,6
+McAfee,"600,000",2,2019-09-07,Computer software,2
+Expedia,"1,283,964",1,2019-09-11,Others,1
+Wissen Technologies,"1,100,000",1,2019-09-13,Others,1
+MIQ Digital,"1,200,000",1,2019-09-13,Others,8
+EY India,"437,173",2,2019-09-14,Others,1
+Cognizant,"400,000",2,2019-09-15,IT services,8
+Vantage Agora,"500,000",2,2019-09-16,Others,8
+LTTS,"400,000",3,2019-09-17,Others,6
+Quest Global ,"725,000",2,2019-09-18,Others,3
+Ather Energy,"700,000",1,2019-09-18,Automotive,5
+Aruba,"800,000",1,2019-09-20,Others,4
+Infosys,"600,000",2,2019-09-30,IT services,2
+Hashedin Technologies,"600,000",2,2019-09-30,Others,3
+Wipro,"550,000",2,2019-10-01,Conglomerate,2
+Century link,"500,000",2,2019-10-03,Others,5
+Sandvine,"1,355,000",1,2019-10-04,Others,5
+Eagle View,"800,000",1,2019-10-05,Others,1
+Google,"1,249,596",1,2019-10-05,Internet,12
+Oracle,"600,000",2,2019-10-05,Others,7
+Eagle View,"1,200,000",1,2019-10-05,Others,9
+Zopsmart,"800,000",1,2019-10-09,Others,4
+Endurance,"1,400,000",1,2019-10-10,Others,1
+Ushur,"600,000",2,2019-10-12,Others,13
+Intel,"800,000",1,2019-10-12,Semiconductors,4
+Saltside,"900,000",1,2019-10-14,Others,1
+Sling Media,"1,580,000",1,2019-10-15,Placeshifting,7
+Accolite,"800,000",1,2019-10-16,Others,2
+Ugam,"800,000",1,2019-10-17,Others,10
+First Source Solutions,"1,100,000",1,2019-10-18,Others,1
+Lam Research,"1,401,260",1,2019-10-18,Semiconductors,2
+Hevo Technology,"1,000,000",1,2019-10-20,Others,7
+Betsol,"400,000",2,2019-10-21,Others,1
+Zinnov,"800,000",1,2019-10-22,Others,1
+Adobe Systems,"2,237,000",1,2019-10-22,Computer software,6
+The Math Company,"450,000",2,2019-10-23,Others,1
+Pluribus,"1,500,000",1,2019-10-23,Others,1
+Perfios,"700,000",2,2019-10-24,Others,9
+Tredence Analytics,"650,000",2,2019-10-25,Others,6
+Atlassian,"5,000,000",1,2019-10-30,Software,1
+Target,"1,120,000",1,2019-11-11,Others,1
+Verizon Media ( Yahoo ),"1,000,000",1,2019-11-13,Others,4
+Zynga,"1,530,000",1,2019-11-13,Video game industry,4
+KPMG,"500,000",2,2019-11-15,Professional services,4
+PayPal,"800,000",1,2019-11-15,Financial services,1
+NXP Semiconductors,"1,215,000",1,2019-11-30,Electronics,1

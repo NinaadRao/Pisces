@@ -57,7 +57,25 @@ body {
             </div>
         </div>
     </nav>
-    <br>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script><br><center><h1>Placement Statistics</h1></center>
+<div class="container"><div class="card text-center"><h3>The next CTC is expected to be close to {{next}} Lakhs</h3></div></div>
+<div class ="container text-center row">
+ {% for i in all_plots %}<div class="col-md-3"></div>
+<div class="chart col-md-8 text-center" id="graph{{ forloop.counter }}" align="center">
+    <script>
+    count = 0
+        var graphs = {{i | safe}};
+        Plotly.plot('graph'+ {{ forloop.counter }} ,graphs,{});
+        count++;
+    </script>
+    </div>
+    {% endfor %}
+</div>
+<script type="text/javascript">
+   document.getElementsByClassName("svg-container").position="absolute";
+</script>
+<center><img src="{{ wordCloud }}"></img></center>
 
 <div id="policy" class="modal fade" role="dialog" style="margin:5px;">
     <div class="modal-dialog modal-xl" >
@@ -160,53 +178,4 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
           </div>
       </div>
         </div></div></div>
-
-<div class="container text-center">
-    <div class = "card bg-success"><div class="card-header" ><font color="white" size="4px">Schedule</font></div></div>
-    {% for company in details %}
-
-    <div class ="card bg-light" style="margin:15px;">
-        <div class="card-body">
-            {% for key,value in company.items %}
-
-                {% if key == "Company" %}
-                    {{key}} : {{value}}<br>
-                {% elif key == "Company Sector" %}
-                    {{key}} : {{value}}<br>
-                {% elif key == "Compensation" %}
-                    {% for j,k in value.items %}
-                        {{j}}:
-                        {% if j == "Full Time" %}
-                            {% for total,cost in k.items %}
-                                {% if total == 'Total CTC' %}
-                                    {{cost}} <br>
-                                {% endif %}
-                            {% endfor %}
-                        {% elif j == "Internship" %}
-                            {{k}}<br>
-                        {% endif %}
-                    {% endfor %}
-            {% elif key == "Test Date" %}Date &nbsp: &nbsp
-            <button  class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">{{value}} </button>&nbsp
-            {% elif key == "room-no" %}Room No &nbsp: &nbsp
-            <button  class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">{{value}}</button>
-            {% elif key == "time" %}&nbspTime&nbsp : &nbsp
-            <button  class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">{{value}}</button>
-            {% endif %}
-            {% endfor %}
-
-
-
-
-
-
-        </div>
-    </div>
-
-
-
-  {% endfor %}
-</div>
-
 {% endblock %}
-
