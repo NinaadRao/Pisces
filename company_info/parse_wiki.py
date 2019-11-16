@@ -34,15 +34,31 @@ def get_wiki_company_categories(page_soup):
     print(categories)
     return categories
 
+def get_wiki_company_suggestions(page_title):
+    suggestions = wikipedia.search(page_title)
+    for item in suggestions:
+        if item.lower() == page_title.lower():
+            categories_list = wikipedia.WikipediaPage(item).categories
+            for category in categories_list:
+                if "companies" or "company" in category:
+                    return item 
+            return None
+    return None
 
-def get_wiki_info(page_title):
-    response = requests.get("https://en.wikipedia.org/wiki/" + page_title)
 
+
+
+def get_wiki_info(page_title):  
+    response = requests.get("https://en.wikipedia.org/wiki/"+page_title)
     if response.status_code != 200:
-        return [None, None]
+        suggestion = get_wiki_company_suggestions(page_title)
+        if suggestion == None:
+            return [None, None]
+        response = requests.get("https://en.wikipedia.org/wiki/"+suggestion)        
+
     page_html = response.content
     page_soup = BeautifulSoup(page_html, 'html.parser')
-
+    
     summary = get_wiki_summary(page_soup)
 
     categories = get_wiki_company_categories(page_soup)
