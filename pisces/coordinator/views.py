@@ -84,7 +84,7 @@ class Search(TemplateView):
 class SearchResults(TemplateView):
     def get(self, request):
         srn = request.GET['srn']
-        student_option = request.GET['student_option']
+        student_option = int(request.GET['student_option'])
         company_name = request.GET['company_name']
         User.objects(srn=srn).update_one(status=student_option)
         if student_option == 1:

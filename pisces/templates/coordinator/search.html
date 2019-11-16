@@ -147,7 +147,7 @@
         function getSearchUSN()
         {
             $.ajax({
-                url:'http://127.0.0.1:8000/coordinator/search',
+                url:'/coordinator/search',
                 method:'POST',
                 data:{'usn':$('#search-usn').val(), csrfmiddlewaretoken:'{{ csrf_token }}'},
                 dataType:'json',
@@ -162,7 +162,7 @@
         function sendData()
         {
             $.ajax({
-                url:'http://127.0.0.1:8000/coordinator/search_results',
+                url:'/coordinator/search_results',
                 method:'GET',
                 data:{'student_option': $('#dropdown').find(":selected").attr('value'),
                       'company_name': $('#dropdown-search').find(":selected").attr('value'),
