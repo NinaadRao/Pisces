@@ -82,6 +82,7 @@ class updatePassword(TemplateView):
 
     def post(self, request):
         form = UserUpdatePassword(request.POST)
+        print('entered here')
         if form.is_valid():
             if 'username' in request.session:
                 password = form.cleaned_data.get("newPassword")
@@ -364,6 +365,7 @@ class Blog(TemplateView):
         # print(blogs.to_json())
         #print(blogs[0].updated_on)
         blogs = json.loads(blogs.to_json())
+        blogs = blogs[::-1]
         for i in blogs:
             # print(i['author'])
             i['author']=User.objects.get(id=i['author']['$oid'])['name']
@@ -407,6 +409,26 @@ class Blog(TemplateView):
         newBlog.content = finalContent
         newBlog.save(force_insert=True)
         return redirect('/students/blog')
+class SearchBlog(TemplateView):
+    template_name = 'blog-posts.html'
+
+    def get(self,request):
+        return HttpResponse(status=403)
+
+    def post(self,request):
+        form = BlogPost()
+        blogs = blogging.objects.filter(company=request.POST['company']).order_by('-created_on')
+
+        # print(blogs.to_json())
+        # print(blogs[0].updated_on)
+        blogs = json.loads(blogs.to_json())
+        blogs = blogs[::-1]
+        for i in blogs:
+            # print(i['author'])
+            i['author'] = User.objects.get(id=i['author']['$oid'])['name']
+            del i['content']
+        print(len(blogs))
+        return render(request, self.template_name, {"form": form, "blogs": blogs})
 
 class BlogDetails(TemplateView):
     template_name = 'blog-detail.html'
