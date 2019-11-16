@@ -1,8 +1,14 @@
 # Create your views here.
 import os
 import datetime
+
+import requests
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from rest_framework import status
+from rest_framework.response import Response
+
+from .forms import UsersLoginForm, UserUpdatePassword, SearchForm
 from .forms import UsersLoginForm, UserUpdatePassword, BlogPost
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import TemplateView
@@ -34,6 +40,10 @@ import os
 import plotly.graph_objs as go
 import plotly
 from django.core.files.storage import FileSystemStorage
+from rest_framework.views import APIView
+import spacy
+
+import pickle
 
 
 class HomePage(TemplateView):
@@ -644,3 +654,56 @@ class ViewStatistics(TemplateView):
         plot2 = wordCloud(df)
         global value
         return render(request,self.template_name,{"all_plots":all_plots,"wordCloud": plot2,'next':str(value[0][0])})
+
+
+class SearchCompany(TemplateView):
+    api_name = "Search Company api"
+    result = CompanyInfo.objects
+    summary_objects = []
+    category_objects = []
+    nlp = spacy.load("en_core_web_md")
+    names = []
+    summaries = []
+    categories = []
+    for item in result:
+        names.append(item["Name"])
+        summaries.append(item["Summary"])
+        categories.append(",".join(item["Categories"]))
+        summary_obj = nlp(item["Summary"])
+        tokens = [token.text for token in summary_obj if not token.is_stop]
+        summary_objects.append(nlp(" ".join(tokens)))
+        category_objects.append(nlp(" ".join(item["Categories"])))
+
+    def get(self, request):
+        print(self.api_name)
+        search_request = request.GET["search_field"]
+        print(search_request)
+        search_request_object = self.nlp(search_request)
+        similarities = []
+        for i in range(len(self.summary_objects)):
+            similarities.append([" ".join(self.names[i].split("_")), self.summaries[i],
+                                 self.categories[i], self.summary_objects[i].similarity(search_request_object),
+                                 self.category_objects[i].similarity(search_request_object)])
+        for i in range(len(similarities)):
+            similarities[i].append(similarities[i][3] + similarities[i][4])
+        similarities.sort(key=lambda x: x[5], reverse=True)
+        similarities = similarities[0:5]
+        for s in similarities:
+            print(s[0])
+            print(s[5])
+            print("\n")
+        request.session["search_query"] = request.GET["search_field"]
+        request.session["search_results"] = similarities
+        return redirect("/students/searchResults")
+
+
+class SearchView(TemplateView):
+    def get(self, request):
+        search_form = SearchForm()
+        return render(self.request, 'search.html', {'search_form': search_form})
+
+
+class SearchResultsView(TemplateView):
+    def get(self, request):
+        return render(self.request, 'results.html', {"search_query": request.session["search_query"],
+                                                     "search_results": request.session["search_results"]})

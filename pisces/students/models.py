@@ -1,13 +1,13 @@
 from django.db import models
 
 # Create your models here.
-from mongoengine import DynamicDocument,Document, fields
+from mongoengine import DynamicDocument, Document, fields
 from datetime import datetime
 
 
 # Create your models here.
 class Company(DynamicDocument):
-    meta = {'collection':'company_data'}
+    meta = {'collection': 'company_data'}
     # company = fields.StringField()
     # postal_address = fields.StringField()
     # about_the_company = fields.StringField()
@@ -29,7 +29,7 @@ class Company(DynamicDocument):
 
 
 class User(DynamicDocument):
-    meta = {'collection':'user_data'}
+    meta = {'collection': 'user_data'}
     # name = fields.StringField()
     # srn = fields.StringField()
     # gender = fields.StringField()
@@ -44,7 +44,7 @@ class User(DynamicDocument):
 
 
 class scheduling_information(DynamicDocument):
-    meta = {'collection':'scheduling_information'}
+    meta = {'collection': 'scheduling_information'}
 
 
 class labs(DynamicDocument):
@@ -58,3 +58,9 @@ class blogging(DynamicDocument):
     class Meta:
         ordering = ['-created_on']
 
+
+    meta = {'collection': 'labs'}
+
+
+class CompanyInfo(DynamicDocument):
+    meta = {'collection': 'company_wiki_info'}
