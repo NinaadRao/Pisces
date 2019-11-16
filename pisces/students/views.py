@@ -16,7 +16,7 @@ from numpy import array
 from keras.models import Sequential
 from keras.layers import LSTM
 from keras.layers import Dense
-
+import json
 
 from plotly.subplots import make_subplots
 from collections import Counter
@@ -263,7 +263,7 @@ class register(TemplateView):
                             company_name.save()
                             company_name.update(push__student_list=userDetails)
                             company_name.save()
-                            print(successful)
+                            print('successful')
                             return render(request, 'registered.html')
                         # already_registered
                         print("already registered")
@@ -305,6 +305,7 @@ class uploadResume(TemplateView):
         else:
             messages.info(request, 'File not uploaded')
             return redirect('/students/homepage')
+
 
 class viewSchedule(TemplateView):
     template_name = 'schedule.html'
@@ -409,6 +410,8 @@ class Blog(TemplateView):
         newBlog.content = finalContent
         newBlog.save(force_insert=True)
         return redirect('/students/blog')
+
+
 class SearchBlog(TemplateView):
     template_name = 'blog-posts.html'
 
@@ -430,6 +433,7 @@ class SearchBlog(TemplateView):
         print(len(blogs))
         return render(request, self.template_name, {"form": form, "blogs": blogs})
 
+
 class BlogDetails(TemplateView):
     template_name = 'blog-detail.html'
     def post(self,request):
@@ -441,7 +445,6 @@ class BlogDetails(TemplateView):
         blog['content'] = list(blog['content'])
         del blog['_id']
         return render(request,self.template_name,{'blog':blog,'form':form})
-
 
 
 def ctc(df):
@@ -585,7 +588,6 @@ def ctc(df):
     return plots
 
 
-
 def wordCloud(df):
     d = {}
     for i in range(len(df)):
@@ -637,10 +639,46 @@ class ViewStatistics(TemplateView):
         first = first/100000
         second = float(a[-2].replace(',',''))
         second = second/100000
-        to_be_predicted=np.array([[second,first]])
-        to_be_predicted = to_be_predicted.reshape(to_be_predicted.shape[0],to_be_predicted.shape[1],1)
+        to_be_predicted = np.array([[second,first]])
+        to_be_predicted = to_be_predicted.reshape(to_be_predicted.shape[0], to_be_predicted.shape[1], 1)
         all_plots = []
         all_plots += ctc(df)
         plot2 = wordCloud(df)
         global value
-        return render(request,self.template_name,{"all_plots":all_plots,"wordCloud": plot2,'next':str(value[0][0])})
+        return render(request, self.template_name, {"all_plots": all_plots, "wordCloud": plot2, 'next': str(value[0][0])})
+
+
+class SkillRefine(TemplateView):
+    template_name = 'quiz/skills_home.html'
+
+    def get(self, request):
+        return render(request, 'quiz/skills_home.html')
+
+
+class QuizPage(TemplateView):
+    template_name = 'quiz/quiz_page.html'
+
+    def post(self, request):
+        result = request.POST['subject']
+        if result == 'op':
+            with open('../skill_questions/oops.json') as json_file:
+                q_data = json.load(json_file)
+        elif result == 'cn':
+            with open('../skill_questions/networking.json') as json_file:
+                q_data = json.load(json_file)
+        elif result == 'ds':
+            with open('../skill_questions/datascience.json') as json_file:
+                q_data = json.load(json_file)
+        elif result == 'al':
+            with open('../skill_questions/algos.json') as json_file:
+                q_data = json.load(json_file)
+        if 'username' in request.session:
+            user = User.objects.get(srn=request.session['username'])
+            print(user)
+            return render(request, self.template_name, {"data": q_data})
+
+
+# class QuizPageResults(TemplateView):
+#     template_name = 'quiz/quiz_page.html'
+#
+#     def post(self, request):
