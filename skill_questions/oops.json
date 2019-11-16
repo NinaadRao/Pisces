@@ -1,454 +1,502 @@
 [
-
     {
-        "q_no": 1,
-        "q": "Which of the following is not OOPS concept in Java?",
-        "o1": "Inheritance",
-        "o2": "Encapsulation",
-        "o3": "Polymorphism",
-        "o4": "Compilation",
-        "a": 4
+        "question": "Which of the following is not OOPS concept in Java?",
+        "answers": {
+            "a": "Inheritance",
+            "b": "Encapsulation",
+            "c": "Polymorphism",
+            "d": "Compilation"
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 2,
-        "q": "Which of the following is a type of polymorphism in Java?",
-        "o1": "Compile time polymorphism",
-        "o2": "Execution time polymorphism",
-        "o3": "Multiple polymorphism",
-        "o4": "Multilevel polymorphism",
-        "a": 1
+        "question": "Which of the following is a type of polymorphism in Java?",
+        "answers": {
+            "a": "Compile time polymorphism",
+            "b": "Execution time polymorphism",
+            "c": "Multiple polymorphism",
+            "d": "Multilevel polymorphism"
+        },
+        "correctAnswer": "a"
     },
     {
-        "q_no": 3,
-        "q": "What is it called if an object has its own lifecycle and there is no owner?",
-        "o1": "Aggregation",
-        "o2": "Composition",
-        "o3": "Encapsulation",
-        "o4": "Association",
-        "a": 4
+        "question": "What is it called if an object has its own lifecycle and there is no owner?",
+        "answers": {
+            "a": "Aggregation",
+            "b": "Composition",
+            "c": "Encapsulation",
+            "d": "Association"
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 4,
-        "q": " Which concept of Java is achieved by combining methods and attribute into a class?",
-        "o1": "Encapsulation",
-        "o2": "Inheritance",
-        "o3": "Polymorphism",
-        "o4": "Abstraction",
-        "a": 1
+        "question": " Which concept of Java is achieved by combining methods and attribute into a class?",
+        "answers": {
+            "a": "Encapsulation",
+            "b": "Inheritance",
+            "c": "Polymorphism",
+            "d": "Abstraction"
+        },
+        "correctAnswer": "a"
     },
     {
-        "q_no": 5,
-        "q": "When does method overloading is determined?",
-        "o1": "At run time",
-        "o2": "At compile time",
-        "o3": "At coding time",
-        "o4": "At execution time",
-        "a": 2
+        "question": "When does method overloading is determined?",
+        "answers": {
+            "a": "At run time",
+            "b": "At compile time",
+            "c": "At coding time",
+            "d": "At execution time"
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 6,
-        "q": "When Overloading does not occur?",
-        "o1": "More than one method with same name but different method signature and different number or type of parameters",
-        "o2": "More than one method with same name, same signature but different number of signature",
-        "o3": "More than one method with same name, same signature, same number of parameters but different type",
-        "o4": "More than one method with same name, same number of parameters and type but different signature",
-        "a": 4
+        "question": "When Overloading does not occur?",
+        "answers": {
+            "a": "More than one method with same name but different method signature and different number or type of parameters",
+            "b": "More than one method with same name, same signature but different number of signature",
+            "c": "More than one method with same name, same signature, same number of parameters but different type",
+            "d": "More than one method with same name, same number of parameters and type but different signature"
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 7,
-        "q": "Which concept of Java is a way of converting real world objects in terms of class?",
-        "o1": "Encapsulation",
-        "o2": "Inheritance",
-        "o3": "Polymorphism",
-        "o4": "Abstraction",
-        "a": 4
+        "question": "Which concept of Java is a way of converting real world objects in terms of class?",
+        "answers": {
+            "a": "Encapsulation",
+            "b": "Inheritance",
+            "c": "Polymorphism",
+            "d": "Abstraction"
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 8,
-        "q": "What is it called where child object gets killed if parent object is killed?",
-        "o1": "Aggregation",
-        "o2": "Composition",
-        "o3": "Encapsulation",
-        "o4": "Association",
-        "a": 2
+        "question": "What is it called where child object gets killed if parent object is killed?",
+        "answers": {
+            "a": "Aggregation",
+            "b": "Composition",
+            "c": "Encapsulation",
+            "d": "Association"
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 9,
-        "q": "What is it called where object has its own lifecycle and child object cannot belong to another parent object?",
-        "o1": "Aggregation",
-        "o2": "Composition",
-        "o3": "Encapsulation",
-        "o4": "Association",
-        "a": 1
+        "question": "What is it called where object has its own lifecycle and child object cannot belong to another parent object?",
+        "answers": {
+            "a": "Aggregation",
+            "b": "Composition",
+            "c": "Encapsulation",
+            "d": "Association"
+        },
+        "correctAnswer": "a"
     },
     {
-        "q_no": 10,
-        "q": "Which of the following is correct about class and structure in C++",
-        "o1": "class can have member functions while structure cannot.",
-        "o2": "class data members are public by default while that of structure are private.",
-        "o3": "Pointer to structure or classes cannot be declared.",
-        "o4": "class data members are private by default while that of structure are public by default.",
-        "a": 4
+        "question": "Which of the following is correct about class and structure in C++",
+        "answers": {
+            "a": "class can have member functions while structure cannot.",
+            "b": "class data members are public by default while that of structure are private.",
+            "c": "Pointer to structure or classes cannot be declared.",
+            "d": "class data members are private by default while that of structure are public by default."
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 11,
-        "q": "Which of the following concepts means waiting until runtime to determine which function to call?",
-        "o1": "Data hiding",
-        "o2": "Dynamic casting",
-        "o3": "Dynamic binding",
-        "o4": "Dynamic loading",
-        "a": 3
+        "question": "Which of the following concepts means waiting until runtime to determine which function to call?",
+        "answers": {
+            "a": "Data hiding",
+            "b": "Dynamic casting",
+            "c": "Dynamic binding",
+            "d": "Dynamic loading"
+        },
+        "correctAnswer": "c"
     },
     {
-        "q_no": 12,
-        "q": "How Late binding is implemented in C++?",
-        "o1": "Using C++ tables",
-        "o2": "Using Virtual tables",
-        "o3": "Using Indexed virtual tables",
-        "o4": "Using polymorphic tables",
-        "a": 2
+        "question": "How Late binding is implemented in C++?",
+        "answers": {
+            "a": "Using C++ tables",
+            "b": "Using Virtual tables",
+            "c": "Using Indexed virtual tables",
+            "d": "Using polymorphic tables"
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 13,
-        "q": "Which of the following operator is overloaded for object cout in C++?",
-        "o1": ">>",
-        "o2": "<<",
-        "o3": "+",
-        "o4": "=",
-        "a": 2
+        "question": "Which of the following operator is overloaded for object cout in C++?",
+        "answers": {
+            "a": ">>",
+            "b": "<<",
+            "c": "+",
+            "d": "="
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 14,
-        "q": "Which of the following functions are performed by a constructor in C++?",
-        "o1": "Construct a new class",
-        "o2": "Construct a new object",
-        "o3": "Construct a new function",
-        "o4": "Initialize objects",
-        "a": 4
+        "question": "Which of the following functions are performed by a constructor in C++?",
+        "answers": {
+            "a": "Construct a new class",
+            "b": "Construct a new object",
+            "c": "Construct a new function",
+            "d": "Initialize objects"
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 15,
-        "q": "Which of the following problem causes an exception(C++)?",
-        "o1": "Missing semicolon in statement in main().",
-        "o2": "A problem in calling function.",
-        "o3": "A syntax error.",
-        "o4": "A run-time error.",
-        "a": 4
+        "question": "Which of the following problem causes an exception(C++)?",
+        "answers": {
+            "a": "Missing semicolon in statement in main().",
+            "b": "A problem in calling function.",
+            "c": "A syntax error.",
+            "d": "A run-time error."
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 16,
-        "q": "Which one of the following options is correct about the statement given below? The compiler checks the type of reference in the object and not the type of object.",
-        "o1": "Encapsulation",
-        "o2": "Inheritance",
-        "o3": "Polymorphism",
-        "o4": "Abstraction",
-        "a": 3
+        "question": "Which one of the following options is correct about the statement given below? The compiler checks the type of reference in the object and not the type of object.",
+        "answers": {
+            "a": "Encapsulation",
+            "b": "Inheritance",
+            "c": "Polymorphism",
+            "d": "Abstraction"
+        },
+        "correctAnswer": "c"
     },
     {
-        "q_no": 17,
-        "q": "Which of the following statement is correct?",
-        "o1": "C++ allows static type checking.",
-        "o2": "C++ allows dynamic type checking.",
-        "o3": "C++ allows static member function be of type const.",
-        "o4": "Both A and B.",
-        "a": 4
+        "question": "Which of the following statement is correct?",
+        "answers": {
+            "a": "C++ allows static type checking.",
+            "b": "C++ allows dynamic type checking.",
+            "c": "C++ allows static member function be of type const.",
+            "d": "Both A and B."
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 18,
-        "q": "Which of the following ways are legal to access a class data member using this pointerin C++?",
-        "o1": "this->x",
-        "o2": "this.x",
-        "o3": "*this.x",
-        "o4": "*this-x",
-        "a": 1
+        "question": "Which of the following ways are legal to access a class data member using this pointerin C++?",
+        "answers": {
+            "a": "this->x",
+            "b": "this.x",
+            "c": "*this.x",
+            "d": "*this-x"
+        },
+        "correctAnswer": "a"
     },
     {
-        "q_no": 19,
-        "q": "Which of the following is a mechanism of static polymorphism?",
-        "o1": "Operator overloading",
-        "o2": "Function overloading",
-        "o3": "Templates",
-        "o4": "All of the above",
-        "a": 4
+        "question": "Which of the following is a mechanism of static polymorphism?",
+        "answers": {
+            "a": "Operator overloading",
+            "b": "Function overloading",
+            "c": "Templates",
+            "d": "All of the above"
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 20,
-        "q": "Which of the following are available only in the class hierarchy chain(C++)?",
-        "o1": "Public data members",
-        "o2": "Private data members",
-        "o3": "Protected data members",
-        "o4": "Member functions",
-        "a": 3
+        "question": "Which of the following are available only in the class hierarchy chain(C++)?",
+        "answers": {
+            "a": "Public data members",
+            "b": "Private data members",
+            "c": "Protected data members",
+            "d": "Member functions"
+        },
+        "correctAnswer": "c"
     },
     {
-        "q_no": 21,
-        "q": "Which of the following is not a type of inheritance?",
-        "o1": "Multiple",
-        "o2": "Multilevel",
-        "o3": "Distributive",
-        "o4": "Hierchical",
-        "a": 3
+        "question": "Which of the following is not a type of inheritance?",
+        "answers": {
+            "a": "Multiple",
+            "b": "Multilevel",
+            "c": "Distributive",
+            "d": "Hierchical"
+        },
+        "correctAnswer": "c"
     },
     {
-        "q_no": 22,
-        "q": "Which of the following keyword is used to overload an operator in C++?",
-        "o1": "overload",
-        "o2": "operator",
-        "o3": "friend",
-        "o4": "override",
-        "a": 2
+        "question": "Which of the following keyword is used to overload an operator in C++?",
+        "answers": {
+            "a": "overload",
+            "b": "operator",
+            "c": "friend",
+            "d": "override"
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 23,
-        "q": "What will happen if a class is not having any name(C++)?",
-        "o1": "It cannot have a destructor.",
-        "o2": "It cannot have a constructor.",
-        "o3": "It is not allowed.",
-        "o4": "Both A and B.",
-        "a": 4 
+        "question": "What will happen if a class is not having any name(C++)?",
+        "answers": {
+            "a": "It cannot have a destructor.",
+            "b": "It cannot have a constructor.",
+            "c": "It is not allowed.",
+            "d": "Both A and B."
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 24,
-        "q": "Which of the following is an invalid visibility label while inheriting a class?",
-        "o1": "public",
-        "o2": "private",
-        "o3": "protected",
-        "o4": "friend",
-        "a": 4
+        "question": "Which of the following is an invalid visibility label while inheriting a class?",
+        "answers": {
+            "a": "public",
+            "b": "private",
+            "c": "protected",
+            "d": "friend"
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 25,
-        "q": "Which of the following statements is correct in C++?",
-        "o1": "Classes cannot have data as protected members.",
-        "o2": "Structures can have functions as members.",
-        "o3": "Class members are public by default.",
-        "o4": "Structure members are private by default.",
-        "a": 2
+        "question": "Which of the following statements is correct in C++?",
+        "answers": {
+            "a": "Classes cannot have data as protected members.",
+            "b": "Structures can have functions as members.",
+            "c": "Class members are public by default.",
+            "d": "Structure members are private by default."
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 26,
-        "q": "Which of the following is used to make an abstract class?",
-        "o1": "Declaring it abstract using static keyword.",
-        "o2": "Declaring it abstract using virtual keyword.",
-        "o3": "Making at least one member function as virtual function.",
-        "o4": "Making at least one member function as pure virtual function.",
-        "a": 4
+        "question": "Which of the following is used to make an abstract class?",
+        "answers": {
+            "a": "Declaring it abstract using static keyword.",
+            "b": "Declaring it abstract using virtual keyword.",
+            "c": "Making at least one member function as virtual function.",
+            "d": "Making at least one member function as pure virtual function."
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 27,
-        "q": "Which of the following access specifier is used as a default in a class definition(C++)?",
-        "o1": "public",
-        "o2": "private",
-        "o3": "protected",
-        "o4": "friend",
-        "a": 2
+        "question": "Which of the following access specifier is used as a default in a class definition(C++)?",
+        "answers": {
+            "a": "public",
+            "b": "private",
+            "c": "protected",
+            "d": "friend"
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 28,
-        "q": "Which of the following provides a reuse mechanism?",
-        "o1": "Abstraction",
-        "o2": "Inheritance",
-        "o3": "Dynamic Binding",
-        "o4": "Encapsulation",
-        "a": 2
+        "question": "Which of the following provides a reuse mechanism?",
+        "answers": {
+            "a": "Abstraction",
+            "b": "Inheritance",
+            "c": "Dynamic Binding",
+            "d": "Encapsulation"
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 29,
-        "q": "Which of the following statement is correct?",
-        "o1": "Class is an instance of object.",
-        "o2": "Object is an instance of a class.",
-        "o3": "Class is an instance of data type.",
-        "o4": "Object is an instance of data type.",
-        "a": 2
+        "question": "Which of the following statement is correct?",
+        "answers": {
+            "a": "Class is an instance of object.",
+            "b": "Object is an instance of a class.",
+            "c": "Class is an instance of data type.",
+            "d": "Object is an instance of data type."
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 30,
-        "q": "Why reference is not same as a pointer(C++)?",
-        "o1": "A reference can never be null.",
-        "o2": "A reference once established cannot be changed.",
-        "o3": "Reference doesn't need an explicit dereferencing mechanism.",
-        "o4": "All of the above.",
-        "a": 4
+        "question": "Why reference is not same as a pointer(C++)?",
+        "answers": {
+            "a": "A reference can never be null.",
+            "b": "A reference once established cannot be changed.",
+            "c": "Reference doesn't need an explicit dereferencing mechanism.",
+            "d": "All of the above."
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 31,
-        "q": "cout is aan",
-        "o1": "operator",
-        "o2": "function",
-        "o3": "object",
-        "o4": "macro",
-        "a": 3
+        "question": "cout is aan",
+        "answers": {
+            "a": "operator",
+            "b": "function",
+            "c": "object",
+            "d": "macro"
+        },
+        "correctAnswer": "c"
     },
     {
-        "q_no": 32,
-        "q": "How many types of polymorphisms are supported by C++?",
-        "o1": "1",
-        "o2": "2",
-        "o3": "3",
-        "o4": "4",
-        "a": 2
+        "question": "How many types of polymorphisms are supported by C++?",
+        "answers": {
+            "a": "1",
+            "b": "2",
+            "c": "3",
+            "d": "4"
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 33,
-        "q": "Which of the following is an abstract data type?",
-        "o1": "int",
-        "o2": "double",
-        "o3": "string",
-        "o4": "class",
-        "a": 4
+        "question": "Which of the following is an abstract data type?",
+        "answers": {
+            "a": "int",
+            "b": "double",
+            "c": "string",
+            "d": "class"
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 34,
-        "q": "Which of the following concepts means adding new components to a program as it runs?",
-        "o1": "Data hiding",
-        "o2": "Dynamic typing",
-        "o3": "Dynamic binding",
-        "o4": "Dynamic loading",
-        "a": 4
+        "question": "Which of the following concepts means adding new components to a program as it runs?",
+        "answers": {
+            "a": "Data hiding",
+            "b": "Dynamic typing",
+            "c": "Dynamic binding",
+            "d": "Dynamic loading"
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 35,
-        "q": "Which of the following statement is correct?",
-        "o1": "A constructor is called at the time of declaration of an object.",
-        "o2": "A constructor is called at the time of use of an object.",
-        "o3": "A constructor is called at the time of declaration of a class.",
-        "o4": "A constructor is called at the time of use of a class.",
-        "a": 1
+        "question": "Which of the following statement is correct?",
+        "answers": {
+            "a": "A constructor is called at the time of declaration of an object.",
+            "b": "A constructor is called at the time of use of an object.",
+            "c": "A constructor is called at the time of declaration of a class.",
+            "d": "A constructor is called at the time of use of a class."
+        },
+        "correctAnswer": "a"
     },
     {
-        "q_no": 36,
-        "q": "Which of the following correctly describes overloading of functions?",
-        "o1": "Virtual polymorphism",
-        "o2": "Transient polymorphism",
-        "o3": "Ad-hoc polymorphism",
-        "o4": "Pseudo polymorphism",
-        "a": 3
+        "question": "Which of the following correctly describes overloading of functions?",
+        "answers": {
+            "a": "Virtual polymorphism",
+            "b": "Transient polymorphism",
+            "c": "Ad-hoc polymorphism",
+            "d": "Pseudo polymorphism"
+        },
+        "correctAnswer": "c"
     },
     {
-        "q_no": 37,
-        "q": "Which of the following approach is adapted by C++?",
-        "o1": "Top-down",
-        "o2": "Bottum-up",
-        "o3": "Right-left",
-        "o4": "Left-right",
-        "a": 2
+        "question": "Which of the following approach is adapted by C++?",
+        "answers": {
+            "a": "Top-down",
+            "b": "Bottum-up",
+            "c": "Right-left",
+            "d": "Left-right"
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 38,
-        "q": "Which of the following is correct about function overloading?",
-        "o1": "The types of arguments are different.",
-        "o2": "The order of argument is different.",
-        "o3": "The number of argument is same.",
-        "o4": "Both A and B.",
-        "a": 4
+        "question": "Which of the following is correct about function overloading?",
+        "answers": {
+            "a": "The types of arguments are different.",
+            "b": "The order of argument is different.",
+            "c": "The number of argument is same.",
+            "d": "Both A and B."
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 39,
-        "q": "Which of the following concept of oops allows compiler to insert arguments in a function call if it is not specified?",
-        "o1": "Call by value",
-        "o2": "Call by reference",
-        "o3": "Default arguments",
-        "o4": "Call by pointer",
-        "a": 3
+        "question": "Which of the following concept of oops allows compiler to insert arguments in a function call if it is not specified?",
+        "answers": {
+            "a": "Call by value",
+            "b": "Call by reference",
+            "c": "Default arguments",
+            "d": "Call by pointer"
+        },
+        "correctAnswer": "c"
     },
     {
-        "q_no": 40,
-        "q": "How many instances of an abstract class can be created?",
-        "o1": "1",
-        "o2": "5",
-        "o3": "10",
-        "o4": "0",
-        "a": 4
+        "question": "How many instances of an abstract class can be created?",
+        "answers": {
+            "a": "1",
+            "b": "5",
+            "c": "10",
+            "d": "0"
+        },
+        "correctAnswer": "d"
     },
     {
-        "q_no": 41,
-        "q": "Which of the following cannot be friend?",
-        "o1": "Function",
-        "o2": "Class",
-        "o3": "Object",
-        "o4": "Operator function",
-        "a": 3
+        "question": "Which of the following cannot be friend?",
+        "answers": {
+            "a": "Function",
+            "b": "Class",
+            "c": "Object",
+            "d": "Operator function"
+        },
+        "correctAnswer": "c"
     },
     {
-        "q_no": 42,
-        "q": "Which of the following type of class allows only one object of it to be created?",
-        "o1": "Virtual class",
-        "o2": "Abstract class",
-        "o3": "Singleton class",
-        "o4": "Friend class",
-        "a": 3
+        "question": "Which of the following type of class allows only one object of it to be created?",
+        "answers": {
+            "a": "Virtual class",
+            "b": "Abstract class",
+            "c": "Singleton class",
+            "d": "Friend class"
+        },
+        "correctAnswer": "c"
     },
     {
-        "q_no": 43,
-        "q": "Which of the following statements is correct?",
-        "o1": "Base class pointer cannot point to derived class.",
-        "o2": "Derived class pointer cannot point to base class.",
-        "o3": "Pointer to derived class cannot be created.",
-        "o4": "Pointer to base class cannot be created.",
-        "a": 2
+        "question": "Which of the following statements is correct?",
+        "answers": {
+            "a": "Base class pointer cannot point to derived class.",
+            "b": "Derived class pointer cannot point to base class.",
+            "c": "Pointer to derived class cannot be created.",
+            "d": "Pointer to base class cannot be created."
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 44,
-        "q": " Not using virtual destructor feature in a C++ object oriented programing can cause",
-        "o1": "Memory leak",
-        "o2": "An Issue in creating object of the class",
-        "o3": "An issue in calling base class destructor",
-        "o4": "Nothing",
-        "a": 1
+        "question": " Not using virtual destructor feature in a C++ object oriented programing can cause",
+        "answers": {
+            "a": "Memory leak",
+            "b": "An Issue in creating object of the class",
+            "c": "An issue in calling base class destructor",
+            "d": "Nothing"
+        },
+        "correctAnswer": "a"
     },
     {
-        "q_no": 45,
-        "q": "Features not available in C++ object oriented programming is",
-        "o1": "Virtual destructor",
-        "o2": "Virtual constructor",
-        "o3": "Virtual function",
-        "o4": "All of the above",
-        "a": 2
+        "question": "Features not available in C++ object oriented programming is",
+        "answers": {
+            "a": "Virtual destructor",
+            "b": "Virtual constructor",
+            "c": "Virtual function",
+            "d": "All of the above"
+        },
+        "correctAnswer": "b"
     },
     {
-        "q_no": 46,
-        "q": "In a class, encapsulating an object of another class is called",
-        "o1": "Composition",
-        "o2": "Inheritance",
-        "o3": "Encapsulation",
-        "o4": "None of these",
-        "a": 1
+        "question": "In a class, encapsulating an object of another class is called",
+        "answers": {
+            "a": "Composition",
+            "b": "Inheritance",
+            "c": "Encapsulation",
+            "d": "None of these"
+        },
+        "correctAnswer": "a"
     },
     {
-        "q_no": 47,
-        "q": "Which function overloads the == operator in python?",
-        "o1": "__eq__()",
-        "o2": "__equ__()",
-        "o3": "__isequal__()",
-        "o4": "None of the mentioned",
-        "a": 1
+        "question": "Which function overloads the == operator in python?",
+        "answers": {
+            "a": "__eq__()",
+            "b": "__equ__()",
+            "c": "__isequal__()",
+            "d": "None of the mentioned"
+        },
+        "correctAnswer": "a"
     },
     {
-        "q_no": 48,
-        "q": "What are the methods which begin and end with two underscore characters called in Python",
-        "o1": "Special methods",
-        "o2": "In-built methods",
-        "o3": "User-defined methods",
-        "o4": "Additional methods",
-        "a": 1
+        "question": "What are the methods which begin and end with two underscore characters called in Python",
+        "answers": {
+            "a": "Special methods",
+            "b": "In-built methods",
+            "c": "User-defined methods",
+            "d": "Additional methods"
+        },
+        "correctAnswer": "a"
     },
     {
-        "q_no": 49,
-        "q": "When will the else part of try-except-else be executed (Python)?",
-        "o1": "always",
-        "o2": "when an exception occurs",
-        "o3": "when no exception occurs",
-        "o4": "when an exception occurs in to except block",
-        "a": 3
+        "question": "When will the else part of try-except-else be executed (Python)?",
+        "answers": {
+            "a": "always",
+            "b": "when an exception occurs",
+            "c": "when no exception occurs",
+            "d": "when an exception occurs in to except block"
+        },
+        "correctAnswer": "c"
     },
     {
-        "q_no": 50,
-        "q": "Which of the following statements is true in Python",
-        "o1": "The __new__() method automatically invokes the __init__ method",
-        "o2": "The __init__ method is defined in the object class",
-        "o3": "The __eq(other) method is defined in the object class",
-        "o4": "The __repr__() method is defined in the object class",
-        "a": 3
+        "question": "Which of the following statements is true in Python",
+        "answers": {
+            "a": "The __new__() method automatically invokes the __init__ method",
+            "b": "The __init__ method is defined in the object class",
+            "c": "The __eq(other) method is defined in the object class",
+            "d": "The __repr__() method is defined in the object class"
+        },
+        "correctAnswer": "c"
     }
-
 ]
