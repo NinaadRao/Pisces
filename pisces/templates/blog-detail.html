@@ -15,6 +15,7 @@ body {
 </style>
 {% endblock %}
 {% block content %}
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -38,6 +39,7 @@ body {
                     <li class="nav-item">
                         <a class="nav-link" href="/students/blog">Blog</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#policy" href="#policy">Policy</a>
                     </li>
@@ -48,16 +50,15 @@ body {
                             </button>
                             <ul class="dropdown-menu" background-color="#212529">
                                 <li background-color="#212529">  <a class="nav-link" href="/students/logout"><font color="grey">Logout</font></a></li>
-                                <li background-color="#212529"><a class="nav-link" href="/students/update"><font color="grey">Update Password</font></a></li>
                             </ul>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
     <br>
+
 <div id="policy" class="modal fade" role="dialog" style="margin:5px;">
     <div class="modal-dialog modal-xl" >
         <div class="modal-content" >
@@ -159,152 +160,120 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
           </div>
       </div>
         </div></div></div>
- {% for company in details %}
-    <div  id = "company{{ company.id }}" class="modal fade"  role="dialog"  >
-                <div class="modal-dialog modal-lg" >
-                    <div class="modal-content" >
+
+<center><a href="#{{ company.id }}" class="btn btn-primary" data-toggle="modal" data-target="#post">Add Post</a></center>
+
+<div class = "modal fade " id = "post" role="dialog" >
+            <div class="modal-dialog modal-lg" >
+
+                    <div class="modal-content" ><div class="modal-header"><center><h5>Help others by sharing your views</h5></center></div>
                         <div class="modal-body">
-                            {% for key,value in company.items %}
+            <form class="form-horizontal" method = 'POST' action= '/students/blog' enctype = "multipart/form-data" >
+                {% csrf_token %}
 
-                {% if key == "Company" %}
-                            <b>{{key}}</b> : &nbsp&nbsp{{value}}<br>
-                            {% elif key == "Disciplines" %}
-                            <b>{{key}}:</b> <br>
-                                 {% for j,k in value.items %}
-                                &nbsp &nbsp{{j}} : &nbsp; <br>
-                            {% for l in k %}
-                                &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp{{l}}<br>
-                            {% endfor %}
-                            {% endfor %}
-                            {% elif key == "Criteria" %}
-                            <b>{{key}}</b>:<br>
-                            {% for j,k in value.items %}
-                                {% if j == "BE" or j == "MTech/MCA" %}
-                                   &nbsp &nbsp &nbsp &nbsp{{j}}:<br>
-                            {% for l,m in k.items %}
-                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{l}}: &nbsp &nbsp{{m}}<br>
-                            {% endfor %}
-                            {% else %}
-                            &nbsp &nbsp &nbsp &nbsp {{j}} : {{k}}<br>
-                                {% endif %}
+                {{ form.as_p }}
+                </label>
+                <button class ="btn btn-lg btn-primary btn-block" type ="button" name="add" id = "add" onclick = "addFields()">Add Field</button>
+                <br>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" name ="login">Submit</button>
+                <br>
 
+            </form>
+                        </div></div></div>
+    </div>
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-12 mt-3 left " style="margin:15px">
 
-                            {% endfor %}
+            <div class="card mb-8">
+                <div class="card-body">
 
-                {% elif key == "Compensation" %}
-                            <b>{{key}}</b> : <br>
-                    {% for j,k in value.items %}
-                        &nbsp &nbsp &nbsp &nbsp{{j}}:<br>
-                        {% if j == "Full Time" %}
-                            {% for total,cost in k.items %}
+                    <h2 class="card-title">{{ blog.title }}</h2>
 
-                                    &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp{{total}}:&nbsp&nbsp{{cost}} <br>
+                    <p class="card-text text-muted h6">{{ blog.author }} |  {{ blog.company}} </p>
+                    <button class = "btn btn-primary btn-sm " >{{blog.blogType}}</button>
+                    <br><br>
+                    {% for i in blog.content %}
 
-                            {% endfor %}
-                        {% elif j == "Internship" %}
-                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{k}}<br>
+                        {% if i.0.0 == 'sub heading'   %}
+                            <h4 class="card-text">{{i.1.0}}</h4>
+                        {% else %}
+                            <p class="card-text">{{i.1.0}}</p>
                         {% endif %}
                     {% endfor %}
-                            {% elif key == "Mode of Selection" %}
-                            <b>{{key}}</b> : <br>
-                            {% for j in value %}
-                                &nbsp &nbsp &nbsp &nbsp{{j}} <br>
-                            {% endfor %}
-                {% elif key == "Job Status" %}
-                            <b>{{key}}</b>: <br>
-                            {% for j in value %}
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{j}}<br>{% endfor %}
-                {% elif key not in notRendered %}
-                            <b>{{key}}</b> : &nbsp&nbsp{{value}}<br>
-                {% endif %}
 
-
-            {% endfor %}
-</div> <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
                 </div>
             </div>
         </div>
 
-    {% endfor %}
-<div class="container text-center">
 
-<div class = "card bg-success"><div class="card-header" ><font color="white" size="4px">Open for Registrations</font></div></div>
+<script type="text/javascript">
+    count = 0;
+    addFields=function(){
+        button = document.getElementById("add");
+        divclass = document.createElement("div");
+        divclass.className = "flex-d";
+        divclass.id="div"+count;
+        var select = document.createElement("select");
+        select.className = "form-control"
+        select.id = "type"+count;
+        select.name="type"+count;
 
-    {% for company in details %}
 
-            {% if company.allowed == 1 %}
-    <div class ="card bg-light" style="margin:15px;">
-        <div class="card-body">
-            {% for key,value in company.items %}
+        var option1 = document.createElement("option");
+        option1.value="sub heading";
 
-                {% if key == "Company" %}
-                    {{key}} : {{value}}<br>
-                {% elif key == "Company Sector" %}
-                    {{key}} : {{value}}<br>
-                {% elif key == "Compensation" %}
-                    {% for j,k in value.items %}
-                        {{j}}:
-                        {% if j == "Full Time" %}
-                            {% for total,cost in k.items %}
-                                {% if total == 'Total CTC' %}
-                                    {{cost}} <br>
-                                {% endif %}
-                            {% endfor %}
-                        {% elif j == "Internship" %}
-                            {{k}}<br>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-            {% endfor %}
-            <a href="#{{ company.id }}" class="btn btn-primary" data-toggle="modal" data-target="#company{{ company.id }}">Details</a>
+        option1.innerHTML= "sub heading";
 
-            <form method="get" action="/students/register" style="margin:10px;">
-                <button type="submit" class="btn btn-primary" name="companyId" value="{{ company.id }}">Register</button>
-            </form>
-            {% endif %}
-        </div>
-    </div>
-  {% endfor %}
-</div>
-
-<div class="container text-center">
-    <div class = "text-center card bg-secondary"><div class="card-header" ><font color="white"><h4>Closed for Registrations</h4></font></div></div>
+        var option2 = document.createElement("option");
+        option2.value="paragraph";
+        option2.innerHTML= "paragraph";
 
 
 
-    {% for company in details %}
-    {% if company.allowed == 0  %}
-    <div class ="card bg-light" style="margin:15px;">
-        <div class="card-body">
+        select.appendChild(option1);
+        select.appendChild(option2);
 
-            {% for key,value in company.items %}
+        contentType = document.createElement("textarea")
+        contentType.className = "form-control";
+        contentType.type = "text";
+        contentType.name = "text"+count;
+        contentType.id = "text"+count;
+        contentType.rows = "5";
+        contentType.cols = "50";
+        contentType.label="Enter content";
 
-                {% if key == "Company" %}
-                    {{key}} : {{value}}<br>
-                {% elif key == "Company Sector" %}
-                    {{key}} : {{value}}<br>
-                {% elif key == "Compensation" %}
-                    {% for j,k in value.items %}
-                        {{j}}:
-                        {% if j == "Full Time" %}
-                            {% for total,cost in k.items %}
-                                {% if total == 'Total CTC' %}
-                                    {{cost}} <br>
-                                {% endif %}
-                            {% endfor %}
-                        {% elif j == "Internship" %}
-                            {{k}}<br>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-            {% endfor %}
-            <a href="#{{ company.id }}" class="btn btn-primary" data-toggle="modal" data-target="#company{{ company.id }}">Details</a>
-            {% endif %}
-        </div>
-    </div>
-  {% endfor %}
-</div>
+        close = document.createElement("button")
+        close.className = "btn btn-sm btn-primary btn-danger"
+        close.type="button"
+        close.id = "close"+count;
+
+
+        close.innerHTML = "Cancel"
+        br = document.createElement("BR");
+        space = document.createTextNode(" ");
+
+        divclass.appendChild(select);
+        divclass.appendChild(contentType);
+         divclass.appendChild(close);
+         divclass.innerHTML+='&nbsp;' ;
+
+        $(divclass).insertBefore(button);
+        $(br).insertBefore(button);
+        close = document.getElementById("close"+count);
+        close.addEventListener('click',function(e){
+        var id = e.target.id;
+        console.log(id);
+        id = id.split('close');
+        console.log(id);
+        elem = document.getElementById("div"+id[1]);
+        elem.parentNode.removeChild(elem);});
+        count++;
+    }
+
+    cancel = function(id){
+
+    }
+</script>
 {% endblock %}
-

@@ -4,7 +4,11 @@
 {% block style %}
 <style type="text/css">
 body {
-	background: #eee !important;
+	background-image : url({% static 'images/pesuniversity.jpg' %});
+	background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
 }
 .wrapper {
 	margin-top: 80px;
@@ -55,6 +59,9 @@ body {
 {% endblock %}
 
 {% block content %}
+
+
+<div class="bg-image"></div>
 <div class = "container">
     <div class = "col-md-6 mx-auto">
         <img src="{% static 'images/peslogo.png' %}" alt="PES Logo">
@@ -70,8 +77,7 @@ body {
                 <br>
                     <button class="btn btn-lg btn-primary btn-block" type="submit" name ="login">{{title}}</button>
                 <br>
-                {% if title == "Login" %}<h5>Forgot Password? <a href = "/accounts/register">Click Here</a></h5>{% endif %}
-                {% if title == "Register" %}<h5>Already Registered? <a href = "/accounts/login">Login Here</a></h5>{% endif %}
+
             </form>
 
         </div>
