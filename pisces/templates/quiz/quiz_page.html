@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% block style %}
+    <style>
+        body{
+            font-size: 20px;
+            font-family: sans-serif;
+            color: #333;
+        }
+        .question{
+            font-weight: 600;
+        }
+        .answers {
+        margin-bottom: 20px;
+        }
+        .answers label{
+        display: block;
+        }
+        #submit{
+            font-family: sans-serif;
+            font-size: 20px;
+            background-color: #279;
+            color: #fff;
+            border: 0px;
+            border-radius: 3px;
+            padding: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #submit:hover{
+            background-color: #38a;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="page-header text-center">
+        <h1>Quiz</h1>
+    </div>
+    <div class="d-flex justify-content-center" style="margin-top: 50px;">
+        <div id="quiz"></div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button id="submit" onclick="sendResults()">Submit Quiz</button>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div id="results"></div>
+    </div>
+
+    <div>
+        {{data}}
+    </div>
+
+    <script type="text/javascript">
+        (function() {
+            function buildQuiz() {
+                const output = [];
+
+                myQuestions.forEach((currentQuestion, questionNumber) => {
+                    const answers = [];
+
+                    for (letter in currentQuestion.answers) {
+                        // ...add an HTML radio button
+                        answers.push(
+                            `<label>
+                            <input type="radio" name="question${questionNumber}" value="${letter}">
+                            ${letter} :
+                            ${currentQuestion.answers[letter]}
+                            </label>`
+                        );
+                    }
+
+                    output.push(
+                        `<div class="question"> ${currentQuestion.question} </div>
+                        <div class="answers"> ${answers.join("")} </div>`
+                    );
+                });
+
+                // Combine our output list into one string of HTML and put it on the page
+                quizContainer.innerHTML = output.join("");
+            }
+
+            function showResults() {
+                // gather answer containers from our quiz
+                const answerContainers = quizContainer.querySelectorAll(".answers");
+
+                let numCorrect = 0;
+
+                myQuestions.forEach((currentQuestion, questionNumber) => {
+                    const answerContainer = answerContainers[questionNumber];
+                    const selector = `input[name=question${questionNumber}]:checked`;
+                    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+                    if (userAnswer === currentQuestion.correctAnswer) {
+                        numCorrect++;
+                        answerContainers[questionNumber].style.color = "lightgreen";
+                    } else {
+                        answerContainers[questionNumber].style.color = "red";
+                    }
+            });
+
+                // show number of correct answers out of total
+                resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+            }
+
+            const quizContainer = document.getElementById("quiz");
+            const resultsContainer = document.getElementById("results");
+            const submitButton = document.getElementById("submit");
+            var json_data = '{{data}}';
+            console.log(String(json_data));
+            var result = [];
+
+<!--            for(var i in json_data)-->
+<!--            {-->
+<!--                console.log(typeof(i));-->
+<!--                result.push(JSON.parse(i));-->
+<!--                console.log(JSON.parse(i));-->
+<!--            }-->
+
+            const myQuestions = result;
+
+            // display quiz right away
+            buildQuiz();
+
+            // on submit, show results
+            submitButton.addEventListener("click", showResults);
+        })();
+
+        function sendResults()
+        {
+            $.ajax({
+                url:'/students/quizPageResults',
+                method:'POST',
+                data:{'subject': $('#subject').find(":selected").attr('value'),
+                      csrfmiddlewaretoken:'{{ csrf_token }}'},
+                success:function(data) {}
+            })
+        }
+    </script>
+{% endblock %}

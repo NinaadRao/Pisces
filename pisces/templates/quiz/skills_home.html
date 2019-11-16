@@ -14,8 +14,11 @@ body {
 }
 </style>
 {% endblock %}
-{% block content %}
 
+
+
+
+{% block content %}
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -52,15 +55,16 @@ body {
                             </button>
                             <ul class="dropdown-menu" background-color="#212529">
                                 <li background-color="#212529">  <a class="nav-link" href="/students/logout"><font color="grey">Logout</font></a></li>
+                                <li background-color="#212529"><a class="nav-link" href="/students/update"><font color="grey">Update Password</font></a></li>
                             </ul>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>
     </nav>
     <br>
-
 <div id="policy" class="modal fade" role="dialog" style="margin:5px;">
     <div class="modal-dialog modal-xl" >
         <div class="modal-content" >
@@ -162,127 +166,29 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
           </div>
       </div>
         </div></div></div>
-<div class = "container">
-<form class="form-horizontal" action="/students/searchBlog" method="POST" enctype = "multipart/form-data" >
-    {% csrf_token %}
-    <input type="text" name = "company" placeholder = "Type Company Name here(Case Sensitive)" class = "form-control">
-    <center><button class="btn btn btn-primary"  type="submit" name ="login">Submit</button></center></form><br></div>
-<center><a href="#{{ company.id }}" class="btn btn-primary" data-toggle="modal" data-target="#post">Add Post</a></center>
-<br>
-<div class = "modal fade " id = "post" role="dialog" >
-            <div class="modal-dialog modal-lg" >
 
-                    <div class="modal-content" ><div class="modal-header"><center><h5>Help others by sharing your views</h5></center></div>
-                        <div class="modal-body">
-            <form class="form-horizontal" method = 'POST' action= '/students/blog' enctype = "multipart/form-data" >
+    <div class="d-flex justify-content-center" style="margin-top: 50px;">
+        <div class="dropdown" id="subject">
+            <form method="post" action="/students/quizPage">
                 {% csrf_token %}
-
-                {{ form.as_p }}
-                </label>
-                <button class ="btn btn-lg btn-primary btn-block" type ="button" name="add" id = "add" onclick = "addFields()">Add Field</button>
+                <select name="subject" class="form-control">
+                    <option selected value="al">Algorithms</option>
+                    <option value="cn">Computer Networking</option>
+                    <option value="op">Object Oriented Programming</option>
+                    <option value="ds">Data Science</option>
+                </select>
                 <br>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" name ="login">Submit</button>
                 <br>
-
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <input type="submit" value="Begin Quiz" class="btn btn-primary" id="submit-btn">
+                </div>
             </form>
-                        </div></div></div>
+        </div>
     </div>
 
-{% if blogs|length == 0 %}<br><br><br><div class="text-center"><h1 class="col-md-16">No blogs available! Please come back later</h1></div>{%endif%}
-<div class="container">
-    <div class="row">
-        <!-- Blog Entries Column -->
-
-        <div class="col-md-12 mt-3 left " style="margin:15px">
-            {% for post in blogs %}
-            <div class="card mb-8">
-                <div class="card-body">
-
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.shortDescription|slice:":200" }}</p>
-                    {% for i,j in post.items %}
-                        {% if i == '_id' %}
-                        {% for k,l in j.items %}
-                    <form action = "/students/blogdetails" method="POST">
-                        {% csrf_token %}
-                        <input type="text" name="id" value="{{l}}" hidden>
-                        <button type="submit"class="btn btn-primary">Read More &rarr;</button></form>{% endfor %}
-                    {% endif %}
-
-                    {% endfor %}
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-
-<script type="text/javascript">
-    count = 0;
-    addFields=function(){
-        button = document.getElementById("add");
-        divclass = document.createElement("div");
-        divclass.className = "flex-d";
-        divclass.id="div"+count;
-        var select = document.createElement("select");
-        select.className = "form-control"
-        select.id = "type"+count;
-        select.name="type"+count;
-
-
-        var option1 = document.createElement("option");
-        option1.value="sub heading";
-
-        option1.innerHTML= "sub heading";
-
-        var option2 = document.createElement("option");
-        option2.value="paragraph";
-        option2.innerHTML= "paragraph";
-
-
-
-        select.appendChild(option1);
-        select.appendChild(option2);
-
-        contentType = document.createElement("textarea")
-        contentType.className = "form-control";
-        contentType.type = "text";
-        contentType.name = "text"+count;
-        contentType.id = "text"+count;
-        contentType.rows = "5";
-        contentType.cols = "50";
-        contentType.label="Enter content";
-
-        close = document.createElement("button")
-        close.className = "btn btn-sm btn-primary btn-danger"
-        close.type="button"
-        close.id = "close"+count;
-
-
-        close.innerHTML = "Cancel"
-        br = document.createElement("BR");
-        space = document.createTextNode(" ");
-
-        divclass.appendChild(select);
-        divclass.appendChild(contentType);
-         divclass.appendChild(close);
-         divclass.innerHTML+='&nbsp;' ;
-
-        $(divclass).insertBefore(button);
-        $(br).insertBefore(button);
-        close = document.getElementById("close"+count);
-        close.addEventListener('click',function(e){
-        var id = e.target.id;
-        console.log(id);
-        id = id.split('close');
-        console.log(id);
-        elem = document.getElementById("div"+id[1]);
-        elem.parentNode.removeChild(elem);});
-        count++;
-    }
-
-    cancel = function(id){
-
-    }
-</script>
 {% endblock %}
+
+
