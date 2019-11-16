@@ -11,7 +11,9 @@ urlpatterns = [
     url(r"^company", Company_list.as_view(), name="company_list"),
     url(r"^register", register.as_view(), name="register_company"),
     url(r"^uploadResume", uploadResume.as_view(), name="upload_resume"),
-
+    url(r"^searchCompanyPage", SearchView.as_view(), name="searchCompanyPage"),
+    url(r"^searchCompany", SearchCompany.as_view(), name="searchCompany"),
+    url(r"^searchResults", SearchResultsView.as_view(), name="searchResults")
 ]
 
 if settings.DEBUG:
