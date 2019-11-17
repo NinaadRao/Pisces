@@ -617,7 +617,7 @@ def wordCloud(df):
     plt.close()
     return 'data:image/png;base64,{}'.format(graph_url)
 
-df = pd.read_csv("detail.csv")
+'''df = pd.read_csv("detail.csv")
 df = df.sort_values(by='Date that the company has come')
 df = df.reset_index(drop=True)
 a = list(df['CTC'])
@@ -630,7 +630,7 @@ to_be_predicted=np.array([[second,first]])
 to_be_predicted = to_be_predicted.reshape(to_be_predicted.shape[0],to_be_predicted.shape[1],1)
 model = load_model('ctc_lstm.h5')
 value = model.predict(to_be_predicted,verbose=0)
-print('This is the value',value)
+print('This is the value',value)'''
 
 
 class ViewStatistics(TemplateView):

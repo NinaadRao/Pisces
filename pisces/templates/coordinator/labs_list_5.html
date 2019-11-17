@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+        {% load staticfiles %}
+        {% load static %}
+
+<head>
+        
+        <style>  
+                body{
+                    background: #ffd89b;
+                    background: -webkit-linear-gradient(to right, #ffd89b, #19547b);
+                    background: linear-gradient(to right, #ffd89b, #19547b);
+                    min-height: 100vh;
+                }
+                hr{
+                    border: 1px solid black;
+                }
+                .image1{
+                    filter: blur(3px);
+                }
+                input{
+                    padding: 10px 500px;
+                    border: 2px solid #19547b;
+                    font-weight: bold;
+                    color: #19547b;
+                    box-align: center;
+                    background-color: white;
+                }
+                ul{
+                    border: solid;
+                    border-width: thin;
+                    align-items: center;
+                    float: left;
+                    background: white;
+                    color: #19547b;
+                    border-color: #19547b;
+                }
+                li{
+                    font-style: oblique;
+                    font-size: 100%;
+                    color: black;
+                    font-weight: bold;
+                    padding: 5px;
+            
+                }
+                .main{
+                    align-items: center;
+                }
+                .image2{
+                   
+                    width: 30px;
+                    height: 30px;
+                }
+                .heading{
+                    font-weight: bold;
+                    color: white;
+                    font-size: 30px;
+                    display: inline;
+                }
+                header{
+                    align-items: center;
+                }
+                .main_p{ 
+                    /*background-image: url('{% static 'images/Chalk-on-Board.jpg' %}');*/
+                    /*background-color: #131145;*/
+                    padding: 1%;
+                    width: 80%;
+                    height: 70%;
+                    border-radius: 10%;
+                    margin: auto;
+                }
+            .search{
+                margin-left: 10%;
+                
+            }
+            option{
+                background-color: #043152;
+                color: aliceblue;
+            }
+            select{
+                padding: 1%;
+                width: 30%;
+                font-weight: bold;
+                background: aliceblue;
+            }
+                </style>
+            
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        labs = ""
+        labs1= ""
+        company_visit_id = "{{ company_visit_id }}";
+        booked_labs = "{{ booked_labs }}"
+        booked_slots = "{{ booked_slots }}"
+        booked_labs = booked_labs.replace(/&#39;/g,"'").replace("[","").replace("]","").split(",")
+        booked_slots = booked_slots.replace(/&#39;/g,"'").replace("[","").replace("]","").split(",")
+
+        lab_slot_pair = [];
+
+        for(i = 0; i < booked_labs.length; i++) {
+            lab_slot_pair.push(booked_labs[i].trim() + ";" + booked_slots[i].trim());
+        }
+
+        function remove_from_list(id) {
+            ele = document.getElementById(id);
+            children = ele.children;
+            items = labs.split(",");
+            items.pop();
+            console.log(items);
+            console.log("Before");
+            console.log(items.length);
+            for(i=0;i<items.length;i++) {
+                if((items[i] == children[0].innerHTML.trim())) {
+                    if(items[i+1] == children[1].innerHTML.trim()) {
+                        items.splice(i, 2);
+                        break;
+                    }
+                }
+            }
+            console.log("After");
+            console.log(items.length);
+            labs = "";
+            for(i = 0;i < items.length;i++) {
+                labs += items[i] + ",";
+            }
+            return labs;
+
+        }
+
+        function add_to_list1(ele) {
+            // ele = document.getElementById(id);
+            // children = ele.children;
+            // labs1 += children[0].innerHTML.trim() + ","
+            // labs1 += children[1].innerHTML.trim() + ","
+            labs1 +=ele
+        }
+
+
+
+        function changetime(){
+            var x = document.getElementById("time").value;
+            
+            ul_tags = document.getElementsByTagName("ul");
+            for(i = ul_tags.length-1; i >-1; i--) {
+                
+                children = ul_tags[i].children;
+                room_id = children[0].innerHTML.trim()
+                time_slot = children[1].innerHTML.trim()
+                
+                if(time_slot!=x){
+                    a = document.getElementById(ul_tags[i].id);
+                    a.style.display = "none"
+                    //a.parentNode.removeChild(a);
+                
+                }else{
+                       a = document.getElementById(ul_tags[i].id);
+                       a.style.display = "block"
+                }
+            }
+
+        }
+            
+        function add_to_list(id) {
+            ele = document.getElementById(id);
+            if(ele.style.backgroundColor == "yellow") {
+                ele.style.backgroundColor = "white";
+                labs = remove_from_list(id);
+                return;
+            }
+            ele.style.backgroundColor = "yellow";
+            children = ele.children;
+            labs += children[0].innerHTML.trim() + ","
+            labs += children[1].innerHTML.trim() + ","
+        }
+        function submit_b_form() {
+            input_field_labs = document.getElementById("csn_labs_field");
+            input_field_labs.value = labs.slice(0, labs.length-1);
+
+            input_field_company_visit_id = document.getElementById("csn_company_visit_id_field")
+            input_field_company_visit_id.value = company_visit_id;
+            document.getElementById("b_form").submit();
+        }
+    </script>
+</head>
+<header>
+        {% load static %}
+    <img src="{% static 'images/ssss.png' %}" class="image2">
+    <div class="heading" style="font-family: 'Times New Roman', Times, serif">Pisces</div>
+
+</header>
+<body>
+    <br>
+    <br>
+    <div class="search">
+            <select id="time" onchange="changetime()">
+                <option> TIMING </option>
+                <option value="09:00"> 09:00</option>
+                <option value="10:00"> 10:00 </option>
+                <option value="11:00"> 11:00 </option>
+                <option value="12:00"> 12:00 </option>
+                <option value="13:00"> 13:00 </option>
+                <option value="14:00"> 14:00 </option>
+                <option value="15:00"> 15:00 </option>
+                <option value="16:00"> 16:00 </option>
+            </select>
+    </div> 
+    <div class="main_p" >
+        {% for item in available %}
+        <ul style="list-style-type: none" id="{{item}}" onclick="add_to_list(this.id)">
+                {% for key, value in item.items %}
+                    <li> {{value}} </li>
+                {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+    <script>
+        ul_tags = document.getElementsByTagName("ul");
+        for(i = 0; i < ul_tags.length; i++) {
+
+            children = ul_tags[i].children;
+            room_id = children[0].innerHTML.trim()
+            time_slot = children[1].innerHTML.trim()
+            if(lab_slot_pair.includes("'"+room_id + "';" + "'"+time_slot+"'")) {
+                add_to_list(ul_tags[i].id)
+                console.log("true")
+                ul_tags[i].style.backgroundColor = "yellow";
+            }
+        }
+    </script>-
+    <div>
+    <form action="/coordinator/upsert_booking" method="POST" id="b_form">
+        {% csrf_token %}
+        {{book_form.as_p}}
+        <input type="button" value="Book" onclick="submit_b_form()" class="button btn"></button>
+    </form>
+    </div>
+</div>
+</body>
+</html>
