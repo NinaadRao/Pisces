@@ -14,8 +14,11 @@ body {
 }
 </style>
 {% endblock %}
-{% block content %}
 
+
+
+
+{% block content %}
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -23,21 +26,24 @@ body {
                 <img src="{% static 'images/peslogo.png' %}" alt="PES Logo" height="55px">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
+                        <a class="nav-link" href="/students/homepage">Home
                           <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/coordinator/company">Companies</a>
+                        <a class="nav-link" href="/students/company">Companies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Schedule</a>
+                        <a class="nav-link" href="/students/viewSchedule">Schedule</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="/students/stats">Statistics</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/coordinator/search">Search</a>
+                        <a class="nav-link" href="/students/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/students/skillRefine">Skill Refinement</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#policy" href="#policy">Policy</a>
@@ -49,15 +55,16 @@ body {
                             </button>
                             <ul class="dropdown-menu" background-color="#212529">
                                 <li background-color="#212529">  <a class="nav-link" href="/students/logout"><font color="grey">Logout</font></a></li>
+                                <li background-color="#212529"><a class="nav-link" href="/students/update"><font color="grey">Update Password</font></a></li>
                             </ul>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>
     </nav>
     <br>
-
 <div id="policy" class="modal fade" role="dialog" style="margin:5px;">
     <div class="modal-dialog modal-xl" >
         <div class="modal-content" >
@@ -159,111 +166,44 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
           </div>
       </div>
         </div></div></div>
-        {% for company in details %}
-            <div  id = "company{{ company.id }}" class="modal fade"  role="dialog"  >
-                <div class="modal-dialog modal-lg" >
-                    <div class="modal-content" >
-                        <div class="modal-body">
-                            {% for key,value in company.items %}
-                                {% if key == "Company" %}
-                                    <b>{{key}}</b> : &nbsp&nbsp{{value}}<br>
-                                {% elif key == "Disciplines" %}
-                                    <b>{{key}}:</b> <br>
-                                    {% for j,k in value.items %}
-                                        &nbsp &nbsp{{j}} : &nbsp; <br>
-                                        {% for l in k %}
-                                            &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp{{l}}<br>
-                                        {% endfor %}
-                                    {% endfor %}
-                                {% elif key == "Criteria" %}
-                                    <b>{{key}}</b>:<br>
-                                    {% for j,k in value.items %}
-                                        {% if j == "BE" or j == "MTech/MCA" %}
-                                            &nbsp &nbsp &nbsp &nbsp{{j}}:<br>
-                                                {% for l,m in k.items %}
-                                                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{l}}: &nbsp &nbsp{{m}}<br>
-                                                {% endfor %}
-                                        {% else %}
-                                            &nbsp &nbsp &nbsp &nbsp {{j}} : {{k}}<br>
-                                        {% endif %}
-                                    {% endfor %}
-                                {% elif key == "Compensation" %}
-                                    <b>{{key}}</b> : <br>
-                                    {% for j,k in value.items %}
-                                        &nbsp &nbsp &nbsp &nbsp{{j}}:<br>
-                                        {% if j == "Full Time" %}
-                                            {% for total,cost in k.items %}
-                                                    &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp{{total}}:&nbsp&nbsp{{cost}} <br>
-                                            {% endfor %}
-                                        {% elif j == "Internship" %}
-                                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{k}}<br>
-                                        {% endif %}
-                                    {% endfor %}
-                                {% elif key == "Mode of Selection" %}
-                                    <b>{{key}}</b> : <br>
-                                    {% for j in value %}
-                                        &nbsp &nbsp &nbsp &nbsp{{j}} <br>
-                                    {% endfor %}
-                                {% elif key == "Job Status" %}
-                                    <b>{{key}}</b>: <br>
-                                    {% for j in value %}
-                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{j}}<br>{% endfor %}
-                                {% elif key not in notRendered %}
-                                    <b>{{key}}</b> : &nbsp&nbsp{{value}}<br>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script><br><center><h1>Skill Refinement</h1></center>
 
-    {% endfor %}
-<div class="container text-center">
-
-    {% for company in details %}
-
-    <div class ="card bg-light" style="margin:15px;">
-        <div class="card-body">
-            {% for key,value in company.items %}
-
-                {% if key == "Company" %}
-                    {{key}} : {{value}}<br>
-                {% elif key == "Company Sector" %}
-                    {{key}} : {{value}}<br>
-                {% elif key == "Compensation" %}
-                    {% for j,k in value.items %}
-                        {{j}}:
-                        {% if j == "Full Time" %}
-                            {% for total,cost in k.items %}
-                                {% if total == 'Total CTC' %}
-                                    {{cost}} <br>
-                                {% endif %}
-                            {% endfor %}
-                        {% elif j == "Internship" %}
-                            {{k}}<br>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-            {% endfor %}
-            <a href="#{{ company.id }}" class="btn btn-primary" data-toggle="modal" data-target="#company{{ company.id }}">Details</a>
-            <form method="get" action="/coordinator/schedule" style="margin:10px;">
-                <button type="submit" class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">(Re-)Schedule</button>
-            </form>
-            <form method="post" action="/coordinator/remove_booking" style="margin:10px;">
+    <div class="d-flex justify-content-center" style="margin-top: 50px;">
+        <div class="dropdown" id="subject">
+            <form method="get" action="/students/quizPage">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">Cancel Schedule</button>
-                }
+                <select name="subject" class="form-control">
+                    <option selected value="al">Algorithms</option>
+                    <option value="cn">Computer Networking</option>
+                    <option value="op">Object Oriented Programming</option>
+                    <option value="ds">Data Science</option>
+                </select>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <input type="submit" value="Begin Quiz" class="btn btn-primary" id="submit-btn">
+                </div>
             </form>
         </div>
+
+    </div>
+    <div class ="container text-center row">
+        {% for i in plots %}<div class="col-md-3"></div>
+        <div class="chart col-md-8 text-center" id="graph{{ forloop.counter }}" align="center">
+            <script>
+            count = 0
+                var graphs = {{i | safe}};
+                Plotly.plot('graph'+ {{ forloop.counter }} ,graphs,{});
+                count++;
+            </script>
+        </div>
+        {% endfor %}
     </div>
 
-
-
-  {% endfor %}
-</div>
-
 {% endblock %}
+
 
