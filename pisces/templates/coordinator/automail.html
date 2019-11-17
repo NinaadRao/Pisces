@@ -155,8 +155,43 @@ body {
             </div>
         </div></div></div>
 
+        <div class="d-flex justify-content-center">
+            <div class="form-group">
+                <input type="email" class="form-control" id="emailID" aria-describedby="emailHelp" placeholder="Enter Email ID">
+                <small id="emailHelp" class="form-text text-muted">The response can be found as a CSV file in your Google Drive.</small>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <input type="submit" value="Send Form" class="btn btn-primary" id="submit-btn" onclick="sendMail()">
+        </div>
+        <br>
+        <div class="container card bg-light">
+            <h3 class="card-text">Upload Company Information</h3>
+            <form class="form-inline" action="/coordinator/uploadCompanyInfo" method="POST" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="file" name = "company_info" class="form-control-file" id ="file">
+                </div>
+                <div class="form-group">
+                    <input type = "submit" class="btn btn-primary" style="margin:10px">
+                </div>
+            </form>
+        </div>
 
-        <form action="/coordinator/automail" method="post">
-            <input name='email' value='email'>
-            <input type='submit'>
-        </form>
+        <script>
+            function sendMail()
+            {
+                console.log($('#emailID').val());
+                $.ajax({
+                    url:'/coordinator/automail',
+                    method:'POST',
+                    datatype: 'JSON',
+                    data:{'email': $('#emailID').val(),
+                          csrfmiddlewaretoken:'{{ csrf_token }}'},
+                    success:function(data) {
+                        location.reload()
+                    }
+                })
+            }
+        </script>
+{% endblock %}
