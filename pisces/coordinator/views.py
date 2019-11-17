@@ -23,6 +23,8 @@ import re
 import smtplib, ssl
 import json
 from django.core.files.storage import FileSystemStorage
+import wikipedia
+from bs4 import BeautifulSoup
 
 
 class HomePage(TemplateView):
@@ -117,20 +119,167 @@ class Automail(TemplateView):
     def post(self, request):
         port = 465  # For SSL
         smtp_server = "smtp.gmail.com"
-        sender_email = "placement.officer138@gmail.com"  # Enter your address
-        # print(request.form.get("email"))
-        receiver_email = request.form["email"]  # Enter receiver address
+        sender_email = "placement.officer138@gmail.com"  # Sender's address
+        receiver_email = request.POST["email"]  # Receiver's address
         password = '0987nes10'
         message = """\
             Subject: Company Details
-            https://docs.google.com/forms/d/e/1FAIpQLSf2MGbsfMb7ohyeFNLckLK99r6EJJLvmdiImaL0_mR1LDzUcQ/viewform?vc=0&c=0&w=1
+            
+            https://forms.gle/RtHfUa6sbUhRgfg87
+            
             Please fill the above form.
+            
             """
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
             server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email, message)
         return HttpResponse('success')
+
+
+def get_wiki_summary(page_soup):
+    summary = ""
+    paragraphs = page_soup.findAll()
+    for paragraph in paragraphs:
+        if paragraph.name == "p":
+            summary += paragraph.text + " "
+            print("Adding summary")
+        elif paragraph.name == "div" and paragraph.has_attr('class') and paragraph['class'][0] == 'toc':
+            break
+
+    print(summary)
+    return summary
+
+
+def get_wiki_company_categories(page_soup):
+    categories = []
+    table_html = str(page_soup.find("table", {"class": "infobox vcard"}))
+    if table_html == "None":
+        print("Returning none")
+        return categories
+    soup_table = BeautifulSoup(table_html, 'html.parser')
+    td_list = soup_table.findAll("td", {"class": "category"})
+
+    for item in td_list:
+        if item.previous_sibling != None and item.previous_sibling.text == "Industry":
+            a_tag_list = BeautifulSoup(str(item), 'html.parser').findAll("a")
+            for tag in a_tag_list:
+                categories.append(tag.text)
+
+    print(categories)
+    return categories
+
+
+def get_wiki_company_suggestions(page_title):
+    suggestions = wikipedia.search(page_title)
+    for item in suggestions:
+        if item.lower() == page_title.lower():
+            categories_list = wikipedia.WikipediaPage(item).categories
+            for category in categories_list:
+                if "companies" or "company" in category:
+                    return item
+            return None
+    return None
+
+
+def get_wiki_info(page_title, about_the_company):
+    response = requests.get("https://en.wikipedia.org/wiki/" + page_title)
+    if response.status_code != 200:
+        suggestion = get_wiki_company_suggestions(page_title)
+        if suggestion == None:
+            return [about_the_company, []]
+        response = requests.get("https://en.wikipedia.org/wiki/" + suggestion)
+
+    page_html = response.content
+    page_soup = BeautifulSoup(page_html, 'html.parser')
+
+    summary = get_wiki_summary(page_soup)
+    categories = get_wiki_company_categories(page_soup)
+
+    return [summary, categories]
+
+
+class UploadCompanyInfo(TemplateView):
+    def post(self, request):
+        if 'username' in request.session:
+            uploaded_file = request.FILES['company_info']
+            print(uploaded_file.name)
+            print(uploaded_file.size)
+
+            if 'csv' in uploaded_file.name:
+                file_data = uploaded_file.read().decode("utf-8")
+                ndict = {}
+                disc = {}
+                cr = {}
+                be = {}
+                mt = {}
+                comp = {}
+                fte = {}
+                fieldnames = ("Timestamp", "comp", "addr", "about", "sector", "SMode",
+                              "ip", "JD", "DBE", "DM", "DMCA",
+                              "10th", "12th", "bcgpa", "BEP", "mcgpa", "MP",
+                              "pos", "loc", "stat", "ftb", "ftctc", "internship", "bond",
+                              "site", "deadline", "tdate", "idate"
+                              )
+
+                lines = file_data.split('\n')
+                line = lines[1]
+                row = line.split(",")
+
+                ndict['Company'] = row[1]
+                ndict['Postal Address'] = row[2]
+                ndict["About the Company"] = row[3]
+                ndict["Company Sector"] = row[4]
+                ndict["Mode of Selection"] = [(row[5])]
+                ndict["Interview Process"] = row[6]
+                ndict["Job Description"] = row[7]
+
+                disc["BE/BTech"] = [row[8]]
+                disc["MTech"] = [row[9]]
+                disc["MCA"] = [row[10]]
+
+                ndict['Disciplines'] = disc
+
+                cr["10th"] = row[11]
+                cr["12th"] = row[12]
+
+                be['CGPA'] = row[13]
+                be['Percentage'] = row[14]
+
+                mt['CGPA'] = row[15]
+                mt['Percentage'] = row[16]
+
+                cr['BE/BTech'] = be
+                cr["MTech/MCA"] = mt
+
+                ndict['Criteria'] = cr
+                ndict['Position'] = row[17]
+                ndict['Location'] = row[18]
+                ndict['Job Status'] = [row[19]]
+
+                fte['Base Pay'] = row[20]
+                fte['Total CTC'] = row[21]
+
+                comp['Full Time'] = fte
+                comp['Internship'] = row[22]
+
+                ndict['Compensation'] = comp
+
+                ndict['Bond/Service agreement details'] = row[23]
+                ndict['Website'] = row[24]
+                ndict['Registration Deadline'] = row[25]
+                ndict['Test Date'] = row[26]
+                ndict['Interview Date'] = row[27]
+                Company.objects.insert(json.dumps(ndict))
+                print(json.dumps(ndict, indent=4))
+                summary, categories = get_wiki_info(row[1], row[3])
+                CompanyWikiInfo.objects.insert(json.dumps({"Name": row[1], "Categories": categories, "Summary": summary}))
+                return redirect('/coordinator/automail')
+            else:
+                messages.info(request, 'File not uploaded')
+                return redirect('/coordinator/automail')
+        else:
+            redirect('accounts/login')
 
 
 class Company_list(TemplateView):

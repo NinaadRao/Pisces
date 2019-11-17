@@ -18,3 +18,7 @@ class Scheduling(DynamicDocument):
 
 class Labs(DynamicDocument):
     meta = {'collection': 'labs'}
+
+
+class CompanyWikiInfo(DynamicDocument):
+    meta = {'collection': 'company_wiki_info'}
