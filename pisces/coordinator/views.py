@@ -220,7 +220,7 @@ class DisplayBooking(APIView):
                         status=status.HTTP_200_OK)
 
 
-class UpsertBooking(APIView):
+class UpsertBooking(TemplateView):
     api_name = "upsert_booking"
 
     def post(self, request):
@@ -249,7 +249,7 @@ class UpsertBooking(APIView):
         Scheduling.objects(id=company_visit_id).update_one(
             set__seating_information={"time": times, "labs": lab_numbers})
         print("After update")
-        return HttpResponse(status=200)
+        return redirect('/coordinator/registered_success')
 
 
 class LabListView(TemplateView):
@@ -278,3 +278,9 @@ class LabListView(TemplateView):
         return render(request, self.template_name, {"available": lab_time_slots, "book_form": book_form,
                                                     "booked_labs": booked_labs, "booked_slots": booked_slots,
                                                     "company_visit_id": request.GET["company_visit_id"]})
+
+
+class RegistrationSuccessfulView(TemplateView):
+    template_name = "coordinator/registered.html"
+    def get(self, request):
+        return render(request, self.template_name)    
