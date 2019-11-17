@@ -252,8 +252,10 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
             <form method="get" action="/coordinator/schedule" style="margin:10px;">
                 <button type="submit" class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">(Re-)Schedule</button>
             </form>
-            <form method="get" action="/coordinator/schedule" style="margin:10px;">
+            <form method="post" action="/coordinator/remove_booking" style="margin:10px;">
+                {% csrf_token %}
                 <button type="submit" class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">Cancel Schedule</button>
+                }
             </form>
         </div>
     </div>
