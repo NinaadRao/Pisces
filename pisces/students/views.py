@@ -668,6 +668,7 @@ class SearchCompany(TemplateView):
     for item in result:
         names.append(item["Name"])
         summaries.append(item["Summary"])
+        print(item["Categories"])
         categories.append(",".join(item["Categories"]))
         summary_obj = nlp(item["Summary"])
         tokens = [token.text for token in summary_obj if not token.is_stop]
