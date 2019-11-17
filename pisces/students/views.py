@@ -10,7 +10,7 @@ from rest_framework.response import Response
 
 from .forms import UsersLoginForm, UserUpdatePassword, SearchForm
 from .forms import UsersLoginForm, UserUpdatePassword, BlogPost
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.views.generic import TemplateView
 import re
 import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ from numpy import array
 from keras.models import Sequential
 from keras.layers import LSTM
 from keras.layers import Dense
-
+import json
 
 from plotly.subplots import make_subplots
 from collections import Counter
@@ -78,7 +78,7 @@ class logout(TemplateView):
             return HttpResponse(status=400)
 
     def post(self, request):
-        return HttpResponse(status=400)
+        return HttpResponse(status=403)
 
 
 class updatePassword(TemplateView):
@@ -121,50 +121,45 @@ class Company_list(TemplateView):
     template_name = 'company.html'
 
     def get(self, request):
-        t = datetime.date(datetime.now())
-        # t = t.strftime("%Y-%m-%d")
-        # t = datetime.strptime(t,"%Y-%m-%d")
-        print(type(t))
-        # companies = Company.objects.filter(__raw__={"Registration Deadline":{"lte":t}})
-        companies = Company.objects.filter()
-        # print(companies)
-        print('This is the registration Deadline', type(companies[1]['Registration Deadline']),
-              companies[1]['Registration Deadline'])
+        if('username' in request.session):
+            t = datetime.date(datetime.now())
 
-        details = json.loads(companies.to_json())
-        df = pd.DataFrame(details)
-        # print(df.columns)
+            print(type(t))
+            companies = Company.objects.filter()
+            print('This is the registration Deadline', type(companies[1]['Registration Deadline']),
+                  companies[1]['Registration Deadline'])
 
-        # print(details)
-        # df = df.dropna(subset=['Registration Deadline'])
+            details = json.loads(companies.to_json())
+            df = pd.DataFrame(details)
 
-        df = df[df['Registration Deadline'] != '']
-        deadlines = list(df['Registration Deadline'])
-        deadlines = [i.split('T')[0] for i in deadlines]
-        deadlines = [datetime.strptime(i, "%Y-%m-%d") for i in deadlines]
-        df['Registration Deadline'] = deadlines
+            df = df[df['Registration Deadline'] != '']
+            deadlines = list(df['Registration Deadline'])
+            deadlines = [i.split('T')[0] for i in deadlines]
+            deadlines = [datetime.strptime(i, "%Y-%m-%d") for i in deadlines]
+            df['Registration Deadline'] = deadlines
 
-        df['Registration Deadline'] = pd.to_datetime(df['Registration Deadline'], format='%Y-%m-%d')
-        print(df['Registration Deadline'][1], pd.Timestamp(t), df['Registration Deadline'][1] > pd.Timestamp(t))
-        # df = df[df['Registration Deadline'] >= pd.Timestamp(t)]
-        df = df.sort_values(by="Registration Deadline",ascending = False)
-        details = list(df.T.to_dict().values())
-        flag = 0
-        flag2 = 0
-        for i in range(len(details)):
-            details[i]['Compensation'] = dict(details[i]['Compensation'])
+            df['Registration Deadline'] = pd.to_datetime(df['Registration Deadline'], format='%Y-%m-%d')
+            print(df['Registration Deadline'][1], pd.Timestamp(t), df['Registration Deadline'][1] > pd.Timestamp(t))
+            df = df.sort_values(by="Registration Deadline",ascending = False)
+            details = list(df.T.to_dict().values())
+            flag = 0
+            flag2 = 0
+            for i in range(len(details)):
+                details[i]['Compensation'] = dict(details[i]['Compensation'])
 
-            # print(details[i]['_id'],type(details[i]['_id']))
-            details[i]['id'] = details[i]['_id']['$oid']
-            if details[i]['Registration Deadline'] >= pd.Timestamp(t):
-                details[i]['allowed']=1
-            else:
-                if(flag ==0):
-                    flag=1
-                    details[i]['first'] = 1
-                details[i]['allowed']=0
-            # print(type(details[i]['Compensation']))
-        return render(request, self.template_name, {'details': details, 'notRendered': ["_id", "id", ]})
+                # print(details[i]['_id'],type(details[i]['_id']))
+                details[i]['id'] = details[i]['_id']['$oid']
+                if details[i]['Registration Deadline'] >= pd.Timestamp(t):
+                    details[i]['allowed']=1
+                else:
+                    if(flag ==0):
+                        flag=1
+                        details[i]['first'] = 1
+                    details[i]['allowed']=0
+                # print(type(details[i]['Compensation']))
+            return render(request, self.template_name, {'details': details, 'notRendered': ["_id", "id", ]})
+        else:
+            return redirect('/accounts/login')
 
 
 class register(TemplateView):
@@ -273,7 +268,7 @@ class register(TemplateView):
                             company_name.save()
                             company_name.update(push__student_list=userDetails)
                             company_name.save()
-                            print(successful)
+                            print('successful')
                             return render(request, 'registered.html')
                         # already_registered
                         print("already registered")
@@ -289,32 +284,36 @@ class register(TemplateView):
 
             else:
                 # Not meeting eligibility criteria
-                return HttpResponse(status=200)
-            return HttpResponse(status=200)
+                return render(request, 'icant.html')
+            return render(request, 'icant.html')
 
-        return HttpResponse(status=400)
+        return redirect('/accounts/login')
 
 
 class uploadResume(TemplateView):
     def post(self, request):
-        uploaded_file = request.FILES['resume']
-        print(uploaded_file.name)
-        print(uploaded_file.size)
-        fs = FileSystemStorage()
-        if ('pdf' in uploaded_file.name or 'doc' in uploaded_file.name):
-            files = set(os.listdir(settings.MEDIA_ROOT))
-            print(files)
-            for i in files:
-                if request.session['username'] in i:
-                    os.remove(settings.MEDIA_ROOT + '/' + i)
-            fileName = request.session['username'] + '.' + uploaded_file.name.split('.')[-1]
-            fs.save(fileName, uploaded_file)
-            userUpload = User.objects.get(srn=request.session['username'])
-            userUpload.update(set__file=fileName)
-            return redirect('/students/homepage')
+        if('username' in request.session):
+            uploaded_file = request.FILES['resume']
+            print(uploaded_file.name)
+            print(uploaded_file.size)
+            fs = FileSystemStorage()
+            if ('pdf' in uploaded_file.name or 'doc' in uploaded_file.name):
+                files = set(os.listdir(settings.MEDIA_ROOT))
+                print(files)
+                for i in files:
+                    if request.session['username'] in i:
+                        os.remove(settings.MEDIA_ROOT + '/' + i)
+                fileName = request.session['username'] + '.' + uploaded_file.name.split('.')[-1]
+                fs.save(fileName, uploaded_file)
+                userUpload = User.objects.get(srn=request.session['username'])
+                userUpload.update(set__file=fileName)
+                return redirect('/students/homepage')
+            else:
+                messages.info(request, 'File not uploaded')
+                return redirect('/students/homepage')
         else:
-            messages.info(request, 'File not uploaded')
-            return redirect('/students/homepage')
+            redirect('accounts/login')
+
 
 class viewSchedule(TemplateView):
     template_name = 'schedule.html'
@@ -369,56 +368,64 @@ class Blog(TemplateView):
     template_name = 'blog-posts.html'
 
     def get(self,request):
-        form = BlogPost()
-        blogs = blogging.objects.filter().order_by('-created_on')
+        if('username' in request.session):
+            form = BlogPost()
+            blogs = blogging.objects.filter().order_by('-created_on')
 
-        # print(blogs.to_json())
-        #print(blogs[0].updated_on)
-        blogs = json.loads(blogs.to_json())
-        blogs = blogs[::-1]
-        for i in blogs:
-            # print(i['author'])
-            i['author']=User.objects.get(id=i['author']['$oid'])['name']
-            del i['content']
-        print(len(blogs))
-        return render(request, self.template_name, {"form": form,"blogs":blogs})
+            # print(blogs.to_json())
+            #print(blogs[0].updated_on)
+            blogs = json.loads(blogs.to_json())
+            blogs = blogs[::-1]
+            for i in blogs:
+                # print(i['author'])
+                i['author']=User.objects.get(id=i['author']['$oid'])['name']
+                del i['content']
+            print(len(blogs))
+            return render(request, self.template_name, {"form": form,"blogs":blogs})
+        else:
+            return redirect('/accounts/login')
     def post(self,request):
-        print(request.POST)
-        user = User.objects.get(srn=request.session['username'])
-        content = dict()
-        values = dict(request.POST)
-        del values['csrfmiddlewaretoken']
-        del values['blogTitle']
-        del values['company']
-        del values['blogType']
-        del values['shortDescription']
-        content = dict()
-        for i in values:
-            if('type' in i):
-                count = i.split('type')[1]
-                if(count not in content):
-                    content[count] = ['','']
-                content[count][0]=values[i]
-            elif('text' in i):
-                count = i.split('text')[1]
-                if(count not in content):
-                    content[count]=['','']
-                content[count][1] = values[i]
-        print(content)
-        keys = list(content.keys())
-        keys.sort()
-        finalContent = []
-        for i in keys:
-            finalContent.append(content[i])
-        newBlog = blogging()
-        newBlog.title = request.POST['blogTitle']
-        newBlog.author = user['id']
-        newBlog.company = request.POST['company']
-        newBlog.blogType = request.POST['blogType']
-        newBlog.shortDescription = request.POST['shortDescription']
-        newBlog.content = finalContent
-        newBlog.save(force_insert=True)
-        return redirect('/students/blog')
+        if('username' in request.session):
+            print(request.POST)
+            user = User.objects.get(srn=request.session['username'])
+            content = dict()
+            values = dict(request.POST)
+            del values['csrfmiddlewaretoken']
+            del values['blogTitle']
+            del values['company']
+            del values['blogType']
+            del values['shortDescription']
+            content = dict()
+            for i in values:
+                if('type' in i):
+                    count = i.split('type')[1]
+                    if(count not in content):
+                        content[count] = ['','']
+                    content[count][0]=values[i]
+                elif('text' in i):
+                    count = i.split('text')[1]
+                    if(count not in content):
+                        content[count]=['','']
+                    content[count][1] = values[i]
+            print(content)
+            keys = list(content.keys())
+            keys.sort()
+            finalContent = []
+            for i in keys:
+                finalContent.append(content[i])
+            newBlog = blogging()
+            newBlog.title = request.POST['blogTitle']
+            newBlog.author = user['id']
+            newBlog.company = request.POST['company']
+            newBlog.blogType = request.POST['blogType']
+            newBlog.shortDescription = request.POST['shortDescription']
+            newBlog.content = finalContent
+            newBlog.save(force_insert=True)
+            return redirect('/students/blog')
+        else:
+            return redirect('/accounts/login')
+
+
 class SearchBlog(TemplateView):
     template_name = 'blog-posts.html'
 
@@ -426,32 +433,38 @@ class SearchBlog(TemplateView):
         return HttpResponse(status=403)
 
     def post(self,request):
-        form = BlogPost()
-        blogs = blogging.objects.filter(company=request.POST['company']).order_by('-created_on')
+        if('username' in request.session):
+            form = BlogPost()
+            blogs = blogging.objects.filter( Q(company__contains=request.POST['company']) |  Q(title__contains=request.POST['company']) | Q(shortDescription__contains=request.POST['company'])).order_by('-created_on')
 
-        # print(blogs.to_json())
-        # print(blogs[0].updated_on)
-        blogs = json.loads(blogs.to_json())
-        blogs = blogs[::-1]
-        for i in blogs:
-            # print(i['author'])
-            i['author'] = User.objects.get(id=i['author']['$oid'])['name']
-            del i['content']
-        print(len(blogs))
-        return render(request, self.template_name, {"form": form, "blogs": blogs})
+            # print(blogs.to_json())
+            # print(blogs[0].updated_on)
+            blogs = json.loads(blogs.to_json())
+            blogs = blogs[::-1]
+            for i in blogs:
+                # print(i['author'])
+                i['author'] = User.objects.get(id=i['author']['$oid'])['name']
+                del i['content']
+            print(len(blogs))
+            return render(request, self.template_name, {"form": form, "blogs": blogs})
+        else:
+            return redirect('/accounts/login')
+
 
 class BlogDetails(TemplateView):
     template_name = 'blog-detail.html'
     def post(self,request):
-        print(request.POST)
-        form = BlogPost()
-        blog = blogging.objects.get(id=request.POST['id'])
-        blog['author'] = User.objects.get(id=blog['author'])['name']
-        blog = json.loads(blog.to_json())
-        blog['content'] = list(blog['content'])
-        del blog['_id']
-        return render(request,self.template_name,{'blog':blog,'form':form})
-
+        if('username' in request.session):
+            print(request.POST)
+            form = BlogPost()
+            blog = blogging.objects.get(id=request.POST['id'])
+            blog['author'] = User.objects.get(id=blog['author'])['name']
+            blog = json.loads(blog.to_json())
+            blog['content'] = list(blog['content'])
+            del blog['_id']
+            return render(request,self.template_name,{'blog':blog,'form':form})
+        else:
+            return redirect('/accounts/login')
 
 
 def ctc(df):
@@ -595,7 +608,6 @@ def ctc(df):
     return plots
 
 
-
 def wordCloud(df):
     d = {}
     for i in range(len(df)):
@@ -617,7 +629,7 @@ def wordCloud(df):
     plt.close()
     return 'data:image/png;base64,{}'.format(graph_url)
 
-df = pd.read_csv("detail.csv")
+'''df = pd.read_csv("detail.csv")
 df = df.sort_values(by='Date that the company has come')
 df = df.reset_index(drop=True)
 a = list(df['CTC'])
@@ -630,30 +642,33 @@ to_be_predicted=np.array([[second,first]])
 to_be_predicted = to_be_predicted.reshape(to_be_predicted.shape[0],to_be_predicted.shape[1],1)
 model = load_model('ctc_lstm.h5')
 value = model.predict(to_be_predicted,verbose=0)
-print('This is the value',value)
+print('This is the value',value)'''
 
 
 class ViewStatistics(TemplateView):
     template_name = 'stats.html'
     def get(self,request):
-        print(os.listdir())
-        df = pd.read_csv("detail.csv")
+        if('username' in request.session):
+            print(os.listdir())
+            df = pd.read_csv("detail.csv")
 
-        df = df.sort_values(by='Date that the company has come')
-        df = df.reset_index(drop=True)
-        a = list(df['CTC'])
-        print(len(a))
-        first=float(a[-1].replace(',',''))
-        first = first/100000
-        second = float(a[-2].replace(',',''))
-        second = second/100000
-        to_be_predicted=np.array([[second,first]])
-        to_be_predicted = to_be_predicted.reshape(to_be_predicted.shape[0],to_be_predicted.shape[1],1)
-        all_plots = []
-        all_plots += ctc(df)
-        plot2 = wordCloud(df)
-        global value
-        return render(request,self.template_name,{"all_plots":all_plots,"wordCloud": plot2,'next':str(value[0][0])})
+            df = df.sort_values(by='Date that the company has come')
+            df = df.reset_index(drop=True)
+            a = list(df['CTC'])
+            print(len(a))
+            first=float(a[-1].replace(',',''))
+            first = first/100000
+            second = float(a[-2].replace(',',''))
+            second = second/100000
+            to_be_predicted=np.array([[second,first]])
+            to_be_predicted = to_be_predicted.reshape(to_be_predicted.shape[0],to_be_predicted.shape[1],1)
+            all_plots = []
+            all_plots += ctc(df)
+            plot2 = wordCloud(df)
+            global value
+            return render(request,self.template_name,{"all_plots":all_plots,"wordCloud": plot2,'next':str(value[0][0])})
+        else:
+            return redirect('/accounts/login')
 
 
 class SearchCompany(TemplateView):
@@ -668,6 +683,7 @@ class SearchCompany(TemplateView):
     for item in result:
         names.append(item["Name"])
         summaries.append(item["Summary"])
+        print(item["Categories"])
         categories.append(",".join(item["Categories"]))
         summary_obj = nlp(item["Summary"])
         tokens = [token.text for token in summary_obj if not token.is_stop]
@@ -707,3 +723,72 @@ class SearchResultsView(TemplateView):
     def get(self, request):
         return render(self.request, 'results.html', {"search_query": request.session["search_query"],
                                                      "search_results": request.session["search_results"]})
+
+
+class SkillRefine(TemplateView):
+    template_name = 'quiz/skills_home.html'
+
+    def get(self, request):
+        if 'username' in request.session:
+            user = User.objects.get(srn=request.session['username'])
+            score_op = user['score_op']
+            score_al = user['score_al']
+            score_ds = user['score_ds']
+            score_cn = user['score_cn']
+
+            data = [go.Bar(x=['Algorithms', 'Networking', 'Data Science', 'OOPs'],
+                           y=[score_al, score_cn, score_ds, score_op])]
+            layout = dict(title='Performance Report', xaxis=dict(title="Subject"),
+                          yaxis=dict(title="Score"))
+            fig = go.Figure(data=data, layout=layout)
+            fig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+            plots = [fig]
+            return render(request, 'quiz/skills_home.html', {"plots": plots})
+
+
+class QuizPage(TemplateView):
+    template_name = 'quiz/quiz_page.html'
+    result = None
+
+    def get(self, request):
+        QuizPage.result = request.GET['subject']
+        return render(request, self.template_name, {'subject': QuizPage.result})
+
+    def post(self, request):
+        result = QuizPage.result
+        if result == 'op':
+            with open('../skill_questions/oops.json') as json_file:
+                q_data = json.load(json_file)
+        elif result == 'cn':
+            with open('../skill_questions/networking.json') as json_file:
+                q_data = json.load(json_file)
+        elif result == 'ds':
+            with open('../skill_questions/datascience.json') as json_file:
+                q_data = json.load(json_file)
+        elif result == 'al':
+            with open('../skill_questions/algos.json') as json_file:
+                q_data = json.load(json_file)
+        q_data.append({'subject': result})
+        print(q_data)
+        return JsonResponse(q_data, safe=False)
+
+
+class QuizPageResults(TemplateView):
+    print("ninaad is here")
+    def get(self, request):
+        print("hi")
+        if 'username' in request.session:
+            user = User.objects.get(srn=request.session['username'])
+            srn = user['srn']
+            sub = request.GET['subject']
+            numCorrect = request.GET['numCorrect']
+            total = request.GET['total']
+            if sub == 'al':
+                User.objects(srn=srn).update_one(score_al=float((int(numCorrect)/int(total))*100))
+            elif sub == 'cn':
+                User.objects(srn=srn).update_one(score_cn=float((int(numCorrect)/int(total))*100))
+            elif sub == 'ds':
+                User.objects(srn=srn).update_one(score_ds=float((int(numCorrect)/int(total))*100))
+            elif sub == 'op':
+                User.objects(srn=srn).update_one(score_op=float((int(numCorrect)/int(total))*100))
+            return HttpResponse("updated")

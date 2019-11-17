@@ -213,18 +213,19 @@ class ListLabs(APIView):
         return Response({'available': lab_time_slots}, status=status.HTTP_200_OK)
 
 
-class RemoveBooking(APIView):
-    api_name = "update_booking"
+class RemoveBooking(TemplateView):
+    api_name = "remove_booking"
+    template_name = "coordinator/registered.html"
 
     def post(self, request):
         print(self.api_name)
-        # company_visit_id = request.POST("company_visit_id")
-        company_visit_id = "5dc6eac7106ac20a0ef0543e"
+        company_visit_id = request.POST["company_visit_id"]
+        # company_visit_id = "5dc6eac7106ac20a0ef0543e"
         lab_numbers = []
         times = []
         Scheduling.objects(id=company_visit_id).update_one(
             set__seating_information={"time": times, "labs": lab_numbers})
-        return Response({'message': 'Removed schedule for company'}, status=status.HTTP_200_OK)
+        return render(request, self.template_name, {"message": "Canceled booking successfully"})
 
 
 class DisplayBooking(APIView):
@@ -246,7 +247,7 @@ class DisplayBooking(APIView):
                         status=status.HTTP_200_OK)
 
 
-class UpsertBooking(APIView):
+class UpsertBooking(TemplateView):
     api_name = "upsert_booking"
 
     def post(self, request):
@@ -275,11 +276,11 @@ class UpsertBooking(APIView):
         Scheduling.objects(id=company_visit_id).update_one(
             set__seating_information={"time": times, "labs": lab_numbers})
         print("After update")
-        return HttpResponse(status=200)
+        return redirect('/coordinator/registered_success')
 
 
 class LabListView(TemplateView):
-    template_name = "coordinator/labs_list_4.html"
+    template_name = "coordinator/labs_list_5.html"
 
     def get(self, request):
         print(self.template_name)
@@ -304,3 +305,9 @@ class LabListView(TemplateView):
         return render(request, self.template_name, {"available": lab_time_slots, "book_form": book_form,
                                                     "booked_labs": booked_labs, "booked_slots": booked_slots,
                                                     "company_visit_id": request.GET["company_visit_id"]})
+
+
+class RegistrationSuccessfulView(TemplateView):
+    template_name = "coordinator/registered.html"
+    def get(self, request):
+        return render(request, self.template_name, {"message": "Booked slots successfully"})    

@@ -1,0 +1,86 @@
+Cure.Fit
+Cisco
+ThoughtSpot
+Intuit
+Morgan Stanley
+Goldman Sachs
+MuSigma
+Couch Base
+Palo Alto
+Novartis
+Zscaler
+Clumio
+Schneider Electric
+Akamai
+Hewlett Packard
+Walmart
+PWC
+Infibeam
+Logmein
+Perpule
+Gartner
+Danske IT
+Optum
+General Electric
+Epsilon
+Societe Generale
+Deloitte USI
+Nuclei
+Exotel
+IBM
+Mathworks
+Komprise
+Standard Chartered GBS
+Deloitte India
+Accenture
+SIXT R & D
+Commvault
+VM Ware
+Robert Bosch
+NetSkope
+Prodapt Solutions
+McAfee
+Expedia
+Wissen Technologies
+MIQ Digital
+EY India
+Cognizant
+Vantage Agora
+LTTS
+Quest Global 
+Ather Energy
+Aruba
+Infosys
+Hashedin Technologies
+Wipro
+Century link
+Sandvine
+Eagle View
+Google
+Oracle
+Eagle View
+Zopsmart
+Endurance
+Ushur
+Intel
+Saltside
+Sling Media
+Accolite
+Ugam
+First Source Solutions
+Lam Research
+Hevo Technology
+Betsol
+Zinnov
+Adobe Systems
+The Math Company
+Pluribus
+Perfios
+Tredence Analytics
+Atlassian
+Target
+Verizon Media ( Yahoo )
+Zynga
+KPMG
+PayPal
+NXP Semiconductors

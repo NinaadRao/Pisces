@@ -14,4 +14,7 @@ urlpatterns = [
     url(r"^upsert_booking$", UpsertBooking.as_view(), name="upsert_booking"),
     url(r"^remove_booking$", RemoveBooking.as_view(), name="remove_booking"),
     url(r"^automail", Automail.as_view(), name="automail")
+    url(r"^remove_booking$", RemoveBooking.as_view(), name="remove_booking"),
+    url(r"^registered_success$", RegistrationSuccessfulView.as_view(), name="registered_successfully")
+
 ]
