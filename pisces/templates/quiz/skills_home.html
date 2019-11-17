@@ -166,10 +166,12 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
           </div>
       </div>
         </div></div></div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script><br><center><h1>Skill Refinement</h1></center>
 
     <div class="d-flex justify-content-center" style="margin-top: 50px;">
         <div class="dropdown" id="subject">
-            <form method="post" action="/students/quizPage">
+            <form method="get" action="/students/quizPage">
                 {% csrf_token %}
                 <select name="subject" class="form-control">
                     <option selected value="al">Algorithms</option>
@@ -187,6 +189,19 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
                 </div>
             </form>
         </div>
+
+    </div>
+    <div class ="container text-center row">
+        {% for i in plots %}<div class="col-md-3"></div>
+        <div class="chart col-md-8 text-center" id="graph{{ forloop.counter }}" align="center">
+            <script>
+            count = 0
+                var graphs = {{i | safe}};
+                Plotly.plot('graph'+ {{ forloop.counter }} ,graphs,{});
+                count++;
+            </script>
+        </div>
+        {% endfor %}
     </div>
 
 {% endblock %}

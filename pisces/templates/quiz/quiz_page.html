@@ -40,9 +40,12 @@
     <div class="page-header text-center">
         <h1>Quiz</h1>
     </div>
-    <div class="d-flex justify-content-center" style="margin-top: 50px;">
-        <div id="quiz"></div>
+    <div class="container text-centered">
+        <div class="d-flex justify-content-center" style="margin-top: 50px;">
+            <div id="quiz"></div>
+        </div>
     </div>
+
     <div class="d-flex justify-content-center">
         <button id="submit" onclick="sendResults()">Submit Quiz</button>
     </div>
@@ -50,93 +53,95 @@
         <div id="results"></div>
     </div>
 
-    <div>
-        {{data}}
-    </div>
-
     <script type="text/javascript">
-        (function() {
-            function buildQuiz() {
-                const output = [];
+        numCorrect = 0
+        var myQuestions = null
+        $(document).ready(function(){
+            $.ajax({
+                url:'/students/quizPage',
+                method:'POST',
+                datatype: 'JSON',
+                data:{csrfmiddlewaretoken:'{{ csrf_token }}'},
+                success:function(data) {
+                    myQuestions = data
+                    sub = myQuestions[myQuestions.length-1]['subject']
+                    myQuestions.pop()
 
-                myQuestions.forEach((currentQuestion, questionNumber) => {
-                    const answers = [];
+                    function buildQuiz() {
+                        const output = [];
 
-                    for (letter in currentQuestion.answers) {
-                        // ...add an HTML radio button
-                        answers.push(
-                            `<label>
-                            <input type="radio" name="question${questionNumber}" value="${letter}">
-                            ${letter} :
-                            ${currentQuestion.answers[letter]}
-                            </label>`
-                        );
+                        myQuestions.forEach((currentQuestion, questionNumber) => {
+                            const answers = [];
+
+                            for (letter in currentQuestion.answers) {
+                                // ...add an HTML radio button
+                                answers.push(
+                                    `<label>
+                                    <input type="radio" name="question${questionNumber}" value="${letter}">
+                                    ${letter} :
+                                    ${currentQuestion.answers[letter]}
+                                    </label>`
+                                );
+                            }
+
+                            output.push(
+                                `<div class="question"> ${currentQuestion.question} </div>
+                                <div class="answers"> ${answers.join("")} </div>`
+                            );
+                        });
+
+                        // Combine our output list into one string of HTML and put it on the page
+                        quizContainer.innerHTML = output.join("");
                     }
 
-                    output.push(
-                        `<div class="question"> ${currentQuestion.question} </div>
-                        <div class="answers"> ${answers.join("")} </div>`
-                    );
-                });
+                    function showResults() {
+                        // gather answer containers from our quiz
+                        const answerContainers = quizContainer.querySelectorAll(".answers");
 
-                // Combine our output list into one string of HTML and put it on the page
-                quizContainer.innerHTML = output.join("");
-            }
+                        myQuestions.forEach((currentQuestion, questionNumber) => {
+                            const answerContainer = answerContainers[questionNumber];
+                            const selector = `input[name=question${questionNumber}]:checked`;
+                            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-            function showResults() {
-                // gather answer containers from our quiz
-                const answerContainers = quizContainer.querySelectorAll(".answers");
+                            if (userAnswer === currentQuestion.correctAnswer) {
+                                numCorrect++;
+                                answerContainers[questionNumber].style.color = "lightgreen";
+                            } else {
+                                answerContainers[questionNumber].style.color = "red";
+                        }
+                    });
 
-                let numCorrect = 0;
-
-                myQuestions.forEach((currentQuestion, questionNumber) => {
-                    const answerContainer = answerContainers[questionNumber];
-                    const selector = `input[name=question${questionNumber}]:checked`;
-                    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-                    if (userAnswer === currentQuestion.correctAnswer) {
-                        numCorrect++;
-                        answerContainers[questionNumber].style.color = "lightgreen";
-                    } else {
-                        answerContainers[questionNumber].style.color = "red";
+                        // show number of correct answers out of total
+                        resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+                        sendResults();
                     }
-            });
 
-                // show number of correct answers out of total
-                resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-            }
+                    const quizContainer = document.getElementById("quiz");
+                    const resultsContainer = document.getElementById("results");
+                    const submitButton = document.getElementById("submit");
 
-            const quizContainer = document.getElementById("quiz");
-            const resultsContainer = document.getElementById("results");
-            const submitButton = document.getElementById("submit");
-            var json_data = '{{data}}';
-            console.log(String(json_data));
-            var result = [];
+                    // display quiz right away
+                    buildQuiz();
 
-<!--            for(var i in json_data)-->
-<!--            {-->
-<!--                console.log(typeof(i));-->
-<!--                result.push(JSON.parse(i));-->
-<!--                console.log(JSON.parse(i));-->
-<!--            }-->
-
-            const myQuestions = result;
-
-            // display quiz right away
-            buildQuiz();
-
-            // on submit, show results
-            submitButton.addEventListener("click", showResults);
-        })();
+                    // on submit, show results
+                    submitButton.addEventListener("click", showResults);
+                }
+            })
+        })
 
         function sendResults()
         {
+            console.log(numCorrect)
             $.ajax({
                 url:'/students/quizPageResults',
-                method:'POST',
-                data:{'subject': $('#subject').find(":selected").attr('value'),
+                method:'GET',
+                datatype: 'JSON',
+                data:{'numCorrect': numCorrect,
+                      'total': myQuestions.length,
+                      'subject': sub,
                       csrfmiddlewaretoken:'{{ csrf_token }}'},
-                success:function(data) {}
+                success:function(data) {
+                }
             })
         }
     </script>
