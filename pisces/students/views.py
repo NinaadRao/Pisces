@@ -10,7 +10,7 @@ from rest_framework.response import Response
 
 from .forms import UsersLoginForm, UserUpdatePassword, SearchForm
 from .forms import UsersLoginForm, UserUpdatePassword, BlogPost
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.views.generic import TemplateView
 import re
 import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ from numpy import array
 from keras.models import Sequential
 from keras.layers import LSTM
 from keras.layers import Dense
-
+import json
 
 from plotly.subplots import make_subplots
 from collections import Counter
@@ -268,7 +268,7 @@ class register(TemplateView):
                             company_name.save()
                             company_name.update(push__student_list=userDetails)
                             company_name.save()
-                            print(successful)
+                            print('successful')
                             return render(request, 'registered.html')
                         # already_registered
                         print("already registered")
@@ -313,6 +313,7 @@ class uploadResume(TemplateView):
                 return redirect('/students/homepage')
         else:
             redirect('accounts/login')
+
 
 class viewSchedule(TemplateView):
     template_name = 'schedule.html'
@@ -449,6 +450,7 @@ class SearchBlog(TemplateView):
         else:
             return redirect('/accounts/login')
 
+
 class BlogDetails(TemplateView):
     template_name = 'blog-detail.html'
     def post(self,request):
@@ -463,7 +465,6 @@ class BlogDetails(TemplateView):
             return render(request,self.template_name,{'blog':blog,'form':form})
         else:
             return redirect('/accounts/login')
-
 
 
 def ctc(df):
@@ -607,7 +608,6 @@ def ctc(df):
     return plots
 
 
-
 def wordCloud(df):
     d = {}
     for i in range(len(df)):
@@ -723,3 +723,72 @@ class SearchResultsView(TemplateView):
     def get(self, request):
         return render(self.request, 'results.html', {"search_query": request.session["search_query"],
                                                      "search_results": request.session["search_results"]})
+
+
+class SkillRefine(TemplateView):
+    template_name = 'quiz/skills_home.html'
+
+    def get(self, request):
+        if 'username' in request.session:
+            user = User.objects.get(srn=request.session['username'])
+            score_op = user['score_op']
+            score_al = user['score_al']
+            score_ds = user['score_ds']
+            score_cn = user['score_cn']
+
+            data = [go.Bar(x=['Algorithms', 'Networking', 'Data Science', 'OOPs'],
+                           y=[score_al, score_cn, score_ds, score_op])]
+            layout = dict(title='Performance Report', xaxis=dict(title="Subject"),
+                          yaxis=dict(title="Score"))
+            fig = go.Figure(data=data, layout=layout)
+            fig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+            plots = [fig]
+            return render(request, 'quiz/skills_home.html', {"plots": plots})
+
+
+class QuizPage(TemplateView):
+    template_name = 'quiz/quiz_page.html'
+    result = None
+
+    def get(self, request):
+        QuizPage.result = request.GET['subject']
+        return render(request, self.template_name, {'subject': QuizPage.result})
+
+    def post(self, request):
+        result = QuizPage.result
+        if result == 'op':
+            with open('../skill_questions/oops.json') as json_file:
+                q_data = json.load(json_file)
+        elif result == 'cn':
+            with open('../skill_questions/networking.json') as json_file:
+                q_data = json.load(json_file)
+        elif result == 'ds':
+            with open('../skill_questions/datascience.json') as json_file:
+                q_data = json.load(json_file)
+        elif result == 'al':
+            with open('../skill_questions/algos.json') as json_file:
+                q_data = json.load(json_file)
+        q_data.append({'subject': result})
+        print(q_data)
+        return JsonResponse(q_data, safe=False)
+
+
+class QuizPageResults(TemplateView):
+    print("ninaad is here")
+    def get(self, request):
+        print("hi")
+        if 'username' in request.session:
+            user = User.objects.get(srn=request.session['username'])
+            srn = user['srn']
+            sub = request.GET['subject']
+            numCorrect = request.GET['numCorrect']
+            total = request.GET['total']
+            if sub == 'al':
+                User.objects(srn=srn).update_one(score_al=float((int(numCorrect)/int(total))*100))
+            elif sub == 'cn':
+                User.objects(srn=srn).update_one(score_cn=float((int(numCorrect)/int(total))*100))
+            elif sub == 'ds':
+                User.objects(srn=srn).update_one(score_ds=float((int(numCorrect)/int(total))*100))
+            elif sub == 'op':
+                User.objects(srn=srn).update_one(score_op=float((int(numCorrect)/int(total))*100))
+            return HttpResponse("updated")
