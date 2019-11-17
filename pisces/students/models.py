@@ -59,8 +59,5 @@ class blogging(DynamicDocument):
         ordering = ['-created_on']
 
 
-    meta = {'collection': 'labs'}
-
-
 class CompanyInfo(DynamicDocument):
     meta = {'collection': 'company_wiki_info'}
