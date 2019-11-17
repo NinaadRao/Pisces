@@ -14,8 +14,11 @@ body {
 }
 </style>
 {% endblock %}
-{% block content %}
 
+
+
+
+{% block content %}
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -40,10 +43,6 @@ body {
                         <a class="nav-link" href="/students/blog">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/students/searchCompanyPage">Company-Info</a>
-                    </li>
-
-                    <li class="nav-item">
                         <a class="nav-link" href="/students/skillRefine">Skill Refinement</a>
                     </li>
                     <li class="nav-item">
@@ -56,15 +55,16 @@ body {
                             </button>
                             <ul class="dropdown-menu" background-color="#212529">
                                 <li background-color="#212529">  <a class="nav-link" href="/students/logout"><font color="grey">Logout</font></a></li>
+                                <li background-color="#212529"><a class="nav-link" href="/students/update"><font color="grey">Update Password</font></a></li>
                             </ul>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>
     </nav>
     <br>
-
 <div id="policy" class="modal fade" role="dialog" style="margin:5px;">
     <div class="modal-dialog modal-xl" >
         <div class="modal-content" >
@@ -166,53 +166,44 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
           </div>
       </div>
         </div></div></div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script><br><center><h1>Skill Refinement</h1></center>
 
-<div class="container text-center">
-    <div class = "card bg-success"><div class="card-header" ><font color="white" size="4px">Schedule</font></div></div>
-    {% for company in details %}
-
-    <div class ="card bg-light" style="margin:15px;">
-        <div class="card-body">
-            {% for key,value in company.items %}
-
-                {% if key == "Company" %}
-                    {{key}} : {{value}}<br>
-                {% elif key == "Company Sector" %}
-                    {{key}} : {{value}}<br>
-                {% elif key == "Compensation" %}
-                    {% for j,k in value.items %}
-                        {{j}}:
-                        {% if j == "Full Time" %}
-                            {% for total,cost in k.items %}
-                                {% if total == 'Total CTC' %}
-                                    {{cost}} <br>
-                                {% endif %}
-                            {% endfor %}
-                        {% elif j == "Internship" %}
-                            {{k}}<br>
-                        {% endif %}
-                    {% endfor %}
-            {% elif key == "Test Date" %}Date &nbsp: &nbsp
-            <button  class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">{{value}} </button>&nbsp
-            {% elif key == "room-no" %}Room No &nbsp: &nbsp
-            <button  class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">{{value}}</button>
-            {% elif key == "time" %}&nbspTime&nbsp : &nbsp
-            <button  class="btn btn-primary" name="company_visit_id" value="{{ company.id }}">{{value}}</button>
-            {% endif %}
-            {% endfor %}
-
-
-
-
-
-
+    <div class="d-flex justify-content-center" style="margin-top: 50px;">
+        <div class="dropdown" id="subject">
+            <form method="get" action="/students/quizPage">
+                {% csrf_token %}
+                <select name="subject" class="form-control">
+                    <option selected value="al">Algorithms</option>
+                    <option value="cn">Computer Networking</option>
+                    <option value="op">Object Oriented Programming</option>
+                    <option value="ds">Data Science</option>
+                </select>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <input type="submit" value="Begin Quiz" class="btn btn-primary" id="submit-btn">
+                </div>
+            </form>
         </div>
+
+    </div>
+    <div class ="container text-center row">
+        {% for i in plots %}<div class="col-md-3"></div>
+        <div class="chart col-md-8 text-center" id="graph{{ forloop.counter }}" align="center">
+            <script>
+            count = 0
+                var graphs = {{i | safe}};
+                Plotly.plot('graph'+ {{ forloop.counter }} ,graphs,{});
+                count++;
+            </script>
+        </div>
+        {% endfor %}
     </div>
 
-
-
-  {% endfor %}
-</div>
-
 {% endblock %}
+
 
