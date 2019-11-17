@@ -222,7 +222,7 @@ class UpsertBooking(APIView):
 
 
 class LabListView(TemplateView):
-    template_name = "coordinator/labs_list_4.html"
+    template_name = "coordinator/labs_list_5.html"
 
     def get(self, request):
         print(self.template_name)
