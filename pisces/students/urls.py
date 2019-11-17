@@ -17,8 +17,8 @@ urlpatterns = [
     url(r"^stats", ViewStatistics.as_view(), name='stats'),
     url(r"^searchBlog", SearchBlog.as_view(), name='searchblog'),
     url(r"^skillRefine", SkillRefine.as_view(), name='skillRefine'),
-    url(r"^quizPage", QuizPage.as_view(), name='quizPage'),
-    # url(r"^quizPageResults", QuizPageResults.as_view(), name='quizPageResults')
+    url(r"^quizPage$", QuizPage.as_view(), name='quizPage'),
+    url(r"^quizPageResults$", QuizPageResults.as_view(), name='quizPageResults')
 ]
 
 if settings.DEBUG:
