@@ -629,24 +629,25 @@ def wordCloud(df):
     plt.close()
     return 'data:image/png;base64,{}'.format(graph_url)
 
-'''df = pd.read_csv("detail.csv")
-df = df.sort_values(by='Date that the company has come')
-df = df.reset_index(drop=True)
-a = list(df['CTC'])
-print(len(a))
-first=float(a[-1].replace(',',''))
-first = first/100000
-second = float(a[-2].replace(',',''))
-second = second/100000
-to_be_predicted=np.array([[second,first]])
-to_be_predicted = to_be_predicted.reshape(to_be_predicted.shape[0],to_be_predicted.shape[1],1)
-model = load_model('ctc_lstm.h5')
-value = model.predict(to_be_predicted,verbose=0)
-print('This is the value',value)'''
+
 
 
 class ViewStatistics(TemplateView):
     template_name = 'stats.html'
+    df = pd.read_csv("detail.csv")
+    df = df.sort_values(by='Date that the company has come')
+    df = df.reset_index(drop=True)
+    a = list(df['CTC'])
+    print(len(a))
+    first = float(a[-1].replace(',', ''))
+    first = first / 100000
+    second = float(a[-2].replace(',', ''))
+    second = second / 100000
+    to_be_predicted = np.array([[second, first]])
+    to_be_predicted = to_be_predicted.reshape(to_be_predicted.shape[0], to_be_predicted.shape[1], 1)
+    model = load_model('ctc_lstm.h5')
+    value = model.predict(to_be_predicted, verbose=0)
+    print('This is the value', value)
     def get(self,request):
         if('username' in request.session):
             print(os.listdir())
@@ -666,7 +667,7 @@ class ViewStatistics(TemplateView):
             all_plots += ctc(df)
             plot2 = wordCloud(df)
             global value
-            return render(request,self.template_name,{"all_plots":all_plots,"wordCloud": plot2,'next':str(value[0][0])})
+            return render(request,self.template_name,{"all_plots":all_plots,"wordCloud": plot2,'next':str(self.value[0][0])})
         else:
             return redirect('/accounts/login')
 
