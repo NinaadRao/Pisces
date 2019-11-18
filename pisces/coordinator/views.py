@@ -25,7 +25,9 @@ import json
 from django.core.files.storage import FileSystemStorage
 import wikipedia
 from bs4 import BeautifulSoup
-
+from pymongo import MongoClient
+client = MongoClient('localhost', 27017)
+db = client.sepcs
 
 class HomePage(TemplateView):
     def get(self, request):
@@ -123,13 +125,13 @@ class Automail(TemplateView):
         receiver_email = request.POST["email"]  # Receiver's address
         password = '0987nes10'
         message = """\
-            Subject: Company Details
-            
-            https://forms.gle/RtHfUa6sbUhRgfg87
-            
-            Please fill the above form.
-            
-            """
+        Subject: Company Details
+        
+        https://forms.gle/RtHfUa6sbUhRgfg87
+        
+        Please fill the above form.
+        
+        """
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
             server.login(sender_email, password)
@@ -270,10 +272,11 @@ class UploadCompanyInfo(TemplateView):
                 ndict['Registration Deadline'] = row[25]
                 ndict['Test Date'] = row[26]
                 ndict['Interview Date'] = row[27]
-                # Company.objects.insert(json.dumps(ndict))
-                print(json.dumps(ndict, indent=4))
+
+                x = db.company_data.insert_one(ndict)
+                # print(json.dumps(ndict, indent=4))
                 summary, categories = get_wiki_info(row[1], row[3])
-                # CompanyWikiInfo.objects.insert(json.dumps({"Name": row[1], "Categories": categories, "Summary": summary}))
+                y = db.company_wiki_info.insert_one({"Name": row[1], "Categories": categories, "Summary": summary})
                 return redirect('/coordinator/automail')
             else:
                 messages.info(request, 'File not uploaded')
