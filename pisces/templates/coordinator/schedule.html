@@ -31,10 +31,7 @@ body {
                         <a class="nav-link" href="/coordinator/company">Companies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Schedule</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="/coordinator/automail">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/coordinator/search">Search</a>
@@ -57,7 +54,6 @@ body {
         </div>
     </nav>
     <br>
-
 <div id="policy" class="modal fade" role="dialog" style="margin:5px;">
     <div class="modal-dialog modal-xl" >
         <div class="modal-content" >
@@ -159,6 +155,7 @@ visiting team or T&amp;P Cell Staff.</h5></div></div>
           </div>
       </div>
         </div></div></div>
+
         {% for company in details %}
             <div  id = "company{{ company.id }}" class="modal fade"  role="dialog"  >
                 <div class="modal-dialog modal-lg" >
