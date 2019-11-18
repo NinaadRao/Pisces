@@ -270,10 +270,10 @@ class UploadCompanyInfo(TemplateView):
                 ndict['Registration Deadline'] = row[25]
                 ndict['Test Date'] = row[26]
                 ndict['Interview Date'] = row[27]
-                Company.objects.insert(json.dumps(ndict))
+                # Company.objects.insert(json.dumps(ndict))
                 print(json.dumps(ndict, indent=4))
                 summary, categories = get_wiki_info(row[1], row[3])
-                CompanyWikiInfo.objects.insert(json.dumps({"Name": row[1], "Categories": categories, "Summary": summary}))
+                # CompanyWikiInfo.objects.insert(json.dumps({"Name": row[1], "Categories": categories, "Summary": summary}))
                 return redirect('/coordinator/automail')
             else:
                 messages.info(request, 'File not uploaded')
