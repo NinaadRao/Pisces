@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% block style %}
+<style>
+body {
+  padding-top: 56px;
+}
+
+.card:hover{
+  box-shadow: 2px 2px grey;
+}
+</style>
+{% endblock %}
+{% block content %}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarResponsive" style="font-size:20px;">
+            <img src="{% static 'images/peslogo.png' %}" alt="PES Logo" height="55px">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/coordinator/company">Companies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/coordinator/automail">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/coordinator/search">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#policy" href="#policy">Policy</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <span class="caret" style="color:white"></span>
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="color:white;">
+                        </button>
+                        <ul class="dropdown-menu" background-color="#212529">
+                            <li background-color="#212529">  <a class="nav-link" href="/students/logout"><font color="grey">Logout</font></a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<div id="policy" class="modal fade" role="dialog" style="margin:5px;">
+    <div class="modal-dialog modal-xl" >
+        <div class="modal-content" >
+
+            <div class="container" >
+
+                <h1 class="header text-center">PLACEMENT POLICY</h1>
+
+                <div class="card  bg-light ">
+                    <div class="card-body">
+                        <h5 class="hoverable">Students who are placed in a company, having a package below 4 Lakhs (Tier -3 Companies) will be permitted to participate in placement drives only for those companies that are providing an annual package of 4 Lakhs and above.</h5>
+                    </div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable" >Students who are placed in a company, having a package between 4
+                            Lakhs and 8 Lakhs (Tier-2 Companies) will be permitted to participate in
+                            placement drives only for those companies that are providing an annual
+                            package of 8 Lakhs and above.</h5>
+                    </div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">Students who are placed in a company, having a package above 8 Lakhs (
+                            Tier-1 Companies ) will not be permitted to participate in the placement
+                            drives.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">Students can participate in the placement drives only until they get two
+                            offers . Once they get two offers , irrespective of their acceptance or
+                            rejection , they are not permitted to participate in the placement drives.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">It is not mandatory for a candidate who willingly decides not to
+                            participate in any placement drive to attend the drive; however the
+                            Placement Cell will not take any responsibility for it.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">Students are hereby informed to take decisions meticulously and as they
+                            deem fit before registering and participating for companies   visiting
+                            campus for recruitments as long as they meet the eligibility criteria set by
+                            the company.  The job profiles and all other details as received from the
+                            company are also attached.  Students are advised to go through the same
+                            before registering/participating.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">Students are to specifically note that the eligibility criteria mentioned
+                            are indicative (as given by the company). The company may short list
+                            students based on a higher cut off and the same will be shared with the
+                            students prior to the recruitment activity.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">If any candidate submits his/her willingness to participate in any
+                            oncampus or off-campus placement recruitment drive and thereby fails
+                            to present himself/herself on the day of the pre-placement talk (PPT),
+                            then he/she is likely to be blacklisted** from the training &amp; Placement .</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">If any candidate is blacklisted from the Training &amp; Placement Cell, then
+                            he/she will not be allowed to participate in any of the placement drives
+                            throughout the academic year.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">Training &amp; Placement Student coordinators only hold the sole right to
+                            deal with Training &amp; Placement matters ( Internal or External)</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">Only with the special permission of the Training &amp; Placement officer any
+                            other student may deal with Training &amp; Placement matters.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">All post job-offer communication between student and company should
+                            be channelized through the placement cell.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">Direct communications with the company officials is not allowed.</h5>
+                        <h5 class="card-panel hoverable">It is mandatory for the students to register in the company to
+                            participate in the placement process of the company.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">Attendance in PPT is mandatory after registration, to be eligible for
+                            further placement process.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">Students proceeding after the PPT for the next step in the selection
+                            process of the company cannot quit in between. If a student quits in
+                            between, then he/she will be debarred and will not be allowed to appear
+                            in any other further placement event.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">Any kind of misbehaviour/complaints reported by the company officials
+                            will be taken seriously and if proven, the student will be debarred from
+                            future campus placements/Blacklisted**.</h5></div></div>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-panel hoverable">All students must keep their identity card with them at the time of
+                            PPT/Written Test/GD/PI and produce the same when demanded by the
+                            visiting team or T&amp;P Cell Staff.</h5></div></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div></div></div>
+
+        <div class="d-flex justify-content-center">
+            <div class="form-group">
+                <input type="email" class="form-control" id="emailID" aria-describedby="emailHelp" placeholder="Enter Email ID">
+                <small id="emailHelp" class="form-text text-muted">The response can be found as a CSV file in your Google Drive.</small>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <input type="submit" value="Send Form" class="btn btn-primary" id="submit-btn" onclick="sendMail()">
+        </div>
+        <br>
+        <div class="container card bg-light">
+            <h3 class="card-text">Upload Company Information</h3>
+            <form class="form-inline" action="/coordinator/uploadCompanyInfo" method="POST" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="file" name = "company_info" class="form-control-file" id ="file">
+                </div>
+                <div class="form-group">
+                    <input type = "submit" class="btn btn-primary" style="margin:10px">
+                </div>
+            </form>
+        </div>
+
+        <script>
+            function sendMail()
+            {
+                console.log($('#emailID').val());
+                $.ajax({
+                    url:'/coordinator/automail',
+                    method:'POST',
+                    datatype: 'JSON',
+                    data:{'email': $('#emailID').val(),
+                          csrfmiddlewaretoken:'{{ csrf_token }}'},
+                    success:function(data) {
+                        location.reload()
+                    }
+                })
+            }
+        </script>
+{% endblock %}
